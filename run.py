@@ -15,8 +15,6 @@ setup_logging()
 logger = logging.getLogger(__name__)
 warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 
-lookup = "hdx-location-exploration"
-
 
 def main(**ignore):
 
