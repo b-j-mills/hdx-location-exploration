@@ -14,6 +14,66 @@ from hdx.utilities.uuid import get_uuid
 logger = logging.getLogger(__name__)
 
 
+def download_resource(resource, fileext, resource_folder):
+    try:
+        _, resource_file = resource.download(folder=resource_folder)
+    except:
+        error = f"Could not download file {resource['name']}"
+        return None, error
+
+    if is_zipfile(resource_file) or ".zip" in basename(resource_file):
+        temp = join(resource_folder, get_uuid())
+        try:
+            with ZipFile(resource_file, "r") as z:
+                z.extractall(temp)
+        except:
+            error = f"Could not unzip resource {resource['name']}"
+            return None, error
+        resource_files = glob(join(temp, "**", f"*.{fileext}"), recursive=True)
+        if len(resource_files) > 1:  # make sure to remove directories containing the actual files
+            resource_files = [r for r in resource_files
+                              if sum([r in rs for rs in resource_files if not rs == r]) == 0]
+        if fileext == "xlsx" and len(resource_files) == 0:
+            resource_files = [resource_file]
+        if fileext in ["gdb", "gpkg"]:
+            resource_files = [join(r, i) for r in resource_files for i in listlayers(r)]
+    else:
+        resource_files = [resource_file]
+
+    return resource_files, None
+
+
+def read_data(resource_files, fileext):
+    data_to_check = dict()
+    error = None
+    for resource_file in resource_files:
+        if fileext in ["xlsx", "xls"]:
+            data = read_excel(resource_file, sheet_name=None)
+        if fileext == "csv":
+            try:
+                data = {basename(resource_file): read_csv(resource_file)}
+            except:
+                error = f"Unable to read resource {basename(resource_file)}"
+                continue
+        if fileext in ["geojson", "json", "shp", "topojson"]:
+            try:
+                data = {basename(resource_file): read_file(resource_file)}
+            except:
+                error = f"Unable to read resource {basename(resource_file)}"
+                continue
+        if fileext in ["gdb", "gpkg"]:
+            try:
+                data = {basename(resource_file): read_file(dirname(resource_file), layer=basename(resource_file))}
+            except:
+                error = f"Unable to read resource {basename(resource_file)}"
+                continue
+
+        for key in data:
+            data_to_check[key] = data[key]
+
+    return data_to_check, error
+
+
 def check_location(dataset, temp_folder):
     pcoded = None
     latlong = None
@@ -43,56 +103,13 @@ def check_location(dataset, temp_folder):
         if filetype not in allowed_filetypes:
             continue
 
-        try:
-            _, resource_file = resource.download(folder=resource_folder)
-        except:
-            error = f"Could not download file {resource['name']}"
-            continue
+        resource_files, error = download_resource(resource, fileext, resource_folder)
+        if not resource_files:
+            return pcoded, latlong, error
 
-        if is_zipfile(resource_file) or ".zip" in basename(resource_file):
-            temp = join(resource_folder, get_uuid())
-            try:
-                with ZipFile(resource_file, "r") as z:
-                    z.extractall(temp)
-            except:
-                error = f"Could not unzip resource {resource['name']}"
-                continue
-            resource_files = glob(join(temp, "**", f"*.{fileext}"), recursive=True)
-            if len(resource_files) > 1:  # make sure to remove directories containing the actual files
-                resource_files = [r for r in resource_files
-                                  if sum([r in rs for rs in resource_files if not rs == r]) == 0]
-            if filetype == "xlsx" and len(resource_files) == 0:
-                resource_files = [resource_file]
-            if filetype in ["geodatabase", "geopackage"]:
-                resource_files = [join(r, i) for r in resource_files for i in listlayers(r)]
-        else:
-            resource_files = [resource_file]
-
-        data_to_check = dict()
-        for resource_file in resource_files:
-            if filetype in ["xlsx", "xls"]:
-                data = read_excel(resource_file, sheet_name=None)
-            if filetype == "csv":
-                try:
-                    data = {basename(resource_file): read_csv(resource_file)}
-                except:
-                    error = f"Unable to read resource {resource['name']}"
-                    continue
-            if filetype in ["geojson", "json", "shp", "topojson"]:
-                try:
-                    data = {basename(resource_file): read_file(resource_file)}
-                except:
-                    error = f"Unable to read resource {resource['name']}"
-                    continue
-            if filetype in ["geodatabase", "geopackage"]:
-                try:
-                    data = {basename(resource_file): read_file(dirname(resource_file), layer=basename(resource_file))}
-                except:
-                    error = f"Unable to read resource {resource['name']}"
-                    continue
-
-            for key in data:
-                data_to_check[key] = data[key]
+        data_to_check, error = read_data(resource_files)
+        if len(data_to_check) == 0:
+            return pcoded, latlong, error
 
         for data in data_to_check:
             if pcoded:
