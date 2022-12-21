@@ -1,10 +1,8 @@
 import csv
 import logging
 import warnings
-from os.path import expanduser, join
 from shapely.errors import ShapelyDeprecationWarning
 
-from hdx.api.configuration import Configuration
 from hdx.data.dataset import Dataset
 from hdx.facades.keyword_arguments import facade
 from hdx.utilities.downloader import Download
@@ -20,9 +18,7 @@ warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 lookup = "hdx-location-exploration"
 
 
-def main():
-
-    configuration = Configuration.read()
+def main(**ignore):
 
     with temp_dir(folder="TempLocationExploration") as temp_folder:
         with Download(rate_limit={"calls": 1, "period": 0.1}) as downloader:
@@ -45,8 +41,7 @@ if __name__ == "__main__":
     facade(
         main,
         hdx_site="prod",
+        user_agent="LocationExploration",
         hdx_read_only=True,
-        user_agent_config_yaml=join(expanduser("~"), ".useragents.yml"),
-        user_agent_lookup=lookup,
-        project_config_yaml=join("config", "project_configuration.yml"),
+        preprefix="HDXINTERNAL",
     )
