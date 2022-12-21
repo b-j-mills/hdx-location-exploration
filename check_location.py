@@ -47,6 +47,7 @@ def read_data(resource_files, fileext):
     data_to_check = dict()
     error = None
     for resource_file in resource_files:
+        data = dict()
         if fileext in ["xlsx", "xls"]:
             data = read_excel(resource_file, sheet_name=None)
         if fileext == "csv":
@@ -107,7 +108,7 @@ def check_location(dataset, temp_folder):
         if not resource_files:
             return pcoded, latlong, error
 
-        data_to_check, error = read_data(resource_files)
+        data_to_check, error = read_data(resource_files, fileext)
         if len(data_to_check) == 0:
             return pcoded, latlong, error
 
