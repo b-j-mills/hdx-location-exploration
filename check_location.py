@@ -75,7 +75,7 @@ def read_data(resource_files, fileext):
     return data_to_check, error
 
 
-def check_location(dataset, temp_folder):
+def check_location(dataset, downloader, temp_folder):
     pcoded = None
     latlong = None
     error = None
@@ -94,6 +94,7 @@ def check_location(dataset, temp_folder):
     for resource in resources:
         if pcoded:
             continue
+
         filetype = resource.get_file_type()
         fileext = filetype
         if fileext == "geodatabase":
@@ -104,21 +105,28 @@ def check_location(dataset, temp_folder):
         if filetype not in allowed_filetypes:
             continue
 
-        resource_files, error = download_resource(resource, fileext, resource_folder)
-        if not resource_files:
+        headers = dict()
+        if fileext in ["csv", "xls", "xlsx"] and ".zip" not in basename(resource["url"]):
+            # these we can read directly off HDX, no need to download
+            header, _ = downloader.get_tabular_rows(resource["url"], dict_form=True)
+            headers[resource["name"]] = header.to_list()
+
+        else:
+            resource_files, error = download_resource(resource, fileext, resource_folder)
+            if not resource_files:
             return pcoded, latlong, error
 
-        data_to_check, error = read_data(resource_files, fileext)
-        if len(data_to_check) == 0:
+            data_to_check, error = read_downloaded_data(resource_files, fileext)
+            if len(data_to_check) == 0:
             return pcoded, latlong, error
 
-        for data in data_to_check:
-            if pcoded:
-                continue
-            headers = data_to_check[data].columns
-            pcodes = [bool(re.match(".*p.?cod.*", header, re.IGNORECASE)) for header in headers]
-            if any(pcodes):
-                pcoded = True
+            for data in data_to_check:
+                headers[data] = data_to_check[data].columns
+
+        pcodes = [bool(re.match(".*p.?cod.*", h, re.IGNORECASE)) for header in headers for h in headers[header]]
+        if any(pcodes):
+            pcoded = True
+            continue
 
     if not error and not pcoded:
         pcoded = False
