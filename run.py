@@ -27,12 +27,12 @@ def main(**ignore):
 
             with open("datasets_location_status.csv", "w") as c:
                 writer = csv.writer(c)
-                writer.writerow(["dataset name", "dataset title", "pcoded", "latlong", "error"])
+                writer.writerow(["dataset name", "dataset title", "pcoded", "error"])
 
                 for dataset in datasets:
-                    pcoded, latlong, error = check_location(dataset, temp_folder)
+                    pcoded, error = check_location(dataset, downloader, temp_folder)
 
-                    writer.writerow([dataset["name"], dataset["title"], pcoded, latlong, error])
+                    writer.writerow([dataset["name"], dataset["title"], pcoded, error])
 
 
 if __name__ == "__main__":

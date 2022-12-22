@@ -43,7 +43,7 @@ def download_resource(resource, fileext, resource_folder):
     return resource_files, None
 
 
-def read_data(resource_files, fileext):
+def read_downloaded_data(resource_files, fileext):
     data_to_check = dict()
     error = None
     for resource_file in resource_files:
@@ -77,7 +77,6 @@ def read_data(resource_files, fileext):
 
 def check_location(dataset, downloader, temp_folder):
     pcoded = None
-    latlong = None
     error = None
 
     allowed_filetypes = ["csv", "geodatabase", "geojson", "geopackage", "json",
@@ -114,11 +113,11 @@ def check_location(dataset, downloader, temp_folder):
         else:
             resource_files, error = download_resource(resource, fileext, resource_folder)
             if not resource_files:
-            return pcoded, latlong, error
+                return pcoded, error
 
             data_to_check, error = read_downloaded_data(resource_files, fileext)
             if len(data_to_check) == 0:
-            return pcoded, latlong, error
+                return pcoded, error
 
             for data in data_to_check:
                 headers[data] = data_to_check[data].columns
@@ -133,4 +132,4 @@ def check_location(dataset, downloader, temp_folder):
 
     rmtree(resource_folder)
 
-    return pcoded, latlong, error
+    return pcoded, error
