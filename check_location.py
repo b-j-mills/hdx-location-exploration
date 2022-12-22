@@ -83,14 +83,14 @@ def get_excel_columns(df):
     df = df.fillna(method='ffill', axis=0).reset_index(drop=True)
     if not any([bool(re.match("Unnamed.*", c, re.IGNORECASE)) for c in df.columns]):
         return df.columns
-    headers = None
+    headers = []
     i = 0
-    while i < 10 and headers is None:
+    while i < 10 and len(headers) == 0:
         headers = df.loc[i]
         if any(headers.isna()):
-            headers = None
+            headers = []
         i += 1
-    if not headers:
+    if len(headers) == 0:
         headers = df.loc[0]
 
     return headers
