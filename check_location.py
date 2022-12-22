@@ -79,16 +79,19 @@ def read_downloaded_data(resource_files, fileext):
 
 
 def get_excel_columns(df):
-    df = df.dropna(how="all").fillna(method='ffill', axis=0)
+    df = df.dropna(how="all", axis=0).dropna(how="all", axis=1)
+    df = df.fillna(method='ffill', axis=0).reset_index(drop=True)
     if not any([bool(re.match("Unnamed.*", c, re.IGNORECASE)) for c in df.columns]):
         return df.columns
     headers = None
-    i = 1
+    i = 0
     while i < 10 and headers is None:
         headers = df.loc[i]
         if any(headers.isna()):
             headers = None
         i += 1
+    if not headers:
+        headers = df.loc[0]
 
     return headers
 
