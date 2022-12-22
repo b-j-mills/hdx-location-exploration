@@ -44,7 +44,7 @@ def download_resource(resource, fileext, resource_folder):
 
 
 def read_downloaded_data(resource_files, fileext):
-    data_to_check = dict()
+    headers = dict()
     error = None
     for resource_file in resource_files:
         data = dict()
@@ -70,9 +70,27 @@ def read_downloaded_data(resource_files, fileext):
                 continue
 
         for key in data:
-            data_to_check[key] = data[key]
+            if fileext in ["xlsx", "xls"]:
+                headers[key] = get_excel_columns(data[key])
+            else:
+                headers[key] = data[key].columns
 
-    return data_to_check, error
+    return headers, error
+
+
+def get_excel_columns(df):
+    df = df.dropna(how="all").fillna(method='ffill', axis=0)
+    if not any([bool(re.match("Unnamed.*", c, re.IGNORECASE)) for c in df.columns]):
+        return df.columns
+    headers = None
+    i = 1
+    while i < 10 and headers is None:
+        headers = df.loc[i]
+        if any(headers.isna()):
+            headers = None
+        i += 1
+
+    return headers
 
 
 def check_location(dataset, downloader, temp_folder):
@@ -105,9 +123,9 @@ def check_location(dataset, downloader, temp_folder):
             continue
 
         headers = dict()
-        if fileext in ["csv", "xls", "xlsx"] and ".zip" not in basename(resource["url"]):
-            # these we can read directly off HDX, no need to download
-            header, _ = downloader.get_tabular_rows(resource["url"], dict_form=True)
+        if fileext == "csv" and ".zip" not in basename(resource["url"]):
+            # read directly off HDX
+            header, iterator = downloader.get_tabular_rows(resource["url"], dict_form=True)
             headers[resource["name"]] = header.to_list()
 
         else:
@@ -115,12 +133,10 @@ def check_location(dataset, downloader, temp_folder):
             if not resource_files:
                 return pcoded, error
 
-            data_to_check, error = read_downloaded_data(resource_files, fileext)
-            if len(data_to_check) == 0:
-                return pcoded, error
-
-            for data in data_to_check:
-                headers[data] = data_to_check[data].columns
+            else:
+                headers, error = read_downloaded_data(resource_files, fileext)
+                if len(headers) == 0:
+                    return pcoded, error
 
         pcodes = [bool(re.match(".*p.?cod.*", h, re.IGNORECASE)) for header in headers for h in headers[header]]
         if any(pcodes):
