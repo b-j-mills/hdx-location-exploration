@@ -115,6 +115,8 @@ def check_location(dataset, downloader, temp_folder):
         if pcoded:
             continue
 
+        logger.info(f"Checking {resource['name']}")
+
         filetype = resource.get_file_type()
         fileext = filetype
         if fileext == "geodatabase":

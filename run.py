@@ -19,7 +19,7 @@ warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 def main(**ignore):
 
     with temp_dir(folder="TempLocationExploration") as temp_folder:
-        with Download(rate_limit={"calls": 1, "period": 0.1}) as downloader:
+        with Download(rate_limit={"calls": 1, "period": 1}) as downloader:
             datasets = Dataset.search_in_hdx(
                 fq='vocab_Topics:"common operational dataset - cod"'
             )
@@ -30,8 +30,9 @@ def main(**ignore):
                 writer.writerow(["dataset name", "dataset title", "pcoded", "error"])
 
                 for dataset in datasets:
-                    pcoded, error = check_location(dataset, downloader, temp_folder)
+                    logger.info(f"Checking {dataset['name']}")
 
+                    pcoded, error = check_location(dataset, downloader, temp_folder)
                     writer.writerow([dataset["name"], dataset["title"], pcoded, error])
 
 
