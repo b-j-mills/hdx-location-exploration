@@ -7,7 +7,7 @@ from os import mkdir
 from os.path import basename, dirname, join
 from pandas import read_csv, read_excel
 from shutil import rmtree
-from zipfile import is_zipfile, ZipFile
+from zipfile import ZipFile, is_zipfile
 
 from hdx.utilities.uuid import get_uuid
 
@@ -45,55 +45,63 @@ def download_resource(resource, fileext, resource_folder):
 
 def read_downloaded_data(resource_files, fileext):
     headers = dict()
+    data = dict()
     error = None
     for resource_file in resource_files:
-        data = dict()
         if fileext in ["xlsx", "xls"]:
-            data = read_excel(resource_file, sheet_name=None)
+            contents = read_excel(
+                resource_file, sheet_name=None, nrows=50
+            )
+            for key in contents:
+                data[get_uuid()] = parse_excel(contents[key])
         if fileext == "csv":
             try:
-                data = {basename(resource_file): read_csv(resource_file)}
+                data = {
+                    get_uuid(): read_csv(resource_file, nrows=50)
+                }
             except:
                 error = f"Unable to read resource {basename(resource_file)}"
                 continue
         if fileext in ["geojson", "json", "shp", "topojson"]:
             try:
-                data = {basename(resource_file): read_file(resource_file)}
+                data = {
+                    get_uuid(): read_file(resource_file, rows=50)
+                }
             except:
                 error = f"Unable to read resource {basename(resource_file)}"
                 continue
         if fileext in ["gdb", "gpkg"]:
             try:
-                data = {basename(resource_file): read_file(dirname(resource_file), layer=basename(resource_file))}
+                data = {
+                    get_uuid(): read_file(dirname(resource_file), layer=basename(resource_file), rows=50)
+                }
             except:
                 error = f"Unable to read resource {basename(resource_file)}"
                 continue
 
-        for key in data:
-            if fileext in ["xlsx", "xls"]:
-                headers[key] = get_excel_columns(data[key])
-            else:
-                headers[key] = data[key].columns
+    for key in data:
+        headers[key] = data[key].columns
 
-    return headers, error
+    return headers, data, error
 
 
-def get_excel_columns(df):
+def parse_excel(df):
     df = df.dropna(how="all", axis=0).dropna(how="all", axis=1)
-    df = df.fillna(method='ffill', axis=0).reset_index(drop=True)
+    df = df.fillna(method="ffill", axis=0).reset_index(drop=True)
     if not any([bool(re.match("Unnamed.*", c, re.IGNORECASE)) for c in df.columns]):
-        return df.columns
+        return df
     headers = []
     i = 0
     while i < 10 and len(headers) == 0:
         headers = df.loc[i]
         if any(headers.isna()):
             headers = []
-        i += 1
-    if len(headers) == 0:
-        headers = df.loc[0]
+            i += 1
+    if len(headers) > 0:
+        df.columns = headers
+        df = df.drop(range(i+1), axis=0).reset_index(drop=True)
 
-    return headers
+    return headers, df
 
 
 def check_location(dataset, downloader, temp_folder):
@@ -139,7 +147,7 @@ def check_location(dataset, downloader, temp_folder):
                 return pcoded, error
 
             else:
-                headers, error = read_downloaded_data(resource_files, fileext)
+                headers, contents, error = read_downloaded_data(resource_files, fileext)
                 if len(headers) == 0:
                     return pcoded, error
 
