@@ -19,21 +19,20 @@ warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 def main(**ignore):
 
     with temp_dir(folder="TempLocationExploration") as temp_folder:
-        with Download(rate_limit={"calls": 1, "period": 1}) as downloader:
-            datasets = Dataset.search_in_hdx(
-                fq='vocab_Topics:"common operational dataset - cod"'
-            )
-            logger.info(f"Found {len(datasets)} datasets")
+        datasets = Dataset.search_in_hdx(
+            fq='vocab_Topics:"common operational dataset - cod"'
+        )
+        logger.info(f"Found {len(datasets)} datasets")
 
-            with open("datasets_location_status.csv", "w") as c:
-                writer = csv.writer(c)
-                writer.writerow(["dataset name", "dataset title", "pcoded", "error"])
+        with open("datasets_location_status.csv", "w") as c:
+            writer = csv.writer(c)
+            writer.writerow(["dataset name", "dataset title", "pcoded", "latlonged", "error"])
 
-                for dataset in datasets:
-                    logger.info(f"Checking {dataset['name']}")
+            for dataset in datasets:
+                logger.info(f"Checking {dataset['name']}")
 
-                    pcoded, error = check_location(dataset, downloader, temp_folder)
-                    writer.writerow([dataset["name"], dataset["title"], pcoded, error])
+                pcoded, latlonged, error = check_location(dataset, temp_folder)
+                writer.writerow([dataset["name"], dataset["title"], pcoded, latlonged, error])
 
 
 if __name__ == "__main__":

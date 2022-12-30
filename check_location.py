@@ -104,8 +104,22 @@ def parse_excel(df):
     return headers, df
 
 
-def check_location(dataset, downloader, temp_folder):
+def check_pcoded(headers, contents):
+    pcoded = False
+    pcodes = [bool(re.match(".*p.?cod.*", h, re.IGNORECASE)) for header in headers for h in headers[header]]
+    if any(pcodes):
+        pcoded = True
+    return pcoded
+
+
+def check_latlong(headers, contents):
+    latlong = False
+    return latlong
+
+
+def check_location(dataset, temp_folder):
     pcoded = None
+    latlonged = None
     error = None
 
     allowed_filetypes = ["csv", "geodatabase", "geojson", "geopackage", "json",
@@ -120,7 +134,7 @@ def check_location(dataset, downloader, temp_folder):
 
     resources = dataset.get_resources()
     for resource in resources:
-        if pcoded:
+        if pcoded and latlonged:
             continue
 
         logger.info(f"Checking {resource['name']}")
@@ -135,30 +149,25 @@ def check_location(dataset, downloader, temp_folder):
         if filetype not in allowed_filetypes:
             continue
 
-        headers = dict()
-        if fileext == "csv" and ".zip" not in basename(resource["url"]):
-            # read directly off HDX
-            header, iterator = downloader.get_tabular_rows(resource["url"], dict_form=True)
-            headers[resource["name"]] = header.to_list()
+        resource_files, error = download_resource(resource, fileext, resource_folder)
+        if not resource_files:
+            return pcoded, latlonged, error
 
         else:
-            resource_files, error = download_resource(resource, fileext, resource_folder)
-            if not resource_files:
-                return pcoded, error
+            headers, contents, error = read_downloaded_data(resource_files, fileext)
+            if len(headers) == 0:
+                return pcoded, latlonged, error
 
-            else:
-                headers, contents, error = read_downloaded_data(resource_files, fileext)
-                if len(headers) == 0:
-                    return pcoded, error
-
-        pcodes = [bool(re.match(".*p.?cod.*", h, re.IGNORECASE)) for header in headers for h in headers[header]]
-        if any(pcodes):
-            pcoded = True
-            continue
+        if not pcoded:
+            pcoded = check_pcoded(headers, contents)
+        if not latlonged:
+            latlonged = check_latlong(headers, contents)
 
     if not error and not pcoded:
         pcoded = False
+    if not error and not latlonged:
+        latlonged = False
 
     rmtree(resource_folder)
 
-    return pcoded, error
+    return pcoded, latlonged, error
