@@ -44,7 +44,6 @@ def download_resource(resource, fileext, resource_folder):
 
 
 def read_downloaded_data(resource_files, fileext):
-    headers = dict()
     data = dict()
     error = None
     for resource_file in resource_files:
@@ -79,10 +78,7 @@ def read_downloaded_data(resource_files, fileext):
                 error = f"Unable to read resource {basename(resource_file)}"
                 continue
 
-    for key in data:
-        headers[key] = data[key].columns
-
-    return headers, data, error
+    return data, error
 
 
 def parse_excel(df):
@@ -101,14 +97,27 @@ def parse_excel(df):
         df.columns = headers
         df = df.drop(range(i+1), axis=0).reset_index(drop=True)
 
-    return headers, df
+    return df
 
 
-def check_pcoded(headers, contents):
-    pcoded = False
-    pcodes = [bool(re.match(".*p.?cod.*", h, re.IGNORECASE)) for header in headers for h in headers[header]]
-    if any(pcodes):
-        pcoded = True
+def check_pcoded(contents):
+    pcoded = None
+    for key in contents:
+        if pcoded:
+            continue
+        content = contents[key]
+        content = content.select_dtypes(include=["string", "object"])
+        pcodes = [h for h in content.columns if bool(re.match(".*p?.?cod.*", h, re.IGNORECASE))]
+        if len(pcodes) == 0:
+            continue
+        for pcode in pcodes:
+            if pcoded:
+                continue
+            column = content[pcode].dropna()
+            matches = column.str.match("[a-z]{2,3}\d{1,8}", case=False)
+            if sum(matches) > (len(column) - 5) and sum(matches) > 0:
+                pcoded = True
+
     return pcoded
 
 
@@ -134,7 +143,9 @@ def check_location(dataset, temp_folder):
 
     resources = dataset.get_resources()
     for resource in resources:
-        if pcoded and latlonged:
+        if pcoded:
+            continue
+        if latlonged or not any(f in ["csv", "json", "xls", "xlsx"] for f in filetypes):
             continue
 
         logger.info(f"Checking {resource['name']}")
@@ -153,15 +164,12 @@ def check_location(dataset, temp_folder):
         if not resource_files:
             return pcoded, latlonged, error
 
-        else:
-            headers, contents, error = read_downloaded_data(resource_files, fileext)
-            if len(headers) == 0:
-                return pcoded, latlonged, error
+        contents, error = read_downloaded_data(resource_files, fileext)
 
         if not pcoded:
-            pcoded = check_pcoded(headers, contents)
-        if not latlonged:
-            latlonged = check_latlong(headers, contents)
+            pcoded = check_pcoded(contents)
+        if not pcoded and not latlonged and filetype in ["csv", "json", "xls", "xlsx"]:
+            latlonged = check_latlong(contents)
 
     if not error and not pcoded:
         pcoded = False
