@@ -5,7 +5,6 @@ from shapely.errors import ShapelyDeprecationWarning
 
 from hdx.data.dataset import Dataset
 from hdx.facades.keyword_arguments import facade
-from hdx.utilities.downloader import Download
 from hdx.utilities.easy_logging import setup_logging
 from hdx.utilities.path import temp_dir
 
