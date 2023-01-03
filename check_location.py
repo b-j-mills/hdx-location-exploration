@@ -3,6 +3,7 @@ import re
 from fiona import listlayers
 from geopandas import read_file
 from glob import glob
+from numpy import number
 from os import mkdir
 from os.path import basename, dirname, join
 from pandas import read_csv, read_excel
@@ -114,16 +115,42 @@ def check_pcoded(contents):
             if pcoded:
                 continue
             column = content[pcode].dropna()
-            matches = column.str.match("[a-z]{2,3}\d{1,8}", case=False)
-            if sum(matches) > (len(column) - 5) and sum(matches) > 0:
+            matches = sum(column.str.match("[a-z]{2,3}\d{1,8}", case=False))
+            if matches > (len(column) - 5) and matches > 0:
                 pcoded = True
 
     return pcoded
 
 
-def check_latlong(headers, contents):
-    latlong = False
-    return latlong
+def check_latlong(contents):
+    latlonged = None
+    for key in contents:
+        if latlonged:
+            continue
+        content = contents[key]
+        content = content.select_dtypes(include=number)
+        lats = [h for h in content.columns if bool(re.match("(.*latitude?.*)|(lat)|((point.*)?y)", h, re.IGNORECASE))]
+        lons = [h for h in content.columns if bool(re.match("(.*longitude?.*)|(lon(g)?)|((point.*)?x)", h, re.IGNORECASE))]
+        if (len(lats) == 0) or (len(lons) == 0):
+            continue
+        content = content[lats + lons]
+        latted = None
+        longed = None
+        for column in [lats + lons]:
+            if latted and longed:
+                continue
+            column = content[column].dropna()
+            if column in lats:
+                matches = sum(column.between(-90, 90))
+                if matches > (len(column) - 5) and matches > 0:
+                    latted = True
+            if column in lons:
+                matches = sum(column.between(-180, 180))
+                if matches > (len(column) - 5) and matches > 0:
+                    longed = True
+        if latted and longed:
+            latlonged = True
+    return latlonged
 
 
 def check_location(dataset, temp_folder):
@@ -173,7 +200,7 @@ def check_location(dataset, temp_folder):
 
     if not error and not pcoded:
         pcoded = False
-    if not error and not latlonged:
+    if not error and not pcoded and not latlonged:
         latlonged = False
 
     rmtree(resource_folder)
