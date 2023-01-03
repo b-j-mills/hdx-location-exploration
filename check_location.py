@@ -85,7 +85,8 @@ def read_downloaded_data(resource_files, fileext):
 def parse_excel(df):
     df = df.dropna(how="all", axis=0).dropna(how="all", axis=1)
     df = df.fillna(method="ffill", axis=0).reset_index(drop=True)
-    if not any([bool(re.match("Unnamed.*", c, re.IGNORECASE)) for c in df.columns]):
+    unnamed = [bool(re.match("Unnamed.*", c, re.IGNORECASE)) for c in df.columns]
+    if not any(unnamed) or (unnamed[0] and not(any(unnamed[1:]))):
         return df
     headers = []
     i = 0
