@@ -58,12 +58,11 @@ def read_downloaded_data(resource_files, fileext):
                 error = f"Unable to read resource {basename(resource_file)}"
                 continue
             for key in contents:
-                data[get_uuid()] = parse_excel(contents[key])
+                data[get_uuid()] = parse_tabular(contents[key])
         if fileext == "csv":
             try:
-                data = {
-                    get_uuid(): read_csv(resource_file, nrows=50)
-                }
+                contents = read_csv(resource_file, nrows=50, skip_blank_lines=True)
+                data[get_uuid()] = parse_tabular(contents)
             except:
                 error = f"Unable to read resource {basename(resource_file)}"
                 continue
@@ -87,8 +86,8 @@ def read_downloaded_data(resource_files, fileext):
     return data, error
 
 
-def parse_excel(df):
-    df = df.dropna(how="all", axis=0).dropna(how="all", axis=1)
+def parse_tabular(df):
+    df = df.dropna(how="all", axis=0).dropna(how="all", axis=1).reset_index(drop=True)
     df = df.fillna(method="ffill", axis=0).reset_index(drop=True)
     unnamed = [bool(re.match("Unnamed.*", c, re.IGNORECASE)) for c in df.columns]
     if not any(unnamed) or (unnamed[0] and not(any(unnamed[1:]))):
