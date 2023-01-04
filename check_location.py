@@ -50,9 +50,13 @@ def read_downloaded_data(resource_files, fileext):
     error = None
     for resource_file in resource_files:
         if fileext in ["xlsx", "xls"]:
-            contents = read_excel(
-                resource_file, sheet_name=None, nrows=50
-            )
+            try:
+                contents = read_excel(
+                    resource_file, sheet_name=None, nrows=50
+                )
+            except:
+                error = f"Unable to read resource {basename(resource_file)}"
+                continue
             for key in contents:
                 data[get_uuid()] = parse_excel(contents[key])
         if fileext == "csv":
