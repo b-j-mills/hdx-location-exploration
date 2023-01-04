@@ -137,15 +137,15 @@ def check_latlong(contents):
         content = content[lats + lons]
         latted = None
         longed = None
-        for column in [lats + lons]:
+        for latlon in [lats + lons]:
             if latted and longed:
                 continue
-            column = content[column].dropna()
-            if column in lats:
+            column = content[latlon].dropna()
+            if latlon in lats:
                 matches = sum(column.between(-90, 90))
                 if matches > (len(column) - 5) and matches > 0:
                     latted = True
-            if column in lons:
+            if latlon in lons:
                 matches = sum(column.between(-180, 180))
                 if matches > (len(column) - 5) and matches > 0:
                     longed = True
