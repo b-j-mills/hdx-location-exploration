@@ -10,6 +10,7 @@ from pandas import read_csv, read_excel
 from shutil import rmtree
 from zipfile import ZipFile, is_zipfile
 
+from hdx.location.country import Country
 from hdx.utilities.uuid import get_uuid
 
 logger = logging.getLogger(__name__)
@@ -104,6 +105,10 @@ def parse_excel(df):
 
 def check_pcoded(contents):
     pcoded = None
+    c = Country.countriesdata()
+    iso3s = [c["countries"][iso]["#country+code+v_iso3"] for iso in c["countries"]]
+    iso2s = [c["countries"][iso]["#country+code+v_iso2"] for iso in c["countries"]]
+    pcode_exp = "(" + "|".join(iso3s+iso2s) + ")" + "\d{1,}"
     for key in contents:
         if pcoded:
             continue
@@ -116,7 +121,7 @@ def check_pcoded(contents):
             if pcoded:
                 continue
             column = content[pcode].dropna()
-            matches = sum(column.str.match("[a-z]{2,3}\d{1,8}", case=False))
+            matches = sum(column.str.match(pcode_exp, case=False))
             if matches > (len(column) - 5) and matches > 0:
                 pcoded = True
 
