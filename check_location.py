@@ -3,10 +3,10 @@ import re
 from fiona import listlayers
 from geopandas import read_file
 from glob import glob
-from numpy import number
+from hxl.geo import LAT_PATTERNS, LON_PATTERNS
 from os import mkdir
 from os.path import basename, dirname, join
-from pandas import read_csv, read_excel
+from pandas import concat, read_csv, read_excel
 from shutil import rmtree
 from zipfile import ZipFile, is_zipfile
 
@@ -144,34 +144,48 @@ def check_pcoded(contents, fileext):
     return pcoded
 
 
-def check_latlong(contents):
+def check_latlong(contents, fileext):
     latlonged = None
+    lat_header_exp = "(.*latitude?.*)|(lat)|((point.*)?y)"
+    lon_header_exp = "(.*longitude?.*)|(lon(g)?)|((point.*)?x)"
     for key in contents:
         if latlonged:
             continue
         content = contents[key]
-        content = content.select_dtypes(include=number)
-        lats = [h for h in content.columns if bool(re.match("(.*latitude?.*)|(lat)|((point.*)?y)", h, re.IGNORECASE))]
-        lons = [h for h in content.columns if bool(re.match("(.*longitude?.*)|(lon(g)?)|((point.*)?x)", h, re.IGNORECASE))]
-        if (len(lats) == 0) or (len(lons) == 0):
-            continue
-        content = content[lats + lons]
+        hxlated = any([len(h.split("||")) != 1 for h in content.columns])
         latted = None
         longed = None
-        for latlon in [lats + lons]:
-            if latted and longed:
+        for h in content.columns:
+            if latlonged:
                 continue
-            column = content[latlon].dropna()
-            if latlon in lats:
-                matches = sum(column.between(-90, 90))
-                if matches > (len(column) - 5) and matches > 0:
+            if fileext in ["csv", "xls", "xlsx"] and not hxlated:
+                possible_headers = content[h][:5].dropna()
+                lat_header = [bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in [h] + possible_headers]
+                lon_header = [bool(re.match(lon_header_exp, head, re.IGNORECASE)) for head in [h] + possible_headers]
+            if fileext in ["csv", "xls", "xlsx"] and hxlated:
+                headers = h.split("||")
+                lat_header = any([bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in headers])
+                lon_header = any([bool(re.match(lon_header_exp, head, re.IGNORECASE)) for head in headers])
+            if fileext not in ["csv", "xls", "xlsx"]:
+                lat_header = bool(re.match(lat_header_exp, h, re.IGNORECASE))
+                lon_header = bool(re.match(lon_header_exp, h, re.IGNORECASE))
+            if not lat_header and not lon_header:
+                continue
+            column = content[h].dropna()
+            if lat_header:
+                matches = concat([column.str.match(lat_exp, case=False) for lat_exp in LAT_PATTERNS], axis=1)
+                matches = sum(matches.any(axis=1))
+                if (len(column) - matches) <= 5 and matches > 0:
                     latted = True
-            if latlon in lons:
-                matches = sum(column.between(-180, 180))
-                if matches > (len(column) - 5) and matches > 0:
+            if lon_header:
+                matches = concat([column.str.match(lon_exp, case=False) for lon_exp in LON_PATTERNS], axis=1)
+                matches = sum(matches.any(axis=1))
+                if (len(column) - matches) <= 5 and matches > 0:
                     longed = True
-        if latted and longed:
-            latlonged = True
+
+            if latted and longed:
+                latlonged = True
+
     return latlonged
 
 
@@ -218,7 +232,7 @@ def check_location(dataset, temp_folder):
         if not pcoded:
             pcoded = check_pcoded(contents, fileext)
         if not pcoded and not latlonged and filetype in ["csv", "json", "xls", "xlsx"]:
-            latlonged = check_latlong(contents)
+            latlonged = check_latlong(contents, fileext)
 
     if not error and not pcoded:
         pcoded = False
