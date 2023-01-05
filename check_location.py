@@ -95,7 +95,7 @@ def parse_tabular(df):
     hxlrow = None  # find hxl row and incorporate into header
     i = 0
     while i < 10 and not hxlrow:
-        hxltags = [bool(re.match("#|Unnamed.*", t)) for t in df.loc[i]]
+        hxltags = [bool(re.match("#|(Unnamed).*", t)) for t in df.loc[i].astype(str)]
         if all(hxltags):
             hxlrow = i
         i += 1
