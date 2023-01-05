@@ -119,13 +119,13 @@ def check_pcoded(contents, fileext):
     header_exp = "((adm)?.*p?.?cod.*)|(#\s?adm\s?\d?\+?\s?p?(code)?)"
     for key in contents:
         if pcoded:
-            continue
+            break
         content = contents[key]
         content = content.select_dtypes(include=["string", "object"])
         hxlated = any([len(h.split("||")) != 1 for h in content.columns])
         for h in content.columns:
             if pcoded:
-                continue
+                break
             if fileext in ["csv", "xls", "xlsx"] and not hxlated:
                 possible_headers = [h] + content[h][:5].dropna()
                 pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in possible_headers])
@@ -150,14 +150,14 @@ def check_latlong(contents, fileext):
     lon_header_exp = "(.*longitude?.*)|(lon(g)?)|((point.*)?x)"
     for key in contents:
         if latlonged:
-            continue
+            break
         content = contents[key]
         hxlated = any([len(h.split("||")) != 1 for h in content.columns])
         latted = None
         longed = None
         for h in content.columns:
             if latlonged:
-                continue
+                break
             if fileext in ["csv", "xls", "xlsx"] and not hxlated:
                 possible_headers = content[h][:5].dropna()
                 lat_header = [bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in [h] + possible_headers]
@@ -207,7 +207,7 @@ def check_location(dataset, temp_folder):
     resources = dataset.get_resources()
     for resource in resources:
         if pcoded:
-            continue
+            break
         if latlonged or not any(f in ["csv", "json", "xls", "xlsx"] for f in filetypes):
             continue
 
