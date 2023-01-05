@@ -88,21 +88,25 @@ def read_downloaded_data(resource_files, fileext):
 
 def parse_tabular(df):
     df = df.dropna(how="all", axis=0).dropna(how="all", axis=1).reset_index(drop=True)
-    df = df.fillna(method="ffill", axis=0).reset_index(drop=True)
-    unnamed = [bool(re.match("Unnamed.*", c, re.IGNORECASE)) for c in df.columns]
-    if not any(unnamed) or (unnamed[0] and not(any(unnamed[1:]))):
+    if not all(df.dtypes == "object"):  # if there are mixed types, probably read correctly
         return df
-    headers = []
+    if len(df) == 1:  # if there is only one row, return
+        return df
+    hxlrow = None  # find hxl row and incorporate into header
     i = 0
-    while i < 10 and len(headers) == 0:
-        headers = df.loc[i]
-        if any(headers.isna()):
-            headers = []
-            i += 1
-    if len(headers) > 0:
-        df.columns = headers
-        df = df.drop(range(i+1), axis=0).reset_index(drop=True)
-
+    while i < 10 and not hxlrow:
+        hxltags = [bool(re.match("#|Unnamed.*", t)) for t in df.loc[i]]
+        if all(hxltags):
+            hxlrow = i
+        i += 1
+    if hxlrow:
+        columns = []
+        for c in df.columns:
+            cols = [c] + [col for col in df[c][:hxlrow + 1] if "Unnamed" not in col]
+            columns.append("||".join(cols))
+        df.columns = columns
+        df = df.drop(index=range(hxlrow + 1)).reset_index(drop=True)
+        return df
     return df
 
 
