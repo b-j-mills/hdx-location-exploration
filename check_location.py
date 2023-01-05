@@ -127,7 +127,7 @@ def check_pcoded(contents, fileext):
             if pcoded:
                 break
             if fileext in ["csv", "xls", "xlsx"] and not hxlated:
-                possible_headers = [h] + list(content[h][:5].dropna())
+                possible_headers = [h] + list(content[h][:5].dropna().astype(str))
                 pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in possible_headers])
             if fileext in ["csv", "xls", "xlsx"] and hxlated:
                 headers = h.split("||")
@@ -159,7 +159,7 @@ def check_latlong(contents, fileext):
             if latlonged:
                 break
             if fileext in ["csv", "xls", "xlsx"] and not hxlated:
-                possible_headers = [h] + list(content[h][:5].dropna())
+                possible_headers = [h] + list(content[h][:5].dropna().astype(str))
                 lat_header = any([bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in possible_headers])
                 lon_header = any([bool(re.match(lon_header_exp, head, re.IGNORECASE)) for head in possible_headers])
             if fileext in ["csv", "xls", "xlsx"] and hxlated:
