@@ -146,8 +146,8 @@ def check_pcoded(contents, fileext):
 
 def check_latlong(contents, fileext):
     latlonged = None
-    lat_header_exp = "(.*latitude?.*)|(lat)|((point.*)?y)"
-    lon_header_exp = "(.*longitude?.*)|(lon(g)?)|((point.*)?x)"
+    lat_header_exp = "(.*latitude?.*)|(lat)|((point.?)?y)|(#\s?geo\s?\+\s?lat)"
+    lon_header_exp = "(.*longitude?.*)|(lon(g)?)|((point.?)?x)|(#\s?geo\s?\+\s?lon)"
     for key in contents:
         if latlonged:
             break
