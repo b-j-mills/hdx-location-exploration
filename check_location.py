@@ -110,26 +110,35 @@ def parse_tabular(df):
     return df
 
 
-def check_pcoded(contents):
+def check_pcoded(contents, fileext):
     pcoded = None
     c = Country.countriesdata().get("countries", {})
     iso3s = [c[iso]["#country+code+v_iso3"] for iso in c]
     iso2s = [c[iso]["#country+code+v_iso2"] for iso in c]
     pcode_exp = "(" + "|".join(iso3s+iso2s) + ")" + "\d{1,}"
+    header_exp = "((adm)?.*p?.?cod.*)|(#\s?adm\s?\d?\+?\s?p?(code)?)"
     for key in contents:
         if pcoded:
             continue
         content = contents[key]
         content = content.select_dtypes(include=["string", "object"])
-        pcodes = [h for h in content.columns if bool(re.match(".*p?.?cod.*", h, re.IGNORECASE))]
-        if len(pcodes) == 0:
-            continue
-        for pcode in pcodes:
+        hxlated = any([len(h.split("||")) != 1 for h in content.columns])
+        for h in content.columns:
             if pcoded:
                 continue
-            column = content[pcode].dropna()
+            if fileext in ["csv", "xls", "xlsx"] and not hxlated:
+                possible_headers = content[h][:5].dropna()
+                pcoded_header = [bool(re.match(header_exp, head, re.IGNORECASE)) for head in [h] + possible_headers]
+            if fileext in ["csv", "xls", "xlsx"] and hxlated:
+                headers = h.split("||")
+                pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in headers])
+            if fileext not in ["csv", "xls", "xlsx"]:
+                pcoded_header = bool(re.match(header_exp, h, re.IGNORECASE))
+            if not pcoded_header:
+                continue
+            column = content[h].dropna()
             matches = sum(column.str.match(pcode_exp, case=False))
-            if matches > (len(column) - 5) and matches > 0:
+            if (len(column) - matches) <= 5 and matches > 0:
                 pcoded = True
 
     return pcoded
@@ -207,7 +216,7 @@ def check_location(dataset, temp_folder):
         contents, error = read_downloaded_data(resource_files, fileext)
 
         if not pcoded:
-            pcoded = check_pcoded(contents)
+            pcoded = check_pcoded(contents, fileext)
         if not pcoded and not latlonged and filetype in ["csv", "json", "xls", "xlsx"]:
             latlonged = check_latlong(contents)
 
