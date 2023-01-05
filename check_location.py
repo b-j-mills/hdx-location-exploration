@@ -108,9 +108,9 @@ def parse_tabular(df):
 
 def check_pcoded(contents):
     pcoded = None
-    c = Country.countriesdata()
-    iso3s = [c["countries"][iso]["#country+code+v_iso3"] for iso in c["countries"]]
-    iso2s = [c["countries"][iso]["#country+code+v_iso2"] for iso in c["countries"]]
+    c = Country.countriesdata().get("countries", {})
+    iso3s = [c[iso]["#country+code+v_iso3"] for iso in c]
+    iso2s = [c[iso]["#country+code+v_iso2"] for iso in c]
     pcode_exp = "(" + "|".join(iso3s+iso2s) + ")" + "\d{1,}"
     for key in contents:
         if pcoded:
