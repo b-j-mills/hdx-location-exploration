@@ -127,8 +127,8 @@ def check_pcoded(contents, fileext):
             if pcoded:
                 continue
             if fileext in ["csv", "xls", "xlsx"] and not hxlated:
-                possible_headers = content[h][:5].dropna()
-                pcoded_header = [bool(re.match(header_exp, head, re.IGNORECASE)) for head in [h] + possible_headers]
+                possible_headers = [h] + content[h][:5].dropna()
+                pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in possible_headers])
             if fileext in ["csv", "xls", "xlsx"] and hxlated:
                 headers = h.split("||")
                 pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in headers])
