@@ -171,14 +171,14 @@ def check_latlong(contents, fileext):
                 lon_header = bool(re.match(lon_header_exp, h, re.IGNORECASE))
             if not lat_header and not lon_header:
                 continue
-            column = content[h].dropna()
+            column = content[h].dropna().astype(str)
             if lat_header:
-                matches = concat([column.str.match(lat_exp, case=False) for lat_exp in LAT_PATTERNS], axis=1)
+                matches = concat([column.str.match(lat_exp.pattern, case=False) for lat_exp in LAT_PATTERNS], axis=1)
                 matches = sum(matches.any(axis=1))
                 if (len(column) - matches) <= 5 and matches > 0:
                     latted = True
             if lon_header:
-                matches = concat([column.str.match(lon_exp, case=False) for lon_exp in LON_PATTERNS], axis=1)
+                matches = concat([column.str.match(lon_exp.pattern, case=False) for lon_exp in LON_PATTERNS], axis=1)
                 matches = sum(matches.any(axis=1))
                 if (len(column) - matches) <= 5 and matches > 0:
                     longed = True
