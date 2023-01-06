@@ -58,11 +58,11 @@ def read_downloaded_data(resource_files, fileext):
                 error = f"Unable to read resource {basename(resource_file)}"
                 continue
             for key in contents:
-                data[get_uuid()] = parse_tabular(contents[key])
+                data[get_uuid()] = parse_tabular(contents[key], fileext)
         if fileext == "csv":
             try:
                 contents = read_csv(resource_file, nrows=100, skip_blank_lines=True)
-                data[get_uuid()] = parse_tabular(contents)
+                data[get_uuid()] = parse_tabular(contents, fileext)
             except:
                 error = f"Unable to read resource {basename(resource_file)}"
                 continue
@@ -86,7 +86,7 @@ def read_downloaded_data(resource_files, fileext):
     return data, error
 
 
-def parse_tabular(df):
+def parse_tabular(df, fileext):
     df = df.dropna(how="all", axis=0).dropna(how="all", axis=1).reset_index(drop=True)
     if not all(df.dtypes == "object"):  # if there are mixed types, probably read correctly
         return df
@@ -94,23 +94,40 @@ def parse_tabular(df):
         return df
     hxlrow = None  # find hxl row and incorporate into header
     i = 0
-    while i < 10 and not hxlrow:
-        hxltags = [bool(re.match("#|(Unnamed).*", t)) for t in df.loc[i].astype(str)]
+    while i < 10 and i < len(df) and not hxlrow:
+        hxltags = [bool(re.match("#.*", t)) if t else True for t in df.loc[i].astype(str)]
         if all(hxltags):
             hxlrow = i
         i += 1
     if hxlrow:
         columns = []
         for c in df.columns:
-            cols = [c] + [col for col in df[c][:hxlrow + 1] if "Unnamed" not in col]
+            cols = [col for col in df[c][:hxlrow + 1] if col]
+            if "Unnamed" not in c:
+                cols = [c] + cols
             columns.append("||".join(cols))
         df.columns = columns
         df = df.drop(index=range(hxlrow + 1)).reset_index(drop=True)
         return df
+    if fileext == "csv" and not hxlrow:  # assume first row of csv is header if there are no hxl tags
+        return df
+    columns = []
+    datarow = 3
+    if hxlrow:
+        datarow = hxlrow + 1
+    if len(df) < 3:
+        datarow = len(df)
+    for c in df.columns:
+        cols = [str(col) for col in df[c][:datarow] if col]
+        if "Unnamed" not in c:
+            cols = [c] + cols
+        columns.append("||".join(cols))
+    df.columns = columns
+    df = df.drop(index=range(datarow)).reset_index(drop=True)
     return df
 
 
-def check_pcoded(contents, fileext):
+def check_pcoded(contents):
     pcoded = None
     c = Country.countriesdata().get("countries", {})
     iso3s = [c[iso]["#country+code+v_iso3"] for iso in c]
@@ -122,18 +139,11 @@ def check_pcoded(contents, fileext):
             break
         content = contents[key]
         content = content.select_dtypes(include=["string", "object"])
-        hxlated = any([len(h.split("||")) != 1 for h in content.columns])
         for h in content.columns:
             if pcoded:
                 break
-            if fileext in ["csv", "xls", "xlsx"] and not hxlated:
-                possible_headers = [h] + list(content[h][:5].dropna().astype(str))
-                pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in possible_headers])
-            if fileext in ["csv", "xls", "xlsx"] and hxlated:
-                headers = h.split("||")
-                pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in headers])
-            if fileext not in ["csv", "xls", "xlsx"]:
-                pcoded_header = bool(re.match(header_exp, h, re.IGNORECASE))
+            headers = h.split("||")
+            pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in headers])
             if not pcoded_header:
                 continue
             column = content[h].dropna()
@@ -144,7 +154,7 @@ def check_pcoded(contents, fileext):
     return pcoded
 
 
-def check_latlong(contents, fileext):
+def check_latlong(contents):
     latlonged = None
     lat_header_exp = "(.*latitude?.*)|(lat)|((point.?)?y)|(#\s?geo\s?\+\s?lat)"
     lon_header_exp = "(.*longitude?.*)|(lon(g)?)|((point.?)?x)|(#\s?geo\s?\+\s?lon)"
@@ -152,23 +162,14 @@ def check_latlong(contents, fileext):
         if latlonged:
             break
         content = contents[key]
-        hxlated = any([len(h.split("||")) != 1 for h in content.columns])
         latted = None
         longed = None
         for h in content.columns:
             if latlonged:
                 break
-            if fileext in ["csv", "xls", "xlsx"] and not hxlated:
-                possible_headers = [h] + list(content[h][:5].dropna().astype(str))
-                lat_header = any([bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in possible_headers])
-                lon_header = any([bool(re.match(lon_header_exp, head, re.IGNORECASE)) for head in possible_headers])
-            if fileext in ["csv", "xls", "xlsx"] and hxlated:
-                headers = h.split("||")
-                lat_header = any([bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in headers])
-                lon_header = any([bool(re.match(lon_header_exp, head, re.IGNORECASE)) for head in headers])
-            if fileext not in ["csv", "xls", "xlsx"]:
-                lat_header = bool(re.match(lat_header_exp, h, re.IGNORECASE))
-                lon_header = bool(re.match(lon_header_exp, h, re.IGNORECASE))
+            headers = h.split("||")
+            lat_header = any([bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in headers])
+            lon_header = any([bool(re.match(lon_header_exp, head, re.IGNORECASE)) for head in headers])
             if not lat_header and not lon_header:
                 continue
             column = content[h].dropna().astype(str)
@@ -230,9 +231,9 @@ def check_location(dataset, temp_folder):
         contents, error = read_downloaded_data(resource_files, fileext)
 
         if not pcoded:
-            pcoded = check_pcoded(contents, fileext)
+            pcoded = check_pcoded(contents)
         if not pcoded and not latlonged and filetype in ["csv", "json", "xls", "xlsx"]:
-            latlonged = check_latlong(contents, fileext)
+            latlonged = check_latlong(contents)
 
     if not error and not pcoded:
         pcoded = False
