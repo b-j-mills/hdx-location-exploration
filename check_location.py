@@ -108,7 +108,7 @@ def parse_tabular(df, fileext):
     if hxlrow is not None:
         columns = []
         for c in df.columns:
-            cols = [col for col in df[c][:hxlrow + 1] if col]
+            cols = [str(col) for col in df[c][:hxlrow + 1] if col]
             if "Unnamed" not in c:
                 cols = [c] + cols
             columns.append("||".join(cols))
