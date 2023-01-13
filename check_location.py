@@ -6,7 +6,7 @@ from glob import glob
 from hxl.geo import LAT_PATTERNS, LON_PATTERNS
 from os import mkdir
 from os.path import basename, dirname, join
-from pandas import concat, read_csv, read_excel
+from pandas import concat, isna, read_csv, read_excel
 from shutil import rmtree
 from zipfile import ZipFile, is_zipfile
 
@@ -58,6 +58,8 @@ def read_downloaded_data(resource_files, fileext):
                 error = f"Unable to read resource {basename(resource_file)}"
                 continue
             for key in contents:
+                if contents[key].empty:
+                    continue
                 data[get_uuid()] = parse_tabular(contents[key], fileext)
         if fileext == "csv":
             try:
@@ -88,6 +90,10 @@ def read_downloaded_data(resource_files, fileext):
 
 def parse_tabular(df, fileext):
     df = df.dropna(how="all", axis=0).dropna(how="all", axis=1).reset_index(drop=True)
+    df.columns = [str(c) for c in df.columns]
+    if all([bool(re.match("Unnamed.*", c)) for c in df.columns]):  # if all columns are unnamed, move down a row
+        df.columns = [str(c) if not isna(c) else f"Unnamed: {i}" for i, c in enumerate(df.loc[0])]
+        df = df.drop(index=0).reset_index(drop=True)
     if not all(df.dtypes == "object"):  # if there are mixed types, probably read correctly
         return df
     if len(df) == 1:  # if there is only one row, return
