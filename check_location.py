@@ -209,10 +209,6 @@ def check_location(dataset, temp_folder):
     for resource in resources:
         if pcoded:
             break
-        if latlonged or not any(f in ["csv", "json", "xls", "xlsx"] for f in filetypes):
-            continue
-
-        logger.info(f"Checking {resource['name']}")
 
         filetype = resource.get_file_type()
         fileext = filetype
@@ -223,6 +219,8 @@ def check_location(dataset, temp_folder):
 
         if filetype not in allowed_filetypes:
             continue
+
+        logger.info(f"Checking {resource['name']}")
 
         resource_files, error = download_resource(resource, fileext, resource_folder)
         if not resource_files:
