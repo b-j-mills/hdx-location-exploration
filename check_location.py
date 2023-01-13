@@ -105,7 +105,7 @@ def parse_tabular(df, fileext):
         if all(hxltags):
             hxlrow = i
         i += 1
-    if hxlrow:
+    if hxlrow is not None:
         columns = []
         for c in df.columns:
             cols = [col for col in df[c][:hxlrow + 1] if col]
@@ -152,7 +152,7 @@ def check_pcoded(contents):
             pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in headers])
             if not pcoded_header:
                 continue
-            column = content[h].dropna()
+            column = content[h].dropna().astype("string")
             matches = sum(column.str.match(pcode_exp, case=False))
             if (len(column) - matches) <= 5 and matches > 0:
                 pcoded = True
