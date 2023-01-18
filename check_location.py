@@ -133,65 +133,58 @@ def parse_tabular(df, fileext):
     return df
 
 
-def check_pcoded(contents):
+def check_pcoded(df):
     pcoded = None
     c = Country.countriesdata().get("countries", {})
     iso3s = [c[iso]["#country+code+v_iso3"] for iso in c]
     iso2s = [c[iso]["#country+code+v_iso2"] for iso in c]
     pcode_exp = "(" + "|".join(iso3s+iso2s) + ")" + "\d{1,}"
     header_exp = "((adm)?.*p?.?cod.*)|(#\s?adm\s?\d?\+?\s?p?(code)?)"
-    for key in contents:
+
+    for h in df.columns:
         if pcoded:
             break
-        content = contents[key]
-        content = content.select_dtypes(include=["string", "object"])
-        for h in content.columns:
-            if pcoded:
-                break
-            headers = h.split("||")
-            pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in headers])
-            if not pcoded_header:
-                continue
-            column = content[h].dropna().astype("string")
-            matches = sum(column.str.match(pcode_exp, case=False))
-            if (len(column) - matches) <= 5 and matches > 0:
-                pcoded = True
+        headers = h.split("||")
+        pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in headers])
+        if not pcoded_header:
+            continue
+        column = df[h].dropna().astype("string")
+        matches = sum(column.str.match(pcode_exp, case=False))
+        if (len(column) - matches) <= 5 and matches > 0:
+            pcoded = True
 
     return pcoded
 
 
-def check_latlong(contents):
+def check_latlong(df):
     latlonged = None
     lat_header_exp = "(.*latitude?.*)|(lat)|((point.?)?y)|(#\s?geo\s?\+\s?lat)"
     lon_header_exp = "(.*longitude?.*)|(lon(g)?)|((point.?)?x)|(#\s?geo\s?\+\s?lon)"
-    for key in contents:
+
+    latted = None
+    longed = None
+    for h in df.columns:
         if latlonged:
             break
-        content = contents[key]
-        latted = None
-        longed = None
-        for h in content.columns:
-            if latlonged:
-                break
-            headers = h.split("||")
-            lat_header = any([bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in headers])
-            lon_header = any([bool(re.match(lon_header_exp, head, re.IGNORECASE)) for head in headers])
-            if not lat_header and not lon_header:
-                continue
-            column = content[h].dropna().astype(str)
-            if lat_header:
-                matches = concat([column.str.match(lat_exp.pattern, case=False) for lat_exp in LAT_PATTERNS], axis=1)
-                matches = sum(matches.any(axis=1))
-                if (len(column) - matches) <= 5 and matches > 0:
-                    latted = True
-            if lon_header:
-                matches = concat([column.str.match(lon_exp.pattern, case=False) for lon_exp in LON_PATTERNS], axis=1)
-                matches = sum(matches.any(axis=1))
-                if (len(column) - matches) <= 5 and matches > 0:
-                    longed = True
+        headers = h.split("||")
+        lat_header = any([bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in headers])
+        lon_header = any([bool(re.match(lon_header_exp, head, re.IGNORECASE)) for head in headers])
+        if not lat_header and not lon_header:
+            continue
+        column = df[h].dropna().astype(str)
+        if lat_header:
+            matches = concat([column.str.match(lat_exp.pattern, case=False) for lat_exp in LAT_PATTERNS], axis=1)
+            matches = sum(matches.any(axis=1))
+            if (len(column) - matches) <= 5 and matches > 0:
+                latted = True
+        if lon_header:
+            matches = concat([column.str.match(lon_exp.pattern, case=False) for lon_exp in LON_PATTERNS], axis=1)
+            matches = sum(matches.any(axis=1))
+            if (len(column) - matches) <= 5 and matches > 0:
+                longed = True
 
-            if latted and longed:
-                latlonged = True
+        if latted and longed:
+            latlonged = True
 
     return latlonged
 
@@ -235,9 +228,15 @@ def check_location(dataset, temp_folder):
         contents, error = read_downloaded_data(resource_files, fileext)
 
         if not pcoded:
-            pcoded = check_pcoded(contents)
+            for key in contents:
+                if pcoded:
+                    break
+                pcoded = check_pcoded(contents[key])
         if not pcoded and not latlonged and filetype in ["csv", "json", "xls", "xlsx"]:
-            latlonged = check_latlong(contents)
+            for key in contents:
+                if pcoded:
+                    break
+                latlonged = check_latlong(contents[key])
 
     if not error and not pcoded:
         pcoded = False
