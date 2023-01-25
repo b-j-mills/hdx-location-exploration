@@ -7,6 +7,7 @@ from hxl.geo import LAT_PATTERNS, LON_PATTERNS
 from os import mkdir
 from os.path import basename, dirname, join
 from pandas import concat, isna, read_csv, read_excel
+from requests import get
 from shutil import rmtree
 from zipfile import ZipFile, is_zipfile
 
@@ -14,6 +15,35 @@ from hdx.location.country import Country
 from hdx.utilities.uuid import get_uuid
 
 logger = logging.getLogger(__name__)
+
+
+def get_global_pcodes():
+    pcodes = []
+    locations = []
+    itos_locations = get("https://apps.itos.uga.edu/CODV2API/api/v1/locations").json()
+    for location in itos_locations:
+        iso3 = location["location_iso"]
+        iso2 = Country.get_iso2_from_iso3(iso3)
+        if not iso2:
+            continue
+        if iso2.lower() in locations:
+            continue
+        locations.append(iso2.lower())
+
+    for iso in locations:
+        for level in reversed(range(1, 6)):
+            itos_url = f"https://apps.itos.uga.edu/CODV2API/api/v1/themes/cod-ab/lookup/{level}/{iso}"
+            itos_pcodes = get(itos_url).json()
+            if len(itos_pcodes) == 0:
+                continue
+            for unit in itos_pcodes:
+                for l in range(1, level + 1):
+                    pcode = unit.get(f"admin{l}Pcode")
+                    if pcode:
+                        pcodes.append(pcode)
+            break
+
+    return pcodes
 
 
 def download_resource(resource, fileext, resource_folder):
@@ -133,12 +163,8 @@ def parse_tabular(df, fileext):
     return df
 
 
-def check_pcoded(df):
+def check_pcoded(df, global_pcodes):
     pcoded = None
-    c = Country.countriesdata().get("countries", {})
-    iso3s = [c[iso]["#country+code+v_iso3"] for iso in c]
-    iso2s = [c[iso]["#country+code+v_iso2"] for iso in c]
-    pcode_exp = "(" + "|".join(iso3s+iso2s) + ")" + "\d{1,}"
     header_exp = "((adm)?.*p?.?cod.*)|(#\s?adm\s?\d?\+?\s?p?(code)?)"
 
     for h in df.columns:
@@ -148,8 +174,8 @@ def check_pcoded(df):
         pcoded_header = any([bool(re.match(header_exp, head, re.IGNORECASE)) for head in headers])
         if not pcoded_header:
             continue
-        column = df[h].dropna().astype("string")
-        matches = sum(column.str.match(pcode_exp, case=False))
+        column = df[h].dropna().astype("string").str.upper()
+        matches = sum(column.isin(global_pcodes))
         if (len(column) - matches) <= 5 and matches > 0:
             pcoded = True
 
@@ -189,7 +215,7 @@ def check_latlong(df):
     return latlonged
 
 
-def check_location(dataset, temp_folder):
+def check_location(dataset, global_pcodes, temp_folder):
     pcoded = None
     latlonged = None
     error = None
@@ -231,7 +257,7 @@ def check_location(dataset, temp_folder):
             for key in contents:
                 if pcoded:
                     break
-                pcoded = check_pcoded(contents[key])
+                pcoded = check_pcoded(contents[key], global_pcodes)
         if not pcoded and not latlonged and filetype in ["csv", "json", "xls", "xlsx"]:
             for key in contents:
                 if pcoded:
