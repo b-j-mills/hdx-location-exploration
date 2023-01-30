@@ -3,3 +3,4 @@ geopandas~=0.10.2
 Fiona~=1.8.20
 pandas~=1.3.4
 Shapely~=1.8.0
+requests~=2.26.0

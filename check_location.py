@@ -215,59 +215,40 @@ def check_latlong(df):
     return latlonged
 
 
-def check_location(dataset, global_pcodes, temp_folder):
+def check_location(resource, global_pcodes, temp_folder):
     pcoded = None
     latlonged = None
-    error = None
-
-    allowed_filetypes = ["csv", "geodatabase", "geojson", "geopackage", "json",
-                         "shp", "topojson", "xls", "xlsx"]
-    filetypes = dataset.get_filetypes()
-    if not any(f in allowed_filetypes for f in filetypes):
-        error = "Can't check formats"
-        return None, None, error
 
     resource_folder = join(temp_folder, get_uuid())
     mkdir(resource_folder)
 
-    resources = dataset.get_resources()
-    for resource in resources:
+    filetype = resource.get_file_type()
+    fileext = filetype
+    if fileext == "geodatabase":
+        fileext = "gdb"
+    if fileext == "geopackage":
+        fileext = "gpkg"
+
+    resource_files, error = download_resource(resource, fileext, resource_folder)
+    if not resource_files:
+        return None, None, error
+
+    contents, error = read_downloaded_data(resource_files, fileext)
+
+    for key in contents:
         if pcoded:
             break
-
-        filetype = resource.get_file_type()
-        fileext = filetype
-        if fileext == "geodatabase":
-            fileext = "gdb"
-        if fileext == "geopackage":
-            fileext = "gpkg"
-
-        if filetype not in allowed_filetypes:
-            continue
-
-        logger.info(f"Checking {resource['name']}")
-
-        resource_files, error = download_resource(resource, fileext, resource_folder)
-        if not resource_files:
-            return pcoded, latlonged, error
-
-        contents, error = read_downloaded_data(resource_files, fileext)
-
-        if not pcoded:
-            for key in contents:
-                if pcoded:
-                    break
-                pcoded = check_pcoded(contents[key], global_pcodes)
-        if not pcoded and not latlonged and filetype in ["csv", "json", "xls", "xlsx"]:
-            for key in contents:
-                if pcoded:
-                    break
-                latlonged = check_latlong(contents[key])
-
+        pcoded = check_pcoded(contents[key], global_pcodes)
     if not error and not pcoded:
         pcoded = False
-    if not error and not pcoded and not latlonged:
-        latlonged = False
+
+    if not pcoded and filetype in ["csv", "json", "xls", "xlsx"]:
+        for key in contents:
+            if latlonged:
+                break
+            latlonged = check_latlong(contents[key])
+        if not latlonged:
+            latlonged = False
 
     rmtree(resource_folder)
 
