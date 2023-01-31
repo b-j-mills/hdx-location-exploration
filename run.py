@@ -16,10 +16,12 @@ warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 
 
 def main(**ignore):
+    allowed_filetypes = ["csv", "geodatabase", "geojson", "geopackage", "json",
+                         "shp", "topojson", "xls", "xlsx"]
 
     with temp_dir(folder="TempLocationExploration") as temp_folder:
         datasets = Dataset.search_in_hdx(
-            fq='vocab_Topics:"common operational dataset - cod"'
+            fq='cod_level:"cod-standard"'
         )
         logger.info(f"Found {len(datasets)} datasets")
 
@@ -27,13 +29,37 @@ def main(**ignore):
 
         with open("datasets_location_status.csv", "w") as c:
             writer = csv.writer(c)
-            writer.writerow(["dataset name", "dataset title", "pcoded", "latlonged", "error"])
+            writer.writerow([
+                "dataset name",
+                "resource name",
+                "pcoded",
+                "latlonged",
+                "error",
+            ])
 
             for dataset in datasets:
                 logger.info(f"Checking {dataset['name']}")
 
-                pcoded, latlonged, error = check_location(dataset, global_pcodes, temp_folder)
-                writer.writerow([dataset["name"], dataset["title"], pcoded, latlonged, error])
+                resources = dataset.get_resources()
+                for resource in resources:
+                    if resource.get_file_type() not in allowed_filetypes:
+                        writer.writerow([
+                            dataset["name"],
+                            resource["name"],
+                            None,
+                            None,
+                            f"{resource.get_file_type()} can't be p-coded",
+                        ])
+                        continue
+
+                    pcoded, latlonged, error = check_location(resource, global_pcodes, temp_folder)
+                    writer.writerow([
+                        dataset["name"],
+                        resource["name"],
+                        pcoded,
+                        latlonged,
+                        error,
+                    ])
 
 
 if __name__ == "__main__":
