@@ -1,434 +1,2455 @@
-dataset name,dataset title,pcoded,error
-cod-ab-mli,Mali - Subnational Administrative Boundaries,TRUE,
-nigeria-settlements-villages-towns-cities,Nigeria - Settlements,TRUE,
-nigeria-water-courses-cod,Nigeria - Water Courses,FALSE,
-nigeria-roads,Nigeria - Roads,FALSE,
-nigeria-elevation-model-cod,Nigeria - Elevation Model,,Can't check formats
-nepal-road-network,Nepal road network,FALSE,
-settlements-in-nepal,Settlements in Nepal,TRUE,
-nepal-aerodromes,Nepal Aerodromes,TRUE,
-nepal-watercourses-rivers,Nepal Watercourses - Rivers,FALSE,
-nepal-district-headquarters,Nepal District Headquarters,FALSE,
-cod-ps-npl,Nepal - Subnational Population Statistics,TRUE,
-cod-ps-slv,El Salvador - Subnational Population Statistics,TRUE,
-cod-ps-per,Peru - Subnational Population Statistics,TRUE,
-cod-ab-per,Peru - Subnational Administrative Boundaries,TRUE,
-cod-ab-lbr,Liberia - Subnational Administrative Boundaries,TRUE,
-liberia-roads,Liberia - Roads,FALSE,
-liberia-railways,Liberia - Railways,FALSE,
-liberia-water-bodies,Liberia - Lakes,FALSE,
-liberia-settlements-0,Liberia - Settlements,TRUE,
-liberia-aerodromes,Liberia - Aerodromes,,Unable to read resource lbr_airdrmp_fhlz_unmil.zip
-ethiopia-settlements,"Ethiopia - Cities, Towns and Villages",TRUE,
-ethiopia-elevation-model,Ethiopia - Elevation Model,FALSE,
-cod-ab-som,Somalia - Subnational Administrative Boundaries,TRUE,
-cod-ps-rwa,Rwanda - Subnational Population Statistics,TRUE,
-rwanda-water-courses,Rwanda - Water courses (Rivers),FALSE,
-rwanda-water-bodies,Rwanda - Water Bodies (Lakes),FALSE,
-rwanda-settlements,Rwanda - Settlements (towns),FALSE,
-rwanda-settlements-0,Rwanda - Settlements,FALSE,
-rwanda-ports,Rwanda - Airports,FALSE,
-cod-ab-eri,Eritrea - Subnational Administrative Boundaries,TRUE,
-eritrea-settlements,Eritrea - Settlements,TRUE,
-eritrea-roads,Eritrea - Roads,FALSE,
-cod-ab-ken,Kenya - Subnational Administrative Boundaries,TRUE,
-kenya-roads,Kenya - Roads Network,FALSE,
-kenya-ports,Kenya - Airports and Airstrips,FALSE,
-kenya-railways,Kenya - Railways Network,FALSE,
-kenya-water-bodies,Kenya - Water Bodies (Lakes),FALSE,
-kenya-water-courses,Kenya - Rivers,FALSE,
-kenya-settlements-0,Kenya - Settlements,FALSE,
-cod-ps-dji,Djibouti - Subnational Population Statistics,TRUE,
-djibouti-roads,Djibouti - Roads,FALSE,
-djibouti-water-courses,Djibouti - Water Courses,FALSE,
-djibouti-settlements,Djibouti - Settlements,FALSE,
-djibouti-aerodromes,Djibouti - Aerodromes,FALSE,
-djibouti-settlements-0,Djibouti - Towns,FALSE,
-djibouti-contour-lines-spot-heights,"Djibouti - Contour Lines, Spot Heights",FALSE,
-uganda-roads,Uganda - Roads,,Unable to read resource uganda_roads_feb2009.zip
-nigeria-water-courses,Nigeria - Water Courses(Rivers),FALSE,
-benin-settlements,Benin - Settlements,TRUE,
-benin-roads,Benin - Roads,FALSE,
-benin-railways,Benin - Railways,FALSE,
-cod-ab-ben,Benin - Subnational Administrative Boundaries,TRUE,
-burkina-faso-health-0,Burkina Faso - Health,TRUE,
-burkina-faso-elevation-model,Burkina Faso - Elevation Model,,Can't check formats
-burkina-faso-water-courses,Burkina Faso - Water Courses,FALSE,
-cod-ab-bfa,Burkina Faso - Subnational Administrative Boundaries,TRUE,
-cod-ab-cmr,Cameroon - Subnational Administrative Boundaries,TRUE,
-cameroon-elevation-model,Cameroon - Digital Elevation Model,,Can't check formats
-congo-settlements,Congo - Settlements,TRUE,
-cod-ab-cog,Congo - Subnational Administrative Boundaries,TRUE,
-congo-roads,Congo - Roads,TRUE,
-gabon-settlements,Gabon - Settlements,TRUE,
-cod-ab-gab,Gabon - Subnational Administrative Boundaries,TRUE,
-ghana-roads,Ghana - Roads,TRUE,
-ghana-settlements,Ghana - Settlements,TRUE,
-cod-ab-gha,Ghana - Subnational Administrative Boundaries,TRUE,
-cod-ps-gin,Guinea - Subnational Population Statistics,TRUE,
-gambia-elevation-model,Gambia - Elevation Model,,Can't check formats
-cod-ps-gmb,Gambia - Subnational Population Statistics,TRUE,
-gambia-water-courses,Gambia - Water Courses,FALSE,
-gambia-roads,Gambia - Roads,FALSE,
-gambia-settlements,Gambia - Settlements,FALSE,
-cod-ab-gmb,Gambia - Subnational Administrative Boundaries,TRUE,
-guinea-bissau-roads,Guinea-Bissau - Roads,FALSE,
-guinea-bissau-settlements,Guinea-Bissau - Settlements,TRUE,
-guinea-bissau-water-courses,Guinea-Bissau - Water Courses,FALSE,
-cod-ab-gnb,Guinea-Bissau - Subnational Administrative Boundaries,TRUE,
-guinea-bissau-elevation-model,Guinea-Bissau - Elevation Model,,Can't check formats
-equatorial-guinea-settlements,Equatorial Guinea - Settlements,TRUE,
-cod-ab-gnq,Equatorial Guinea - Subnational Administrative Boundaries,TRUE,
-cod-ab-mrt,Mauritania - Subnational Administrative Boundaries,TRUE,
-mauritania-damage-assessments,Mauritania - Floods Damage Assessments,FALSE,
-mauritania-roads,Mauritania - Roads,FALSE,
-mauritania-railways,Mauritania - Railways,FALSE,
-mauritania-elevation-model,Mauritania - Elevation Model,,Can't check formats
-mauritania-water-courses,Mauritania - Rivers,,Could not unzip resource mrt_rivers.zip
-cape-verde-settlements,Cabo Verde - Settlements,TRUE,
-senegal-education,Senegal - Schools,FALSE,
-cod-ab-sen,Senegal - Subnational Administrative Boundaries,TRUE,
-senegal-elevation-model,Senegal - Digital Elevation Model,,Can't check formats
-senegal-railways,Senegal - Railways,FALSE,
-senegal-water-courses,Senegal - Water Courses,FALSE,
-senegal-settlements,Senegal - Settlements,TRUE,
-cod-ab-stp,Sao Tome and Principe - Subnational Administrative Boundaries,TRUE,
-sao-tome-and-principe-settlements,Sao Tome And Principe - Settlements,TRUE,
-cod-ab-cpv,Cabo Verde - Subnational Administrative Boundaries,TRUE,
-mali-settlements,Mali - Settlements,TRUE,
-mali-water-bodies-water-courses,"Mali - Main, secondary rivers and water bodies",FALSE,
-mali-water-courses,Mali - Water Courses,FALSE,
-mali-railways,Mali - Railways,FALSE,
-mali-elevation-model,Mali - Elevation Model,,Can't check formats
-cod-ps-col,Colombia - Subnational Population Statistics,TRUE,
-togo-settlements,Togo - Settlements,TRUE,
-cod-ab-sle,Sierra Leone - Subnational Administrative Boundaries,TRUE,
-myanmar-transportation-network,Myanmar - Transportation network,,Unable to read resource Myanmar Railway Network
-somalia-settlements-2012,Somalia - Settlements,TRUE,
-cod-ab-fji,Fiji - Subnational Administrative Boundaries,TRUE,
-sri-lanka-roads,Sri Lanka - Main Roads,FALSE,
-sri-lanka-railways,Sri Lanka - Railways,FALSE,
-sri-lanka-water-bodies,Sri Lanka - Tanks and Reservoirs,FALSE,
-sri-lanka-contour-lines,Sri Lanka - Contour Lines,FALSE,
-sri-lanka-water-bodies-0,Sri Lanka - Lagoons,FALSE,
-sri-lanka-water-bodies-0-0,Sri Lanka - River and Streams,FALSE,
-bangladesh-roads,Bangladesh - Roads,FALSE,
-bangladesh-contour-lines,Bangladesh - Contour Lines,FALSE,
-bangladesh-railways,Bangladesh - Railroads,FALSE,
-bangladesh-aerodromes,Bangladesh - Airports and Helipads,FALSE,
-bangladesh-settlements-0,Bangladesh - Settlements,FALSE,
-bangladesh-water-bodies,Bangladesh - Waterbodies,FALSE,
-bangladesh-water-courses,Bangladesh - Rivers,FALSE,
-cod-ab-tha,Thailand - Subnational Administrative Boundaries,TRUE,
-thailand-roads,Thailand - Roads,FALSE,
-thailand-water-bodies-water-courses,Thailand - Inland Waters,FALSE,
-dpr-korea-settlements,DPR Korea - Settlements,FALSE,
-dpr-korea-roads,DPR Korea - Roads,FALSE,
-dpr-korea-water-bodies,DPR Korea - Major River Bodies and River Banks,FALSE,
-dpr-korea-water-courses,DPR Korea - Major Rivers,FALSE,
-dpr-korea-settlements-0,DPR Korea - Settlements,FALSE,
-dpr-korea-contour-lines,DPR Korea - Contour Lines,FALSE,
-dpr-korea-railways,DPR Korea - Railways,FALSE,
-dpr-korea-aerodromes,DPR Korea - Airports,FALSE,
-viet-nam-roads,Viet Nam - Roads,FALSE,
-viet-nam-railways,Viet Nam - Railroads,FALSE,
-viet-nam-aerodromes,Viet Nam - Airports and Airfields,FALSE,
-viet-nam-settlements,Viet Nam - Settlements,FALSE,
-cod-ps-lao,Lao People's Democratic Republic - Subnational Population Statistics,TRUE,
-cod-ab-khm,Cambodia - Subnational Administrative Boundaries,TRUE,
-cambodia-settlements,Cambodia - Settlements,FALSE,
-cod-ps-khm,Cambodia - Subnational Population Statistics,TRUE,
-cambodia-population-statistics-0,Cambodia - Population density,,Can't check formats
-cambodia-roads,Cambodia - Roads,FALSE,
-cambodia-railways,Cambodia - Railroads,FALSE,
-cambodia-water-courses-0,Cambodia - Rivers,FALSE,
-cambodia-canals,Cambodia - Canals,FALSE,
-bhutan-roads,Bhutan - Roads,FALSE,
-bhutan-aerodromes,Bhutan - Airports and Airfield,FALSE,
-bhutan-water-courses,Bhutan - Water Courses,FALSE,
-bhutan-settlements,Bhutan - Settlements,FALSE,
-papua-new-guinea-contour-lines,Papua New Guinea - Contour Lines,FALSE,
-papua-new-guinea-water-courses,Papua New Guinea - Water Courses,FALSE,
-papua-new-guinea-roads,Papua New Guinea - Roads,FALSE,
-cod-ab-png,Papua New Guinea - Subnational Administrative Boundaries,TRUE,
-mongolia-water-bodies,Mongolia - Inland Waters and Lakes,FALSE,
-mongolia-settlements,Mongolia - Settlements (Populated Places as points),FALSE,
-mongolia-roads,Mongolia - Roads Network,FALSE,
-mongolia-water-courses,Mongolia - Rivers,FALSE,
-mongolia-railways,Mongolia - Railroads,FALSE,
-mongolia-aerodromes,Mongolia - Airports,FALSE,
-mongolia-settlements-0,Mongolia - Settlements (Urban Areas),FALSE,
-mongolia-roads-0,Mongolia - Main roads in Ulaanbaatar,FALSE,
-mongolia-water-courses-0,Mongolia - Rivers of Ulaanbaatar,FALSE,
-mongolia-roads-0-0,Mongolia - Main roads,FALSE,
-cod-ps-mng,Mongolia - Subnational Population Statistics,TRUE,
-cod-ps-lso,Lesotho - Subnational Population Statistics,TRUE,
-cod-ab-mdg,Madagascar - Subnational Administrative Boundaries,TRUE,
-madagascar-settlements,Madagascar - Populated Places,TRUE,
-madagascar-elevation-model,Madagascar - Elevation Model,,Can't check formats
-cod-ab-nam,Namibia - Subnational Administrative Boundaries,TRUE,
-namibia-contour-lines,Namibia - Contour Lines,FALSE,
-cod-ab-zaf,South Africa - Subnational Administrative Boundaries,TRUE,
-zimbabwe-elevation-model,Zimbabwe - Elevation Model,,Can't check formats
-zimbabwe-settlements,Zimbabwe - Populated Places,FALSE,
-philippines-water-courses,Philippines - Water Courses(Rivers),FALSE,
-niger-elevation-model,Niger - Elevation Model,FALSE,
-niger-roads,Niger - Roads,FALSE,
-niger-settlements,Niger - Settlements,TRUE,
-cod-ab-ner,Niger - Subnational Administrative Boundaries,FALSE,
-cote-d-ivoire-settlements,Côte d'Ivoire - Settlements,TRUE,
-cote-d-ivoire-roads,Côte d'Ivoire - Roads,FALSE,
-cote-d-ivoire-railways,Côte d'Ivoire - Railways,FALSE,
-cote-d-ivoire-water-bodies,Côte d'Ivoire - Water Bodies,FALSE,
-cote-d-ivoire-water-courses,Côte d'Ivoire - Water Courses,FALSE,
-dr-congo-settlements,DR Congo - Settlements,TRUE,
-dr-congo-transportation-network,DR Congo - Transportation Network,FALSE,
-dr-congo-hydrology,DR Congo - Hydrology,FALSE,
-chad-aerodromes,Chad - Aerodromes,FALSE,
-bolivia-railways,Bolivia - Railways,FALSE,
-bolivia-roads,Bolivia - Secondary Roads,FALSE,
-bolivia-roads-0,Bolivia - Main Roads,FALSE,
-bolivia-aerodromes,Bolivia - Aerodromes,FALSE,
-bolivia-settlements,Bolivia - Settlements,FALSE,
-cod-ab-ecu,Ecuador - Subnational Administrative Boundaries,TRUE,
-honduras-settlements,Honduras - Settlements,FALSE,
-cod-ab-hnd,Honduras - Subnational Administrative Boundaries,TRUE,
-haiti-water-courses,Haiti - Rivers,FALSE,
-haiti-ports,Haiti - Ports,FALSE,
-haiti-water-bodies,Haiti - Lakes,FALSE,
-haiti-roads,Haiti - Network Road,FALSE,
-central-african-republic-elevation-model-41-10-to-41-12,Central African Republic - Elevation Model,,Can't check formats
-cod-ab-caf,Central African Republic - Subnational Administrative Boundaries,TRUE,
-central-african-republic-roads,Central African Republic - Roads Network,TRUE,
-central-african-republic-settlements,Central African Republic: Villages and towns with administrative classification of Central African Republic,TRUE,
-central-african-republic-water-bodies-0,Central African Republic - Water Bodies- Rivers ( Landsat satellite images (2002-2003),FALSE,
-pakistan-settlements,Pakistan - Population of Major Cities,FALSE,
-cod-ab-yem,Yemen - Subnational Administrative Boundaries,TRUE,
-yemen-roads,Yemen - Roads,FALSE,
-yemen-ports,Yemen - Ports,FALSE,
-yemen-water-bodies,Yemen - Water Courses,FALSE,
-cod-ps-kaz,Kazakhstan - Subnational Population Statistics,TRUE,
-cod-ps-tjk,Tajikistan - Subnational Population Statistics,TRUE,
-settlements,Burkina Faso: Settlements,TRUE,
-mrt-settlements,Mauritania: Settlements,TRUE,
-cod-ab-syr,Syrian Arab Republic - Subnational Administrative Boundaries,TRUE,
-syrian-arab-republic-water-bodies,Syrian Arab Republic - Water Bodies,FALSE,
-state-of-palestine-admin-level-2-boundaries,State of Palestine - Palestinian Communities in the West Bank and the Gaza Strip,TRUE,
-state-of-palestine-transportation-network,State of Palestine - Crossing Points,FALSE,
-state-of-palestine-water-bodies,State of Palestine - Hydrography,FALSE,
-sudan-settlements,Sudan - Settlements,TRUE,
-sudan-roads,Sudan - Roads,FALSE,
-sudan-aerodromes,Sudan -  Airfields,FALSE,
-cod-ab-ssd,South Sudan - Subnational Administrative Boundaries,TRUE,
-tunisia-population-statistics,Tunisia - Estimated Population Statistics per delegation,FALSE,
-cod-ps-tun,Tunisia - Subnational Population Statistics,TRUE,
-libya-elevation-model,Libya - Elevation Model,,Can't check formats
-cod-ab-irq,Iraq - Subnational Administrative Boundaries,TRUE,
-iraq-water-bodies,Iraq - Water Bodies (Lakes and Ponds),FALSE,
-iraq-water-courses,Iraq - Water Courses (Rivers and Streams),FALSE,
-iraq-roads,Iraq - Roads Network,FALSE,
-lebanon-settlements-villages-towns-cities,"Lebanon - Settlements (villages, towns, cities)",TRUE,
-settlements-villages-towns-cities,"Iraq - Settlements (villages, towns, cities)",TRUE,
-cod-ab-pse,State of Palestine - Subnational Administrative Boundaries,TRUE,
-cod-ps-arm,Armenia - Subnational Population Statistics,TRUE,
-cod-ps-caf,Central African Republic - Subnational Population Statistics,TRUE,
-south-sudan-settlement-data,South Sudan - Settlement Data,TRUE,
-cod-ab-grc,Greece - Subnational Administrative Boundaries,FALSE,
-cod-ab-hti,Haiti - Subnational Administrative Boundaries,TRUE,
-cod-ab-mkd,North Macedonia - Subnational Administrative Boundaries,FALSE,
-chad-gis-geodatabase,Chad - GIS geodatabase,TRUE,
-roads-network,Ethiopia - Roads Network,FALSE,
-cod-ab-phl,Philippines - Subnational Administrative Boundaries,TRUE,
-cod-ps-hnd,Honduras - Subnational Population Statistics,TRUE,
-philippines-pre-disaster-indicators,Philippines: Pre-Disaster Indicators,TRUE,
-cod-ab-bhs,Bahamas - Subnational Administrative Boundaries,FALSE,
-philippines-elevation-model,Philippines - Elevation Model,,Can't check formats
-cod-ab-tcd,Chad - Subnational Administrative Boundaries,TRUE,
-nigeria-roads-data-from-osm,Nigeria Primary and Secondary Roads (data from OSM),FALSE,
-nigeria-railways-data-from-osm,Nigeria Railways (data from OSM),FALSE,
-nigeria-waterways,Nigeria waterways,FALSE,
-cod-ab-gin,Guinea - Subnational Administrative Boundaries,TRUE,
-cod-ab-lao,Lao People's Democratic Republic - Subnational Administrative Boundaries,TRUE,
-laos-populated-places,Laos - Populated places,FALSE,
-cod-ps-mmr,Myanmar - Subnational Population Statistics,TRUE,
-cod-ab-tur,Türkiye - Subnational Administrative Boundaries,TRUE,
-turkey-rivers,Turkey Rivers,FALSE,
-turkey-refugee-camps,Turkey Refugee Camps,TRUE,
-settlements-in-turkey,Settlements in Turkey (Admin 3-4),,Could not unzip resource Turkey_Settlements_4.zip
-cod-ab-nga,Nigeria - Subnational Administrative Boundaries,TRUE,
-cod-ps-ken,Kenya - Subnational Population Statistics,TRUE,
-sierra-leone-settlements,Sierra Leone settlements,TRUE,
-cod-ab-lby,Libya - Subnational Administrative Boundaries,TRUE,
-transportation-libya-cods,Libya - Transportation  Network,FALSE,
-river-network-libya-cods,Libya - River Network,FALSE,
-cod-ab-dza,Algeria - Subnational Administrative Boundaries,TRUE,
-algeria-transportation-network,Algeria - Transportation Network,FALSE,
-algeria-elevation-model,Algeria - Elevation Model,,Can't check formats
-cod-ab-bhr,Bahrain - Subnational Administrative Boundaries,FALSE,
-bahrain-transportation-network,Bahrain - Transportation Network,FALSE,
-cod-ab-kwt,Kuwait - Subnational Administrative Boundaries,TRUE,
-kuwait-transportation-network,Kuwait - Transportation Network,FALSE,
-kuwait-river-network,Kuwait - River Network,FALSE,
-cod-ab-mar,Morocco - Subnational Administrative Boundaries,TRUE,
-morocco-transportation-network,Morocco - Transportation Network,FALSE,
-morocco-river-network,Morocco - River Network,FALSE,
-cod-ab-omn,Oman - Subnational Administrative Boundaries,TRUE,
-oman-transportation-network,Oman - Transportation Network,FALSE,
-oman-river-network,Oman - River Network,FALSE,
-cod-ab-qat,Qatar - Subnational Administrative Boundaries,FALSE,
-qatar-transportation-network,Qatar - Transportation Network,FALSE,
-cod-ab-sau,Saudi Arabia - Subnational Administrative Boundaries,TRUE,
-saudi-arabia-transportation-network,Saudi Arabia - Transportation Network,FALSE,
-cod-ab-tun,Tunisia - Subnational Administrative Boundaries,TRUE,
-tunisia-transportation-network,Tunisia - Transportation Network,FALSE,
-tunisia-river-network,Tunisia - River Network,FALSE,
-cod-ab-are,United Arab Emirates - Subnational Administrative Boundaries,FALSE,
-uae-transportation-network,United Arab Emirates - Transportation Network,FALSE,
-morocco-elevation-model,Morocco - Elevation Model,,Can't check formats
-tunisia-elevation-model,Tunisia_ Elevation Model,,Can't check formats
-gulf-countries-elevation-model,Gulf Countries- Elevation Model,,Can't check formats
-cod-ab-esh,Western Sahara - Subnational Administrative Boundaries,TRUE,
-western-sahara-transportation-network,Western Sahara - Transportation Network,FALSE,
-cod-ab-tjk,Tajikistan -  Administrative Boundaries (taxonomy),TRUE,
-cod-ab-cod,Democratic Republic of the Congo - Subnational Administrative Boundaries,TRUE,
-rdc-statistiques-des-populations,RDC - Statistiques des Populations par Zones de Santé,TRUE,
-lebanon-municipalities-list,Lebanon Municipalities List,FALSE,
-palestinian-gatherings,Palestinian Gatherings,FALSE,
-palestinian-camp-in-lebanon,Palestinian Camp in Lebanon,FALSE,
-lebanon-primary-health-care-centers-phcs,Lebanon Primary Health Care Centers (PHCs),TRUE,
-lebanon-public-schools-and-unrwa-schools-for-palestine-refugees,Lebanon - Public Schools and UNRWA Schools for Palestine Refugees,FALSE,
-lebanon-secondary-health-care-centers,Lebanon Secondary Health Care centers,TRUE,
-lebanon-social-development-centers-sdcs,Lebanon Social Development Centers (SDCs),TRUE,
-syrian-refugees-collective-centers-in-lebanon,Lebanon - Syrian Refugees Collective Centers in Lebanon,TRUE,
-lebanon-villages-settlements,Lebanon villages/settlements,TRUE,
-cod-ab-col,Colombia - Subnational Administrative Boundaries,TRUE,
-guinea-settlement,Guinea Settlement,TRUE,
-cod-ab-kgz,Kyrgyzstan - Subnational Administrative Boundaries,TRUE,
-cod-ps-som,Somalia - Subnational Population Statistics,TRUE,
-cod-ps-nga,Nigeria - Subnational Population Statistics,TRUE,
-cod-ps-tcd,Chad - Subnational Population Statistics,TRUE,
-cod-ab-sdn,Sudan - Subnational Administrative Boundaries,TRUE,
-cod-ab-lbn,Lebanon - Subnational Administrative Boundaries,TRUE,
-cod-ps-geo,Georgia - Subnational Population Statistics,TRUE,
-cod-ab-aze,Azerbaijan - Subnational Administrative Boundaries,TRUE,
-cod-ab-arm,Armenia - Subnational Administrative Boundaries,TRUE,
-cod-ab-zmb,Zambia - Subnational Administrative Boundaries,TRUE,
-cod-ps-aze,Azerbaijan - Subnational Population Statistics,TRUE,
-cod-ab-kaz,Kazakhstan - Subnational Administrative Boundaries,TRUE,
-burundi-health-district-boundaries,Burundi - Health District Boundaries,TRUE,
-cod-ps-bdi,Burundi: Subnational Population Statistics,TRUE,
-cod-ps-kgz,Kyrgyzstan - Subnational Population Statistics,TRUE,
-cod-ab-egy,Egypt - Subnational Administrative Boundaries,TRUE,
-cod-ps-phl,Philippines - Subnational Population Statistics,TRUE,
-cod-ab-npl,Nepal - Subnational Administrative Boundaries,TRUE,
-cod-ps-eri,Eritrea - Subnational Population Statistics,TRUE,
-cod-ps-sle,Sierra Leone - Subnational Population Statistics,TRUE,
-cod-ab-pri,Puerto Rico - Subnational Administrative Boundaries,TRUE,
-puerto-rico-roads,Puerto Rico - Roads,FALSE,
-cod-ab-dom,Dominican Republic - Subnational Administrative Boundaries,TRUE,
-cod-ab-atg,Antigua and Barbuda - Subnational Administrative Boundaries,TRUE,
-cod-ab-brb,Barbados - Subnational Administrative Boundaries,TRUE,
-cod-ab-cub,Cuba - Subnational Administrative Boundaries,TRUE,
-cod-ab-dma,Dominica - Subnational Administrative Boundaries,TRUE,
-cod-ab-glp,Guadeloupe - Subnational Administrative Boundaries,TRUE,
-cod-ab-gtm,Guatemala - Subnational Administrative Boundaries,TRUE,
-cod-ab-abw,Aruba - Subnational Administrative Boundaries,TRUE,
-cod-ab-aia,Anguilla - Subnational Administrative Boundaries,FALSE,
-cod-ab-tto,Trinidad and Tobago - Subnational Administrative Boundaries,TRUE,
-cod-ab-blm,Saint Barthélemy - Subnational Administrative Boundaries,FALSE,
-cod-ab-blz,Belize - Subnational Administrative Boundaries,TRUE,
-cod-ab-cuw,Curaçao - Subnational Administrative Boundaries,TRUE,
-cod-ab-cym,Cayman Islands - Subnational Administrative Boundaries,TRUE,
-cod-ab-grd,Grenada - Subnational Administrative Boundaries,TRUE,
-cod-ab-kna,Saint Kitts and Nevis - Subnational Administrative Boundaries,TRUE,
-cod-ab-lca,Saint Lucia - Subnational Administrative Boundaries,TRUE,
-cod-ab-jam,Jamaica - Subnational Administrative Boundaries,TRUE,
-cod-ab-msr,Montserrat - Subnational Administrative Boundaries,TRUE,
-cod-ab-tca,Turks and Caicos Islands - Subnational Administrative Boundaries,TRUE,
-cod-ab-vgb,British Virgin Islands - Subnational Administrative Boundaries,TRUE,
-cod-ab-bes,"Bonaire, Sint Eustatius and Saba - Subnational Administrative Boundaries",FALSE,
-cod-ab-vir,United States Virgin Islands - Subnational Administrative Boundaries,TRUE,
-cod-ab-mtq,Martinique - Subnational Administrative Boundaries,TRUE,
-cod-ab-maf,Saint Martin (French part) - Subnational Administrative Boundaries,FALSE,
-cod-ab-bgd,Bangladesh - Subnational Administrative Boundaries,TRUE,
-dominica-populated-places,Dominica populated places,TRUE,
-cod-ps-dma,Dominica - Subnational Population Statistics,TRUE,
-cod-ab-bmu,Bermuda - Subnational Administrative Boundaries,TRUE,
-cod-ab-vct,Saint Vincent and The Grenadines - Subnational Administrative Boundaries,TRUE,
-cod-ps-egy,Egypt - Subnational Population Statistics,TRUE,
-cod-ps-sen,Senegal - Subnational Population Statistics,TRUE,
-cod-ab-ven,Venezuela (Bolivarian Republic of) - Subnational Administrative Boundaries,TRUE,
-cod-ab-guy,Guyana - Subnational Administrative Boundaries,TRUE,
-cod-ab-sur,Suriname - Subnational Administrative Boundaries,TRUE,
-cod-ab-guf,French Guiana - Subnational Administrative Boundaries,TRUE,
-cod-ab-tgo,Togo - Subnational Administrative Boundaries,TRUE,
-cod-ab-chl,Chile - Subnational Administrative Boundaries,TRUE,
-cod-ab-slv,El Salvador - Subnational Administrative Boundaries,TRUE,
-cod-ab-pan,Panama - Subnational Administrative Boundaries,TRUE,
-cod-ab-nic,Nicaragua - Subnational Administrative Boundaries,TRUE,
-cod-ab-ury,Uruguay - Subnational Administrative Boundaries,TRUE,
-cod-ab-pry,Paraguay - Subnational Administrative Boundaries,TRUE,
-cod-ab-arg,Argentina - Subnational Administrative Boundaries,TRUE,
-cod-ab-bra,Brazil - Subnational Administrative Boundaries,TRUE,
-cod-ab-vut,Vanuatu - Subnational Administrative Boundaries,TRUE,
-cod-ab-bdi,Burundi - Subnational Administrative Boundaries,TRUE,
-cod-ab-btn,Bhutan - Subnational Administrative Boundaries,TRUE,
-cod-ps-mrt,Mauritania - Subnational Population Statistics,TRUE,
-cod-ab-pak,Pakistan - Subnational Administrative Boundaries,TRUE,
-yemen-humanitarian-needs-overview,Yemen : Humanitarian Needs Overview,TRUE,Unable to read resource Yemen PIN per Sector - 2022
-cod-ab-tls,Timor-Leste - Subnational Administrative Boundaries,TRUE,
-cod-ab-mng,Mongolia - Subnational Administrative Boundaries,TRUE,
-cours-d-eau-caf,Central African Republic cours d'eau,FALSE,
-cod-ab-vnm,Viet Nam - Subnational Administrative Boundaries,TRUE,
-cod-ab-prk,Democratic People's Republic of Korea - Subnational Administrative Boundaries,TRUE,
-cod-ab-mdv,Maldives - Subnational Administrative Boundaries,TRUE,
-maldives-airports,Maldives - Airports,FALSE,
-cabo-verde-roads,Cabo Verde Roads,FALSE,
-cabo-verde-water-courses,Cabo Verde - Water Courses,FALSE,
-cod-ab-chn,China - Subnational Administrative Boundaries,TRUE,
-province-and-prefecture-capitals-of-china,Province and Prefecture capitals of China,TRUE,
-cod-ab-slb,Solomon Islands - Subnational Administrative Boundaries,TRUE,
-cod-ps-slb,Solomon Islands - Subnational Population Statistics,TRUE,
-cod-ps-fji,Fiji - Subnational Population Statistics,TRUE,
-cod-ps-tls,Timor-Leste - Subnational Population Statistics,TRUE,
-cod-ps-mex,Mexico - Subnational Population Statistics,TRUE,
-mexican-populated-places,Mexican populated places,TRUE,
-cod-ps-cpv,Cabo Verde - Subnational Population Statistics,TRUE,
-cod-ab-mex,Mexico - Subnational Administrative Boundaries,TRUE,
-cod-ab-ton,Tonga - Subnational Administrative Boundaries,TRUE,
-cod-ps-ton,Tonga - Subnational Population Statistics,TRUE,
-cod-ab-tza,United Republic of Tanzania - Subnational Administrative Boundaries,TRUE,
-cod-ps-ago,Angola - Subnational Population Statistics,TRUE,
-cod-ps-png,Papua New Guinea - Subnational Population Statistics,TRUE,
-cod-ps-mli,Mali - Subnational Population Statistics,TRUE,
-syrian-arab-republic-populated-places,Syrian Arab Republic populated places,TRUE,
-cod-ps-bfa,Burkina Faso - Subnational Population Statistics,TRUE,
-cod-ps-civ,Côte d'Ivoire - Subnational Population Statistics,TRUE,
-cod-ps-lbr,Liberia - Subnational Population Statistics,TRUE,
-cod-ps-guy,Guyana - Subnational Population Statistics,TRUE,
-cod-ps-ner,Niger - Subnational Population Statistics,TRUE,
-cod-ps-ven,Venezuela (Bolivarian Republic of) - Subnational Population Statistics,TRUE,
-cod-ab-bol,Bolivia (Plurinational State of) - Subnational Administrative Boundaries,TRUE,
-cod-ab-uzb,Uzbekistan - Subnational Administrative Boundaries,TRUE,
-cod-ps-uzb,Uzbekistan - Subnational Population Statistics,TRUE,
-cod-ab-mhl,Marshall Islands - Subnational Administrative Boundaries,TRUE,
-cod-ps-mhl,Marshall Islands - Subnational Population Statistics,TRUE,
-cod-ab-uga,Uganda - Subnational Administrative Boundaries,TRUE,
-cod-ab-civ,Côte d'Ivoire - Subnational Administrative Boundaries,TRUE,
-cod-ab-rwa,Rwanda - Subnational Administrative Boundaries,TRUE,
-cod-ab-ago,Angola - Subnational Administrative Boundaries,TRUE,
-cod-ab-zwe,Zimbabwe - Subnational Administrative Boundaries,TRUE,
-cod-ps-zwe,Zimbabwe - Subnational Population Statistics,TRUE,
-cod-ab-mwi,Malawi - Subnational Administrative Boundaries,TRUE,
-cod-ps-mwi,Malawi - Subnational Population Statistics,TRUE,
-cod-ab-moz,Mozambique - Subnational Administrative Boundaries,TRUE,
-cod-ps-uga,Uganda - Subnational Population Statistics,TRUE,
-democratic-republic-of-the-congo-major-cities,Democratic Republic of the Congo - major cities,TRUE,
-cod-ab-sxm,Sint Maarten (Dutch part) - Subnational Administrative Boundaries,TRUE,
-cod-ps-sxm,Sint Maarten (Dutch part) - Subnational Population Statistics,TRUE,
-cod-ps-mdg,Madagascar - Subnational Population Statistics,TRUE,
-cod-ps-tza,United Republic of Tanzania - Subnational Population Statistics,TRUE,
-cod-ab-dji,Djibouti - Subnational Administrative Boundaries,TRUE,
-pakistan-settlement,Pakistan- Settlement,FALSE,
-cod-ps-ecu,Ecuador - Subnational Population Statistics,TRUE,
-cod-ps-nam,Namibia - Subnational Population Statistics,TRUE,
+dataset name,resource name,pcoded,latlonged,error
+nigeria-settlements-villages-towns-cities,nga_plp_nga.zip,False,,
+nigeria-settlements-villages-towns-cities,NGA_pcode_rowca_20150127_2.xlsx,False,True,
+nigeria-water-courses-cod,NGA_river_line_dcw.shp.zip,False,,
+nigeria-water-courses-cod,NGA_river_poly_dcw.shp.zip,False,,
+nigeria-water-courses-cod,NGA_river_line_esri.shp.zip,False,,
+nigeria-roads,nga roads.shp.zip,False,,
+nigeria-elevation-model-cod,nga_dem.zip,,,garmin img can't be p-coded
+nepal-road-network,npl_rdsl_trans_25K_50K_sdn_wgs84.zip,False,,
+nepal-road-network,npl_majrdsl_gist.zip,False,,
+settlements-in-nepal,npl_settlements_pcode.zip,False,,
+settlements-in-nepal,npl_settlements_pcode_CSV.ZIP,False,False,
+nepal-aerodromes,npl_airdrm_poly_trans_25K_50K_sdn_wgs84.zip,False,,
+nepal-aerodromes,npl_airdrmp_airp_withstatus_OCHA_wgs84.zip,False,,
+nepal-watercourses-rivers,npl_watcrsl_hydro_25K_50K_sdn_wgs84.shp.zip,False,,
+nepal-watercourses-rivers,npl_watcrsa_hydro_25K_50K_sdn_wgs84.shp.zip,False,,
+nepal-district-headquarters,npl_pplp_dhq_25K_50K_sdn_wgs84.shp.zip,False,,
+liberia-roads,lbr_rdsl_unmil.zip,False,,
+liberia-railways,lbr_rlwl_unmil.zip,False,,
+liberia-water-bodies,lbr_lakeresa_lake_unmil.zip,False,,
+liberia-settlements-0,lbr_plp_ocha.zip,True,,
+liberia-aerodromes,lbr_airdrmp_fhlz_unmil.zip,,,Unable to read resource lbr_airdrmp_fhlz_unmil.shp
+ethiopia-settlements,ETH_PopulatedAreas2022.zip,False,,
+ethiopia-settlements,ETH_CapitalTowns 2021 Shape files,True,,
+ethiopia-settlements,ETH_CapitalTowns 2021,True,,
+ethiopia-settlements,eth_pplp_multiplesources_20160205.zip,True,,
+ethiopia-settlements,ETH_PopulatedPlaces_TabularData.xlsx,True,,
+ethiopia-elevation-model,eth_dem_90m.zip,,,
+rwanda-water-courses,Rwanda rivers,False,,
+rwanda-water-bodies,rwa_lakes.zip,False,,
+rwanda-settlements,rwa_towns.zip,False,,
+rwanda-settlements-0,rwa_settlements.zip,False,,
+rwanda-ports,Rwanda Airports,False,,
+eritrea-settlements,places.zip,True,,
+eritrea-roads,Eritrea - Roads Network,False,,
+kenya-roads,ken_roads.zip,False,,
+kenya-ports,ken_airports.zip,False,,
+kenya-railways,ken_rails.zip,False,,
+kenya-water-bodies,ken_lakes.zip,False,,
+kenya-water-courses,ken_rivers.zip,False,,
+kenya-settlements-0,ken_populated_places_2002_depha.zip,True,,
+cod-ps-dji,dji_admpop_2022.xlsx,True,,
+cod-ps-dji,dji_admpop_adm0_2009.csv,True,,
+cod-ps-dji,dji_admpop_adm1_2009.csv,True,,
+djibouti-roads,dji_road_2001_ign_undp.zip,False,,
+djibouti-water-courses,dji_drainage_1993_dcw.zip,False,,
+djibouti-settlements,dji_settlements_2001_nima.zip,False,,
+djibouti-aerodromes,dji_airports_2000_nima.zip,False,,
+djibouti-settlements-0,dji_towns_2000_nima.zip,False,,
+djibouti-contour-lines-spot-heights,hypsography2.zip,False,,
+uganda-roads,uganda_roads_feb2009.zip,False,,
+nigeria-water-courses,NGA_river_line_dcw.zip,False,,
+nigeria-water-courses,NGA_river_line_esri.zip,False,,
+benin-settlements,Settlements,False,,
+benin-settlements,Benin: settlements.xlsx,False,True,
+benin-roads,Roads.zip,False,,
+benin-railways,Railway.zip,False,,
+burkina-faso-health-0,BFA_Cholera_99-11.xlsx,False,False,
+burkina-faso-elevation-model,bfa_dem.zip,,,arc/info grid can't be p-coded
+burkina-faso-water-courses,BFA_rvrs_lines_1m_dcw.zip,False,,
+burkina-faso-water-courses,BFA_rvrs_areas_1m_dcw.zip,False,,
+cameroon-elevation-model,cmr_dem_90 m_wfp.zip,,,arc/info grid can't be p-coded
+congo-settlements,Settlements,False,,
+congo-settlements,cog_ppl_1m_nga.xlsx,True,,
+congo-roads,cog_roads_classification_20150331.xlsx,False,True,
+congo-roads,Road Network,False,,
+gabon-settlements,gab_places_nga.zip,True,,
+gabon-settlements,GAB_pcode_rowca_20150210.xlsx,True,,
+cod-ab-gab,gab_admbndp0_1m_salb.zip,False,,
+cod-ab-gab,gab_admbndp1_1m_salb.zip,True,,
+cod-ab-gab,gab_admbndp2_1m_salb.shp_.zip,True,,
+cod-ab-gab,GAB_pcode_rowca_20150210.xlsx,True,,
+cod-ab-gab,gab_adm_1m_salb_EMF.zip,,,emf can't be p-coded
+cod-ab-gab,gab_ppt_map.pptx,,,pptx can't be p-coded
+ghana-roads,GHA_roads_dcw.zip,False,,
+ghana-roads,gha_roads_classification_20150406.xlsx,False,True,
+ghana-settlements,Excel Summary,True,,
+ghana-settlements,Settlements.zip,True,,
+gambia-elevation-model,gmb_dem.zip,,,erdas image can't be p-coded
+gambia-water-courses,gmb_hydro_line_dcw.zip,False,,
+gambia-water-courses,gmb_hydropol_dcw.zip,False,,
+gambia-roads,GMB_rds_1m_dcw.shp.zip,False,,
+gambia-settlements,gmb_pplp_ocha_1m_nga_ocha.zip,False,,
+cod-ab-gmb,GMB_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-gmb,gmb_adm_ndma_20220901_SHP.zip,True,,
+cod-ab-gmb,gmb_adm_ndma_20220901_GDB.gdb.zip,True,,
+cod-ab-gmb,COD_External/GMB_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-gmb,COD_External/GMB_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-gmb,COD_External/GMB_pcode (MapServer),,,geoservice can't be p-coded
+guinea-bissau-roads,gnb_roads_estradas_inec.zip,False,,
+guinea-bissau-settlements,gnb_pplp_1m_nga.zip,True,,
+guinea-bissau-settlements,gnb_PopulatedPlaces_TabularData.xlsx,True,,
+guinea-bissau-water-courses,GNB_rivers_poly.zip,False,,
+guinea-bissau-water-courses,gnb_rvrlines_1m_dcw.zip,False,,
+guinea-bissau-elevation-model,gnb_dem.zip,,,geotiff can't be p-coded
+equatorial-guinea-settlements,gnq_pcode_rowca_20150218.xlsx,True,,
+equatorial-guinea-settlements,gnq_places_nga.zip,False,,
+mauritania-damage-assessments,outil_de_suivi_degats_inondations_15.08.2010.xls,False,False,
+mauritania-roads,mrt_rds_1m_ons.zip,False,,
+mauritania-railways,mrt_railway_dcw.zip,False,,
+mauritania-elevation-model,mrt_dem.zip,,,arc/info grid can't be p-coded
+mauritania-water-courses,mrt_rivers.zip,,,Could not unzip resource mrt_rivers.zip
+cape-verde-settlements,cpv_ppl_1m_NGA.zip,True,,
+cape-verde-settlements,cpv_pcode_rowca_20150323.xlsx,True,,
+senegal-education,sen_school_mapaction.zip,False,,
+senegal-elevation-model,sen_dem_90 m_wfp.zip,,,arc/info grid can't be p-coded
+senegal-railways,SEN_rls_1m_DCW.zip,False,,
+senegal-water-courses,Senegal: Water courses,False,,
+senegal-settlements,sen_plpp_gov_ocha_09082017.zip,True,,
+senegal-settlements,sen_PopulatedPlaces_TabularData.xlsx,True,,
+cod-ab-stp,stp_admgaz_2020.xlsx,True,,
+cod-ab-stp,stp_adm_gadm_2020_SHP.zip,False,,
+cod-ab-stp,stp_adm_gadm_2020_EMF.zip,,,emf can't be p-coded
+cod-ab-stp,stp_adm_gadm_2020.gdb.zip,False,,
+cod-ab-stp,stp_ppt_map.pptx,,,pptx can't be p-coded
+sao-tome-and-principe-settlements,STP_ppl_1m_nga.zip,True,,
+sao-tome-and-principe-settlements,stp_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-cpv,cpv_adminboundaries_tabulardata_v4.xlsx,True,,
+cod-ab-cpv,cpv_adm_shp.zip,True,,
+cod-ab-cpv,cpv_adm_gdb.gdb.zip,False,,
+mali-settlements,mli_populatedplaces_shp.zip,True,,
+mali-settlements,MLI_MapServices,,,geoservice can't be p-coded
+mali-settlements,MLI_pcode,,,xml can't be p-coded
+mali-water-bodies-water-courses,mli_rivl_gov_level1.zip,False,,
+mali-water-bodies-water-courses,mli_rivl_gov_level2.zip,False,,
+mali-water-bodies-water-courses,mli_lakel_gov.zip,False,,
+mali-water-bodies-water-courses,mli_lakea_gov_artificialdam.zip,False,,
+mali-water-courses,mli_rivers_0.zip,False,,
+mali-railways,mli_railway_0.zip,False,,
+mali-elevation-model,mli_dem_0.zip,,,erdas image can't be p-coded
+togo-settlements,tgo_plpp_1m_nga_20210420.zip,True,,
+togo-settlements,tgo_settlement_20210420.dbf.xlsx,True,,
+cod-st-som,som_settlements_2022.zip,False,,
+cod-st-som,som_admgz_2022.xls,False,False,
+cod-ab-fji,fji_polbnda_adm.gdb.zip,False,,
+cod-ab-fji,fji_polbnda_adm0_country.zip,False,,
+cod-ab-fji,fji_polbnda_adm3_tikina.zip,True,,
+cod-ab-fji,fji_polbnda_adm2_province.zip,True,,
+cod-ab-fji,fji_polbnda_adm1_district.zip,True,,
+cod-ab-fji,fji_polbnda_EMF.zip,,,emf can't be p-coded
+cod-ab-fji,fji_adm_gz.xlsx,True,,
+sri-lanka-roads,lka_rdsl_250k_sdlka.zip,False,,
+sri-lanka-railways,lka_rlwl_250k_sdlka.zip,False,,
+sri-lanka-water-bodies,lka_lakeresa_lake_250k_sdlka.zip,False,,
+sri-lanka-contour-lines,lka_contourl_250k_sdlka.zip,False,,
+sri-lanka-water-bodies-0,lka_laga_250k_sdlka.zip,True,,
+sri-lanka-water-bodies-0-0,lka_rapidsl_rvr_250k_sdlka.zip,False,,
+bangladesh-roads,bgd_trs_roads_lged.zip,False,,
+bangladesh-contour-lines,bgd_Elevation.zip,False,,
+bangladesh-railways,bgd_trs_railways_lged.zip,False,,
+bangladesh-aerodromes,bgd_trs_airports_lged.zip,False,,
+bangladesh-settlements-0,bgd_majtowns.zip,False,,
+bangladesh-settlements-0,bgd_phy_settlements_lged.zip,False,,
+bangladesh-water-bodies,bgd_hyd_wetlands_lged.zip,False,,
+bangladesh-water-bodies,bgd_hyd_ponds_lged.zip,False,,
+bangladesh-water-courses,bgd_watcrsa_1m_iscgm.zip,False,,
+bangladesh-water-courses,bgd_hyd_rivers_lged.zip,False,,
+thailand-roads,trans.zip,False,,
+thailand-water-bodies-water-courses,water.zip,False,,
+dpr-korea-settlements,prk_pplp_osm.zip,False,,
+dpr-korea-roads,prk_rdsl_osm_edit.zip,False,,
+dpr-korea-water-bodies,prk_watcrsa_osm.zip,False,,
+dpr-korea-water-courses,prk_watcrsl_osm.zip,False,,
+dpr-korea-settlements-0,prk_pplp_wfp.zip,False,,
+dpr-korea-contour-lines,prk_contourl_vmap.zip,False,,
+dpr-korea-railways,prk_rlwl_vmap.zip,False,,
+dpr-korea-aerodromes,prk_aerofacp_vmap.zip,False,,
+viet-nam-roads,vnm_rdsl_2015_OSM.zip,False,,
+viet-nam-railways,vnm_rlwl_2015_OSM.zip,False,,
+viet-nam-aerodromes,vnm_airdrmp_1m_iscgm.zip,False,,
+viet-nam-settlements,vnm_pplp_2015_OSM.zip,False,,
+cambodia-settlements,settlements.zip,False,,
+cambodia-population-statistics-0,khm_popdenr_landscan_2011.zip,,,geotiff can't be p-coded
+cambodia-roads,khm_rdsl_gov.zip,False,,
+cambodia-railways,khm_rlwl_gov.zip,False,,
+cambodia-water-courses-0,river.zip,False,,
+cambodia-canals,khm_canall_gov.zip,False,,
+bhutan-roads,btn_rdsl_2015_osm.zip,False,,
+bhutan-roads,btn_rdsl_bgp.zip,False,,
+bhutan-aerodromes,btn_airdrmp_airp_gdisc.zip,False,,
+bhutan-water-courses,btn_watcrsl_rvr_2015_osm.zip,False,,
+bhutan-settlements,btn_pplp_2015_osm.zip,False,,
+bhutan-settlements,btn_pplp_gdisc.zip,False,,
+papua-new-guinea-contour-lines,png_CENTRAL_contour1_2000_nmb.zip,False,,
+papua-new-guinea-water-courses,png_watcrsl1_rvr_2000_nso_edit.zip,False,,
+papua-new-guinea-roads,png_rdsl_2014_osm.zip,False,,
+papua-new-guinea-roads,png_rdsl_2000_nmb.zip,False,,
+mongolia-water-bodies,Mongolia_Inland_Waters_and_Lakes.zip,False,,
+mongolia-settlements,Mongolia_Populated_Places.zip,False,,
+mongolia-roads,Mongolia_Roads.zip,False,,
+mongolia-water-courses,Mongolia_River.zip,False,,
+mongolia-railways,Mongolia_Railroads.zip,False,,
+mongolia-aerodromes,Mongolia_Airports.zip,False,,
+mongolia-settlements-0,Mongolia_Urban_areas.zip,False,,
+mongolia-roads-0,Mongolia_MainRoads_in_ Ulaanbaatar.zip,False,,
+mongolia-water-courses-0,Mongolia_Rivers_of_Ulaanbaatar.zip,False,,
+mongolia-roads-0-0,Mongolia_Major_roads.zip,False,,
+cod-ab-mdg,mdg_gazetteer_20181031.xls,True,,
+cod-ab-mdg,mdg_adm_BNGRC_OCHA_20181031_SHP.zip,True,,
+cod-ab-mdg,mdg_admbnda_adm0_BNGRC_OCHA_20181031.emf,,,emf can't be p-coded
+cod-ab-mdg,mdg_admbnda_adm1_BNGRC_OCHA_20181031.emf,,,emf can't be p-coded
+cod-ab-mdg,mdg_admbnda_adm2_BNGRC_OCHA_20181031.emf,,,emf can't be p-coded
+cod-ab-mdg,mdg_admbnda_adm3_BNGRC_OCHA_20181031.emf,,,emf can't be p-coded
+cod-ab-mdg,mdg_admbnda_adm4_BNGRC_OCHA_20181031.emf,,,emf can't be p-coded
+cod-ab-mdg,mdg_admbndl_all_BNGRC_OCHA_20181031.zip,,,
+cod-ab-mdg,mdg_cod_metadata_20181031.pdf,,,pdf can't be p-coded
+cod-ab-mdg,BNGRC_codes_LUT_pcodes_2018.xlsx,True,,
+madagascar-settlements,mdg_pplp_places_nga_ocha.zip,False,,
+madagascar-settlements,mdg_pplp_places_nga_ocha_metadata.txt,,,txt can't be p-coded
+madagascar-settlements,mdg_pplp_places_nga_ocha_table.xlsx,False,True,
+madagascar-elevation-model,mdg_msk_alt.zip,,,arc/info grid can't be p-coded
+namibia-contour-lines,Elevations and Relief,False,,
+zimbabwe-elevation-model,pa_srtm_dem_all.zip,,,xml can't be p-coded
+zimbabwe-settlements,zwe_settlements_250k_cso.zip,False,,
+philippines-water-courses,phl_rivl_250k_NAMRIA.zip,False,,
+niger-elevation-model,ner_dem_ne.zip,,,
+niger-roads,roads.zip,False,,
+niger-settlements,NER_settlements.zip,,,
+niger-settlements,Niger_pplp_ocha_itos.zip,True,,
+cote-d-ivoire-settlements,civ_pplp_cntig_ocha.zip,True,,
+cote-d-ivoire-roads,route.zip,False,,
+cote-d-ivoire-railways,rails.zip,False,,
+cote-d-ivoire-water-bodies,plan_deau.zip,False,,
+cote-d-ivoire-water-courses,cours_deau.zip,False,,
+dr-congo-settlements,Localite.zip,False,,
+dr-congo-transportation-network,axe_navigable.zip,False,,
+dr-congo-transportation-network,Airport_p.zip,False,,
+dr-congo-transportation-network,bac.zip,False,,
+dr-congo-transportation-network,Gare_p.zip,False,,
+dr-congo-transportation-network,pont.zip,False,,
+dr-congo-transportation-network,Port_p.zip,True,,
+dr-congo-transportation-network,route.zip,False,,
+dr-congo-transportation-network,Railway_l.zip,False,,
+dr-congo-hydrology,cascade.zip,False,,
+dr-congo-hydrology,Hydrology_l.zip,False,,
+dr-congo-hydrology,Hydrology_a.zip,False,,
+dr-congo-hydrology,Lac_a.zip,False,,
+chad-aerodromes,aeroports.zip,False,,
+chad-aerodromes,tcd_p_trs_airports_wfp_2020.zip,False,,
+bolivia-railways,transportation_network_vias_ferreas.zip,False,,
+bolivia-roads,transportation_network_red_secundaria.zip,False,,
+bolivia-roads-0,transportation_network_red_principal.zip,False,,
+bolivia-aerodromes,aeropuertos.zip,False,,
+bolivia-settlements,Bolivia Lugares poblados-2012.zip,False,,
+honduras-settlements,casas_e_instalaciones.zip,False,,
+haiti-water-courses,hti_rvrl_cnigs.zip,False,,
+haiti-water-courses,hti_dom_watcrsl_rvr_osm.zip,False,,
+haiti-ports,hit_prtp_wfp.zip,False,,
+haiti-water-bodies,hti_lakersa_cnigs.zip,False,,
+haiti-roads,hti_polbndl_rd_CNIGS_2019.zip,False,,
+haiti-roads,hti_polbndl_rd_CNIGS.zip,False,,
+haiti-roads,hti_polbndl_rd_cnigs.xlsx,False,True,
+central-african-republic-elevation-model-41-10-to-41-12,srtm_41.rar,,,geotiff can't be p-coded
+central-african-republic-elevation-model-41-10-to-41-12,srtm_40.rar,,,geotiff can't be p-coded
+central-african-republic-roads,car_data_140731_roads.zip,False,,
+central-african-republic-settlements,CAF_SETTLEMENTS_SIGCAF.ZIP,False,,
+central-african-republic-settlements,CAF_pcode_rowca_20150115.xlsx,False,True,
+central-african-republic-water-bodies-0,Cours_deau.zip,False,,
+pakistan-settlements,world-gazetteer_pakistan_major_cities_population_0.xls,False,True,
+yemen-roads,ymn-roads.zip,False,,
+yemen-ports,ymn-seaport.zip,False,,
+yemen-water-bodies,wadies.zip,False,,
+cod-ps-tjk,tjk_admpop_2019.xlsx,False,False,
+cod-ps-tjk,tjk_admpop_adm1_2022.csv,False,False,
+cod-ps-tjk,tjk_admpop_adm0_2022.csv,False,False,
+settlements,BFA_populated_places,True,,
+settlements,bfa_pplp_1m_nga_ocha.zip,True,,
+mrt-settlements,MRT_ppl_1m_NGA.zip,False,,
+mrt-settlements,MRT_PopulatedPlaces_TabularData.xlsx,False,False,
+syrian-arab-republic-water-bodies,waterways_line_osm.zip,False,,
+syrian-arab-republic-water-bodies,natural_polygons_osm_0.zip,False,,
+state-of-palestine-admin-level-2-boundaries,PalestinianCommunities_WB_GS.zip,False,,
+state-of-palestine-admin-level-2-boundaries,PalestinianCommunities_WB_GS_Excel.xlsx,False,True,
+state-of-palestine-transportation-network,CrossingPoints.zip,False,,
+state-of-palestine-water-bodies,P_Hydrography.zip,False,,
+state-of-palestine-water-bodies,L_Hydrography.zip,False,,
+sudan-settlements,sd_settlements_17012016_zipped shapefile (854kb).zip,True,,
+sudan-roads,Roads,False,,
+sudan-aerodromes,Airfileds,False,,
+tunisia-population-statistics,tab7_fr_delegation_estimation_01 january 2013.xls,False,False,
+cod-ps-tun,TUN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-tun,tun_admpop_2020.xlsx,True,,
+cod-ps-tun,tun_admpop_adm0_2020.csv,False,False,
+cod-ps-tun,tun_admpop_adm1_2020.csv,True,,
+cod-ps-tun,tun_admpop_adm2_2020.csv,True,,
+libya-elevation-model,srtm_90m_dem_for_libya_download_links.kmz,,,kmz can't be p-coded
+libya-elevation-model,DEM.zip,,,geotiff can't be p-coded
+iraq-water-bodies,water_bodies_0.zip,False,,
+iraq-water-courses,river_line.zip,False,,
+iraq-water-courses,river_poly.zip,False,,
+iraq-roads,roads_polyline.zip,False,,
+iraq-roads,primary_routes.zip,False,,
+lebanon-settlements-villages-towns-cities,lebanon_villages.zip,False,,
+settlements-villages-towns-cities,irq_pplp_ocha_20140722.zip,False,,
+south-sudan-settlement-data,SSD_PopulatedPlaces_TabularData.xlsx,False,True,
+south-sudan-settlement-data,SS_PopulatedPlaces.zip,False,,
+south-sudan-settlement-data,SSD_PopulatedPlaces.zip,,,
+south-sudan-settlement-data,SSD_PopulatedPlaces_Supporting_Info_gdb_2016.zip,False,,
+cod-ab-grc,GR_bsm_admn_adm_py_EuroGeoGraphics_2015_pp.zip,False,,
+cod-ab-grc,GRC_Adm.xlsx,False,False,
+cod-ab-mkd,MKD_admn.xls,False,False,
+cod-ab-mkd,MKD_admn_adm_py_EuroGeographics-NTES_pp.zip,False,,
+chad-gis-geodatabase,TCD_GeoDB_OCHA_20170421.gdb.zip,True,,
+chad-gis-geodatabase,TCD_GeoDB_OCHA_metadata.txt,,,txt can't be p-coded
+chad-gis-geodatabase,TCD_GeoDB_OCHA_20161101.gdb.zip,False,,
+chad-gis-geodatabase,TCD_GeoDB_OCHA_20160619.gdb.zip,True,,
+chad-gis-geodatabase,tcd_admbnda_adm1_ocha.zip,False,,
+chad-gis-geodatabase,tcd_admbnda_adm2_ocha.zip,False,,
+roads-network,Ethiopia_roads_network.zip,False,,
+philippines-pre-disaster-indicators,210127_Health (facility type)_my municipality.xlsx,False,False,
+philippines-pre-disaster-indicators,190118_Health (facility type)_by municipality.xlsx,True,,
+philippines-pre-disaster-indicators,180814_health (personnel)_by city_municipality.xlsx,True,,
+philippines-pre-disaster-indicators,180814_number of household_by city_municipality.xlsx,True,,
+philippines-pre-disaster-indicators,180814_number of barangay_by city_municipality.xlsx,True,,
+philippines-pre-disaster-indicators,180814_construction materials of the outer walls and roof_by city_municipality.xlsx,True,,
+philippines-pre-disaster-indicators,180814_source of water supply for drinking_by city_municipality.xlsx,True,,
+philippines-pre-disaster-indicators,180814_kind of toilet facility_by city_municipality.xlsx,True,,
+philippines-pre-disaster-indicators,180814_number of evacuation center_by city_municipality.xlsx,True,,
+philippines-pre-disaster-indicators,190118_DepEd_number of schools and enrolment (with sex disaggregation)_by municipality.xlsx,True,,
+philippines-pre-disaster-indicators,190108_pantawid pamilya beneficiary households and household members by sex and age group.xlsx,True,,
+philippines-pre-disaster-indicators,180814_Philippines Population Admin 1 to 3_2015_vertical.xlsx,True,,
+philippines-pre-disaster-indicators,180723_PSGC Code as March 2018.xlsx,True,,
+philippines-pre-disaster-indicators,180814_vulnerable groups_by city_municipality.xlsx,True,,
+cod-ab-bhs,BHS_adm0_gdams_2009.zip,False,,
+cod-ab-bhs,BHS_adm1_GDAMS_2009.zip,False,,
+cod-ab-bhs,bhs_gazetteer.xls,False,False,
+cod-ab-bhs,bhs_adm_EMF.zip,,,emf can't be p-coded
+philippines-elevation-model,PHL_msk_alt.zip,,,arc/info grid can't be p-coded
+nigeria-roads-data-from-osm,Roads_NGA.zip,False,,
+nigeria-railways-data-from-osm,Railways_NGA.zip,False,,
+nigeria-waterways,Nigeria_Waterways.zip,False,,
+laos-populated-places,lao_pop_population_mpi2005.zip,False,,
+cod-ab-tur,tur_adm_2022_WGS_84.gdb.zip,True,,
+cod-ab-tur,turkey_administrativelevels0_1_2.zip,False,,
+cod-ab-tur,turkey_centeralpoints_1_2.zip,True,,
+cod-ab-tur,Common operational Dataset.xlsx,True,,
+turkey-rivers,Turkey_Rivers_1m.zip,False,,
+turkey-refugee-camps,Turkey_Refugee_Camps.zip,True,,
+settlements-in-turkey,Turkey_Settlements_3.zip,,,Could not unzip resource Turkey_Settlements_3.zip
+settlements-in-turkey,Turkey_Settlements_4.zip,,,Could not unzip resource Turkey_Settlements_4.zip
+sierra-leone-settlements,sle_pplp_nga_20170523.zip,True,,
+sierra-leone-settlements,SLE_PopulatedPlaces_TabularData.xlsx,True,,
+sierra-leone-settlements,Sierra Leone Map Server Populated Places,,,geoservice can't be p-coded
+transportation-libya-cods,Roads,False,,
+transportation-libya-cods,Ports,False,,
+transportation-libya-cods,Railways,False,,
+transportation-libya-cods,Airport,False,,
+river-network-libya-cods,River,False,,
+algeria-transportation-network,DZA_TRS_Airport.zip,False,,
+algeria-transportation-network,DZA_TRS_Roads.zip,False,,
+algeria-transportation-network,DZA_TRS_Railways.zip,False,,
+algeria-transportation-network,DZA_TRS_Ports.zip,False,,
+algeria-elevation-model,DZA_DEM.zip,,,geotiff can't be p-coded
+cod-ab-bhr,Admin 0,False,,
+cod-ab-bhr,Admin 1,False,,
+cod-ab-bhr,Capitals,False,,
+cod-ab-bhr,Populated Places,False,,
+cod-ab-bhr,bhr_adm_EMF.zip,,,emf can't be p-coded
+bahrain-transportation-network,Airports,False,,
+bahrain-transportation-network,Roads,False,,
+bahrain-transportation-network,Ports,False,,
+kuwait-transportation-network,Airports,False,,
+kuwait-transportation-network,Roads,False,,
+kuwait-transportation-network,Railways,False,,
+kuwait-transportation-network,Ports,False,,
+kuwait-river-network,River Network,False,,
+morocco-transportation-network,Airports,False,,
+morocco-transportation-network,Roads,False,,
+morocco-transportation-network,Railways,False,,
+morocco-transportation-network,Ports,False,,
+morocco-river-network,River Network,False,,
+oman-transportation-network,Airports,False,,
+oman-transportation-network,Roads,False,,
+oman-transportation-network,Ports,False,,
+oman-river-network,River Network,False,,
+cod-ab-qat,Admin 0,False,,
+cod-ab-qat,Admin 1,False,,
+cod-ab-qat,Capitals,False,,
+cod-ab-qat,Populated Places,False,,
+cod-ab-qat,QAT_EMF.zip,,,emf can't be p-coded
+qatar-transportation-network,Airports,False,,
+qatar-transportation-network,Roads,False,,
+qatar-transportation-network,Ports,False,,
+saudi-arabia-transportation-network,Airports,False,,
+saudi-arabia-transportation-network,Roads,False,,
+saudi-arabia-transportation-network,Railways,False,,
+saudi-arabia-transportation-network,Ports,False,,
+cod-ab-tun,TUN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-tun,tun_adm_ins_20221115_SHP.zip,True,,
+cod-ab-tun,tun_adm_ins_20221115_GDB.gdb.zip,True,,
+cod-ab-tun,tun_adm_ins_20221115_EMF.zip,,,emf can't be p-coded
+cod-ab-tun,COD_External/TUN_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-tun,COD_External/TUN_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-tun,COD_External/TUN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-tun,COD_External/TUN_pcode (FeatureServer),,,geoservice can't be p-coded
+tunisia-transportation-network,Airports,False,,
+tunisia-transportation-network,Roads,False,,
+tunisia-transportation-network,Railways,False,,
+tunisia-transportation-network,Ports,False,,
+tunisia-river-network,River Network,False,,
+cod-ab-are,Admin0.zip,False,,
+cod-ab-are,Admin1.zip,False,,
+cod-ab-are,Capitals,False,,
+cod-ab-are,Populated Places,False,,
+uae-transportation-network,Airports,False,,
+uae-transportation-network,Roads,False,,
+uae-transportation-network,Railways,False,,
+uae-transportation-network,Ports,False,,
+morocco-elevation-model,MAR_DEM.zip,,,geotiff can't be p-coded
+tunisia-elevation-model,DEM.zip,,,geotiff can't be p-coded
+gulf-countries-elevation-model,DEM.zip,,,geotiff can't be p-coded
+western-sahara-transportation-network,eh-airports.csv,False,True,
+western-sahara-transportation-network,Ports.zip,False,,
+western-sahara-transportation-network,Roads.zip,False,,
+western-sahara-transportation-network,Railways.zip,False,,
+cod-ab-tjk,Tajikistan administrative division_v2.1.xlsx,True,,
+cod-ab-tjk,TJK_Administrative_division_and_Pcoding_system_2017_05_17.pdf,,,pdf can't be p-coded
+cod-ab-tjk,ОКАТО_from_Statistics_January_2017.xls,False,False,
+rdc-statistiques-des-populations,POPULATION 2019-2020.xlsx,True,,
+rdc-statistiques-des-populations,drc_zs_population_2019_2020.xlsx,True,,
+rdc-statistiques-des-populations,RDC_Zone_de_sante_04012019.zip,False,,
+rdc-statistiques-des-populations,RGC_as_equateur.zip,False,,
+rdc-statistiques-des-populations,RGC_zs_equateur.zip,False,,
+rdc-statistiques-des-populations,rdc_zone_de_sante_lignes_20210216.zip,False,,
+lebanon-municipalities-list,LBN_Municipality_List by cadastral_02052017.xlsx,True,,
+palestinian-gatherings,LBN_Palestinian Gatherings_02052017.xlsx,False,False,
+palestinian-camp-in-lebanon,LBN_Palestinian_Camps_in_Lebanon_02052017.xlsx,False,False,
+lebanon-primary-health-care-centers-phcs,LBN_Primary Health Care Center_02052017.xlsx,True,,
+lebanon-public-schools-and-unrwa-schools-for-palestine-refugees,LBN_Public_Schools_&_UNRWA_Schools_02052017.xlsx,False,True,
+lebanon-secondary-health-care-centers,LBN_Secondary Health Care Centers_04052017.xls,True,,
+lebanon-social-development-centers-sdcs,LBN_Social Development Centers_04052017.xls,True,,
+syrian-refugees-collective-centers-in-lebanon,LBN_Syrian Refugees CollectiveShelters_02052017.xls,True,,
+lebanon-villages-settlements,LBN_villages-Localities_List_02052017.xlsx,True,,
+guinea-settlement,gin_pplp_ocha_itos.zip,False,,
+cod-ab-aze,aze_admGZ_2018.xlsx,True,,
+cod-ab-aze,aze_adm_2020_SHP.zip,True,,
+cod-ab-aze,aze_adm_2020_EMF.zip,,,emf can't be p-coded
+cod-ab-aze,aze_adm_2020_GDB.gdb.zip,False,,
+cod-ab-arm,arm_gazetteer_2019.xlsx,,,
+cod-ab-arm,arm_adm_2029_SHP.zip,False,,
+cod-ab-arm,arm_admbnda_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-arm,arm_adm_2019.gdb.zip,True,,
+cod-ps-aze,azerbaijan_population_statistics_2018_v2.xlsx,False,False,
+cod-ps-aze,aze_admpop_adm0_2018.csv,False,False,
+cod-ps-aze,aze_admpop_adm1_2018.csv,False,False,
+cod-ps-aze,aze_admpop_adm2_2018.csv,False,False,
+cod-ab-kaz,kaz_admgz_unhcr_2023.xls,,,
+cod-ab-kaz,kaz_adm_unhcr_2023_SHP.zip,True,,
+cod-ab-kaz,kaz_adm_unhcr_2023_GDB.gdb.zip,False,,
+burundi-health-district-boundaries,bdi_admin2_healthdistricts_ocha-bdi-2020.zip,False,,
+burundi-health-district-boundaries,BDI_Admin2_HealthDistricts_OCHA BDI 2018.zip,True,,
+cod-ps-kgz,kyrgyzstan_population_statistics_2018.xlsx,False,False,
+cod-ps-kgz,kyrgyzstan_population_statistics_2018_adm1_v2.csv,,False,Unable to read resource kyrgyzstan_population_statistics_2018_adm1_v2.csv
+cod-ps-kgz,kyrgyzstan_population_statistics_2018_adm2_v2.csv,,False,Unable to read resource kyrgyzstan_population_statistics_2018_adm2_v2.csv
+cod-ab-pri,pri_adm_2019.xlsx,True,,
+cod-ab-pri,pri_adm_2019_SHP.zip,False,,
+cod-ab-pri,pri_adm_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-pri,pri_adm_gdb.zip,False,,
+puerto-rico-roads,tl_2013_72_prisecroads.zip,False,,
+cod-ab-atg,atg_adm_gazetteer_2019.xlsx,False,False,
+cod-ab-atg,atg_adm_2019_SHP.zip,False,,
+cod-ab-atg,atg_adm_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-atg,atg_adm_2019.gdb.zip,False,,
+cod-ab-brb,brb_adm_gz.xlsx,True,,
+cod-ab-brb,brb_adm_2019_shp.zip,False,,
+cod-ab-brb,brb_adm_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-brb,brb_adm_2019.gdb.zip,False,,
+cod-ab-cub,cub_adm_gazetteer.xlsx,True,,
+cod-ab-cub,cub_adma_2019_SHP.zip,False,,
+cod-ab-cub,cub_adm_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-cub,cub_adm_2019.gdb.zip,False,,
+cod-ab-dma,dma_admgz_2019.xls,,,
+cod-ab-dma,dma_admn_adm0_py_s1_dominode_v2.zip,False,,
+cod-ab-dma,dma_admn_adm1_py_s1_dominode.zip,True,,
+cod-ab-dma,dma_admbndl_ALL_py_s1_dominode.zip,False,,
+cod-ab-dma,dma_admn_py_s1_dominode_v2_EMF.zip,,,emf can't be p-coded
+cod-ab-glp,glp_adm_2019.xlsx,True,,
+cod-ab-glp,glp_adm_2019_SHP.zip,False,,
+cod-ab-glp,glp_adm_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-glp,glp_adm_2019.gdb.zip,True,,
+cod-ab-abw,abw_admbnda_adm0_2020.zip,False,,
+cod-ab-abw,abw_admbnda_adm0_2020.emf,,,emf can't be p-coded
+cod-ab-aia,AIA_adm0.zip,False,,
+cod-ab-aia,gadm36_AIA_0.emf,,,emf can't be p-coded
+cod-ab-tto,tto_adm_gazetteer_v2.xls,True,,
+cod-ab-tto,TTO_adm0.zip,False,,
+cod-ab-tto,tto_adm1_v2.zip,True,,
+cod-ab-tto,tto_adm_lines_v2.zip,False,,
+cod-ab-tto,tto_adm_EMF.zip,,,emf can't be p-coded
+cod-ab-blm,BLM_adm0.zip,False,,
+cod-ab-blm,BLM_adm0.emf,,,emf can't be p-coded
+cod-ab-cuw,CUW_adm0.zip,False,,
+cod-ab-cuw,cuw_gz.xlsx,True,,
+cod-ab-cuw,gadm36_CUW_0.emf,,,emf can't be p-coded
+cod-ab-cym,cym_admgz_2020.xlsx,True,,
+cod-ab-cym,cym_adm_2020_SHP.zip,False,,
+cod-ab-cym,cym_adm_2020_EMF.zip,,,emf can't be p-coded
+cod-ab-cym,cym_adm_2020.gdb.zip,False,,
+cod-ab-grd,GRD_adm0.zip,False,,
+cod-ab-grd,GRD_adm1.zip,False,,
+cod-ab-grd,grd_admbndl_ALL.zip,False,,
+cod-ab-grd,GRD_adm_EMF.zip,,,emf can't be p-coded
+cod-ab-grd,grd_admgz_2020.xlsx,True,,
+cod-ab-kna,kna_admgz_2020.xlsx,True,,
+cod-ab-kna,kna_adm_2020_SHP.zip,False,,
+cod-ab-kna,kna_adm_2020_EMF.zip,,,emf can't be p-coded
+cod-ab-kna,kna_adm_2020.gdb.zip,False,,
+cod-ab-lca,lca_adm_gazetteer.xlsx,True,,
+cod-ab-lca,lca_admbnda_gov_2019_SHP.zip,False,,
+cod-ab-lca,lca_adm_gov_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-lca,lca_adm_gov_2019.gdb.zip,False,,
+cod-ab-jam,jam_adm.xlsx,True,,
+cod-ab-jam,jam_adm_SHP.zip,True,,
+cod-ab-jam,jam_adm.gdb.zip,False,,
+cod-ab-jam,jam_adm_EMF.zip,,,emf can't be p-coded
+cod-ab-msr,msr_adm_gz.xlsx,True,,
+cod-ab-msr,msr_adm_gadm_SHP.zip,False,,
+cod-ab-msr,msr_adm_gadm_EMF.zip,,,emf can't be p-coded
+cod-ab-msr,msr_adm_gadm.gdb.zip,False,,
+cod-ab-tca,tca_admbnda_gadm_SHP.zip,True,,
+cod-ab-tca,tca_admbnda_gadm_EMF.zip,,,emf can't be p-coded
+cod-ab-tca,tca_gazetteer.xlsx,True,,
+cod-ab-vgb,vgb_adm_2020_SHP.zip,False,,
+cod-ab-vgb,vgb_adm_2020_EMF.zip,,,emf can't be p-coded
+cod-ab-vgb,vgb_adm_2020.gdb.zip,False,,
+cod-ab-vgb,vgb_admgz_2020.xlsx,True,,
+cod-ab-bes,BES_adm0.zip,False,,
+cod-ab-bes,bes_adm1.zip,False,,
+cod-ab-bes,bes_adm_EMF.zip,,,emf can't be p-coded
+cod-ab-vir,vir_adm_2020.xls,False,False,
+cod-ab-vir,vir_adm_2019_SHP.zip,False,,
+cod-ab-vir,vir_adm_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-vir,vir_adm_2019.gdb.zip,False,,
+cod-ab-mtq,mtq_adm_gz_2016_ignf.xlsx,True,,
+cod-ab-mtq,mtq_adm_2016_ignf_SHP.zip,False,,
+cod-ab-mtq,mtq_adm_2016_ignf_EMF.zip,,,emf can't be p-coded
+cod-ab-mtq,mtq_adm_2016_ignf_GDB.gdb.zip,False,,
+cod-ab-maf,MAF_adm0.zip,False,,
+cod-ab-maf,MAF_adm0.emf,,,emf can't be p-coded
+dominica-populated-places,dma_stle_stl_pt_s1_dominode_pp_V4.zip,True,,
+cod-ab-bmu,bmu_gazetteer.xlsx,True,,
+cod-ab-bmu,bmu_adm_2019_SHP.zip,False,,
+cod-ab-bmu,bmu_adm_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-vct,vct_admbnda_2021_shp.zip,False,,
+cod-ab-vct,vct_admbnda_2021_EMF.zip,,,emf can't be p-coded
+cod-ab-vct,vct_admbnda_2021.gdb.zip,False,,
+cod-ab-vct,vct_admgz_2021.xlsx,True,,
+cod-ps-egy,egypt_population_estimate_compas_2012_v1.1_0_fis_v2.xlsx,True,,
+cod-ps-egy,egypt_population_estimate_compas_2012_v1.1_0_fis_v2.csv,True,,
+cod-ab-guy,guy_admgz_2021.xlsx,True,,
+cod-ab-guy,guy_admbnd_2021_SHP.zip,True,,
+cod-ab-guy,guy_admbnd_2021_EMF.zip,,,emf can't be p-coded
+cod-ab-guy,guy_admbnda_2021.gdb.zip,False,,
+cod-ab-sur,sur_gz_adm_2017.xls,True,,
+cod-ab-sur,sur_adm_2017_SHP.zip,False,,
+cod-ab-sur,sur_adm_2017_EMF.zip,,,emf can't be p-coded
+cod-ab-sur,sur_adm_2017.gdb.zip,False,,
+cod-ab-guf,guf_admbgz_ign.xls,True,,
+cod-ab-guf,guf_adm_ign_SHP.zip,False,,
+cod-ab-guf,guf_adm_ign_EMF.zip,,,emf can't be p-coded
+cod-ab-guf,guf_adm_ign_GDB.gdb.zip,False,,
+cod-ab-ury,ury_admgaz_2020.xlsx,True,,
+cod-ab-ury,ury_adm_2020_SHP.zip,False,,
+cod-ab-ury,ury_adm_2020_EMF.zip,,,emf can't be p-coded
+cod-ab-ury,ury_adm_2020.gdb.zip,False,,
+cod-ab-pry,pry_admgz_DGEEC_2020.xlsx,True,,
+cod-ab-pry,pry_adm_DGEEC_2020_SHP.zip,False,,
+cod-ab-pry,pry_adm_DGEEC_2020_EMF.zip,,,emf can't be p-coded
+cod-ab-pry,pry_adm_gadm_GDB.gdb.zip,False,,
+cod-ab-arg,arg_admgz.xlsx,True,,
+cod-ab-arg,arg_adm_unhcr2017_SHP.zip,False,,
+cod-ab-arg,arg_adm_unhcr2017_EMF.zip,,,emf can't be p-coded
+cod-ab-arg,arg_adm_unhcr2017_EMF.zip,,,
+cod-ab-bra,bra_admgz_ibge_2020.xlsx,True,,
+cod-ab-bra,bra_adm_ibge_2020_SHP.zip,True,,
+cod-ab-bra,bra_adm_ibge_2020_EMF.zip,,,emf can't be p-coded
+cod-ab-bra,bra_adm_ibge_2020.gdb.zip,False,,
+yemen-humanitarian-needs-overview,YEM_TRG_2023.xlsx,True,,
+yemen-humanitarian-needs-overview,YEM_PIN_2023.xlsx,True,,
+yemen-humanitarian-needs-overview,yemen_hno_2022_clusters-intersectoral-severity_dataset-with-said.xlsx,True,,
+yemen-humanitarian-needs-overview,yemen_hrp_2022_clusters-intersectoral-severity_dataset.xlsx,True,,
+yemen-humanitarian-needs-overview,Yemen PIN per Sector - 2022,,False,Unable to read resource Yemen PIN per Sector - 2022.csv
+yemen-humanitarian-needs-overview,yemen_HNO_2021_Clusters Intersectoral Severity_dataset.xlsx,True,,
+yemen-humanitarian-needs-overview,yemen_HRP_2021_Clusters Intersectoral Severity_dataset.xlsx,True,,
+yemen-humanitarian-needs-overview,yemen_HNO_2021_Intersectoral Severity(JIAF)_dataset.xlsx,True,,
+yemen-humanitarian-needs-overview,yemen_HNO_2021_population_dataset.xlsx,True,,
+yemen-humanitarian-needs-overview,Yemen PIN per Sector - 2021,,False,Unable to read resource Yemen PIN per Sector - 2021.csv
+yemen-humanitarian-needs-overview,yemen_pin_severity_hno_2019.xlsx,True,,
+yemen-humanitarian-needs-overview,2019_Yemen_HNO.xlsx,False,False,
+yemen-humanitarian-needs-overview,yemen_target_pin_severity_hrp_2019.xlsx,True,,
+yemen-humanitarian-needs-overview,yemen_pin_severity_hno_2018.xlsx,True,,
+cours-d-eau-caf,caf_watcrsl_rvr_200k_parpaf.zip,False,,
+maldives-airports,MDV_OCHA_Airports.zip,False,,
+cabo-verde-roads,cpv_rdsl_1m_dcw.zip,False,,
+cabo-verde-water-courses,cpv_rvrl_dcw.zip,False,,
+cod-ab-chn,chn_admgz_2020.xlsx,True,,
+cod-ab-chn,chn_adm_ocha_2020_SHP.zip,True,,
+cod-ab-chn,chn_adm_ocha_2020_EMF.zip,,,emf can't be p-coded
+cod-ab-chn,chn_adm_ocha_2020.gdb.zip,False,,
+province-and-prefecture-capitals-of-china,CHN_Prefecture_capitals.zip,False,,
+province-and-prefecture-capitals-of-china,CHN_Province_capitals.zip,False,,
+cod-ab-slb,slb_adm.xls,True,,
+cod-ab-slb,slb_polbnda.zip,,,
+cod-ab-slb,slb_admbnda_adm0.zip,False,,
+cod-ab-slb,slb_admbnda_adm1.zip,True,,
+cod-ab-slb,slb_admbnda_adm2.zip,True,,
+cod-ab-slb,slb_admbnda_adm3.zip,True,,
+cod-ab-slb,slb_adm_EMF.zip,,,emf can't be p-coded
+cod-ps-tls,TLS_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-tls,tls_admpop_2022.xlsx,True,,
+cod-ps-tls,tls_admpop_adm0_2022.csv,False,False,
+cod-ps-tls,tls_admpop_adm1_2022.csv,True,,
+mexican-populated-places,mex_admbndp_adm_govmex.zip,True,,
+mexican-populated-places,mex_popp_govemex_administrative_hierarchy.xlsx,True,,
+cod-ab-ton,ton_admbnda_adm1_2022_v2.zip,True,,
+cod-ab-ton,ton_admbnda_adm0_2022_v2.zip,False,,
+cod-ab-ton,ton_polbnda.zip,,,
+cod-ab-ton,ton_polbnda_adm0_country.zip,False,,
+cod-ab-ton,ton_polbnda_adm1_division.zip,True,,
+cod-ab-ton,ton_polbnda_adm2_district.zip,True,,
+cod-ab-ton,ton_polbnda_adm3_village.zip,True,,
+cod-ab-ton,ton_Admin_Boundary_taxonomy_Metadata.xlsx,True,,
+cod-ab-tza,tza_admbnda_adm0_20181019.zip,False,,
+cod-ab-tza,tza_admbnda_adm0_20181019.emf,,,emf can't be p-coded
+cod-ab-tza,tza_admbnda_adm1_20181019.zip,True,,
+cod-ab-tza,tza_admbnda_adm1_20181019.emf,,,emf can't be p-coded
+cod-ab-tza,tza_admbnda_adm2_20181019.zip,True,,
+cod-ab-tza,tza_admbnda_adm2_20181019.emf,,,emf can't be p-coded
+cod-ab-tza,tza_admbnda_adm3_20181019.zip,True,,
+cod-ab-tza,tza_admbnda_adm3_20181019.emf,,,emf can't be p-coded
+cod-ab-tza,tza_admbndl_ALL_20181019.zip,False,,
+syrian-arab-republic-populated-places,syr_pplp_adm4_unocha_20180226.zip,True,,
+syrian-arab-republic-populated-places,syr_pplp_adm4_unocha_20180226.zip,True,,
+syrian-arab-republic-populated-places,SYR_PopulatedPlaces_TabularData.xlsx,True,,
+syrian-arab-republic-populated-places,syr_pplp_adm4_unocha_20180226.kmz,,,kml can't be p-coded
+cod-ps-ner,ner_admgz_2022.xls,,,
+cod-ps-ner,ner_admpop_2022.xlsx,True,,
+cod-ps-ner,ner_admpop_adm0_2022.csv,False,False,
+cod-ps-ner,ner_admpop_adm1_2022.csv,True,,
+cod-ps-ner,ner_admpop_adm2_2022.csv,True,,
+cod-ps-ner,ner_admpop_adm3_2022.csv,True,,
+cod-ab-uzb,uzb_adm_2018.xls,True,,
+cod-ab-uzb,uzb_admbnda_adm0_2018b.zip,False,,
+cod-ab-uzb,uzb_admbnda_adm1_2018b.zip,True,,
+cod-ab-uzb,uzb_admbnda_adm2_2018b.zip,True,,
+cod-ab-uzb,uzb_admbndl_ALL_gov.zip,False,,
+cod-ab-uzb,uzb_adm_2018b_EMF.zip,,,emf can't be p-coded
+cod-ab-mhl,mhl_Admin_Boundary_taxonomy_Metadata.xlsx,True,,
+cod-ab-mhl,mhl_admbnda.zip,False,,
+cod-ab-mhl,mhl_admbnda_adm0.zip,False,,
+cod-ab-mhl,mhl_admbnda_adm1_atolls.zip,True,,
+cod-ab-mhl,mhl_admbnda_adm2_EA.zip,True,,
+cod-ab-rwa,rwa_gazetteer_rphc2012_v2.xlsx,True,,
+cod-ab-rwa,rwa_adm_2006_NISR_WGS1984_20181002_SHP.zip,True,,
+cod-ab-rwa,rwa_2006_NISR_WGS1984_20181002_EMF.zip,,,emf can't be p-coded
+democratic-republic-of-the-congo-major-cities,COD_CITIES_20180906H.zip,True,,
+cod-ab-sxm,sxm_gazetteer.xlsx,True,,
+cod-ab-sxm,sxm_admbnda_adm0.zip,False,,
+cod-ab-sxm,sxm_admbnda_adm1.zip,True,,
+cod-ab-sxm,sxm_admbndl_all.zip,False,,
+cod-ab-sxm,sxm_adm.zip,False,,
+cod-ab-sxm,sxm_adm_EMF.zip,,,emf can't be p-coded
+cod-ab-dji,dji_admgz_gadm_2022.xlsx,True,,
+cod-ab-dji,dji_adm_gadm_2022_SHP.zip,True,,
+cod-ab-dji,dji_adm_gadm_2022_GDB.zip,False,,
+pakistan-settlement,PAK_Settlements_NGA_2017_20181122.zip,False,,
+afghanistan-humanitarian-needs-overview,afg_hno_pin_2023,True,,
+afghanistan-humanitarian-needs-overview,afg_hno_pin_2022,True,,
+afghanistan-humanitarian-needs-overview,afg_hno_pin_2021,True,,
+afghanistan-humanitarian-needs-overview,afg_hrp_pin_2020,True,,
+afghanistan-humanitarian-needs-overview,afg_hno_pin_2019,False,False,
+afghanistan-humanitarian-needs-overview,afg_hno_pin_2018,False,False,
+afghanistan-humanitarian-needs-overview,afg_hno_pin_2017,False,False,
+democratic-republic-of-the-congo-humanitarian-needs-overview,cod_hno_2022.xlsx,True,,
+democratic-republic-of-the-congo-humanitarian-needs-overview,cod_hno_2021.xlsx,True,,
+democratic-republic-of-the-congo-humanitarian-needs-overview,cod_hno_2020.xlsx,True,,
+democratic-republic-of-the-congo-humanitarian-needs-overview,cod_hno_2019.xlsx,True,,
+iraq-humanitarian-needs-overview,IRAQ 2022 HNO HRP Population PIN Severity Targets Activities Requirements.xlsx,True,,
+iraq-humanitarian-needs-overview,iraq-hrp-2021-pin-targets-activity-data-compiled P-coded.xlsx,True,,
+iraq-humanitarian-needs-overview,irq_hrp_2021.csv,True,,
+iraq-humanitarian-needs-overview,IRAQ_HNO_2020_PIN_AcutePIN_Severity_20211111.xlsx,True,,
+iraq-humanitarian-needs-overview,IRQ_HNO_2020.xlsx,False,False,
+iraq-humanitarian-needs-overview,IRQ_HNO_2019.xlsx,False,False,
+iraq-humanitarian-needs-overview,IRQ_HNO_2015-2016.xlsx,False,False,
+cod-ab-lso,lso_adm_FAO_MLGCA_2019_FIS.xls,True,,
+cod-ab-lso,lso_adm_FAO_MLGCA_2019.zip,True,,
+cod-ab-lso,lso_adm_FAO_MLGCA_2019_EMF.zip,,,emf can't be p-coded
+haiti-humanitarian-needs-overview,HTI_HNO_2023.xlsx,True,,
+haiti-humanitarian-needs-overview,HTI_HNO_2022.xlsx,True,,
+haiti-humanitarian-needs-overview,HTI_HNO_2021.xlsx,True,,
+haiti-humanitarian-needs-overview,HTI_HNO_2020.xlsx,False,False,
+haiti-humanitarian-needs-overview,HTI_HNO_2019.xlsx,True,,
+haiti-humanitarian-needs-overview,HTI_HNO_2018.xlsx,False,False,
+cod-ps-atg,atg_adm_gazetteer_2019.xlsx,,,
+cod-ps-atg,atg_admpop_2022.xlsx,False,False,
+cod-ps-atg,atg_admpop_adm0_2022.csv,False,False,
+cod-ps-aia,aia_admpop_2011_v2.xlsx,False,False,
+cod-ps-aia,aia_admpop_adm1_2011.csv,False,False,
+cod-ps-aia,aia_admpop_adm0_2011.csv,False,False,
+cod-ab-fsm,fsm_adm_gazeteer.xls,,,
+cod-ab-fsm,fsm_admbnda_SHP.zip,True,,
+2018_malawi_ta_dataset-updated-admin3,Mwi_TA_Adm3_nso_2018_20190327,False,,
+2018_malawi_ta_dataset-updated-admin3,2018_Census_Total_Number_of HH-per-EA,False,False,
+cod-ab-blr,BLR_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-blr,blr_adm_unicef_20220727_AB_SHP.zip,False,,
+cod-ab-blr,blr_adm_unicef_20220727_AB.gdb.zip,True,,
+cod-ab-blr,COD_External/BLR_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-blr,COD_External/BLR_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-blr,COD_External/BLR_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-mda,MDA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-mda,mda_admbnda_unhcr_20220510_SHP.zip,False,,
+cod-ab-mda,mda_admbnda_unhcr_20220510_GDB.gdb.zip,True,,
+cod-ab-mda,COD_External/MDA_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-mda,COD_External/MDA_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mda,COD_External/MDA_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-bhs,bhs_gazetteer.xls,,,
+cod-ps-bhs,bhs_admpop_2022.xlsx,False,False,
+cod-ps-bhs,bhs_admpop_adm0_2022.csv,False,False,
+cod-ab-bgr,BGR_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-bgr,bgr_adm_unicef_20221012_SHP.zip,False,,
+cod-ab-bgr,bgr_adm_unicef_20221012_EMF.zip,,,emf can't be p-coded
+cod-ab-bgr,bgr_adm_unicef_20221012_GDB.gdb.zip,True,,
+cod-ab-bgr,COD_External/BGR_BG (MapServer),,,geoservice can't be p-coded
+cod-ab-bgr,COD_External/BGR_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-bgr,COD_External/BGR_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-bgr,COD_External/BGR_pcode (MapServer),,,geoservice can't be p-coded
+cod-admin-0-geojson-simplified-geometries-from-gistmaps-live-service-source,COD_MOZ_Admin0.geojson,False,,
+cod-ab-jpn,jpn_adm_gz_2019.xls,True,,
+cod-ab-jpn,jpn_adm_2019_SHP.zip,True,,
+cod-ab-jpn,jpn_adm_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-jpn,jpn_adm_2019_GDB.gdb.zip,False,,
+cod-ab-alb,alb_adm_gz_2019_v6.xlsx,True,,
+cod-ab-alb,alb_adm_2019b_SHP.zip,True,,
+cod-ab-alb,alb_adm_2019b_EMF.zip,,,emf can't be p-coded
+cod-ab-alb,alb_adm_2019_GDB.gdb.zip,False,,
+cod-ab-kir,kir_admgz_2020.xlsx,True,,
+cod-ab-kir,kir_adm_2020_SHP.zip,False,,
+cod-ab-kir,kir_adm_2020_GDB.gdb.zip,False,,
+mimu-geonode-myanmar-district-boundaries-mimu,Myanmar District Boundaries MIMU v9.3 shapefile,True,,
+mimu-geonode-myanmar-district-boundaries-mimu,Myanmar District Boundaries MIMU v9.3 geojson,True,,
+mimu-geonode-myanmar-state-and-region-boundaries-mimu,Myanmar State and Region Boundaries MIMU v9.3 shapefile,True,,
+mimu-geonode-myanmar-state-and-region-boundaries-mimu,Myanmar State and Region Boundaries MIMU v9.3 geojson,True,,
+mimu-geonode-myanmar-national-boundary-mimu,Myanmar National Boundary MIMU v9.3 shapefile,False,,
+mimu-geonode-myanmar-national-boundary-mimu,Myanmar National Boundary MIMU v9.3 geojson,False,,
+mimu-geonode-myanmar-state-and-region-boundaries-with-sub-regions-mimu,Myanmar State and Region Boundaries with Sub-regions MIMU  v9.3 shapefile,True,,
+mimu-geonode-myanmar-state-and-region-boundaries-with-sub-regions-mimu,Myanmar State and Region Boundaries with Sub-regions MIMU  v9.3 geojson,True,,
+cod-ps-eth,ETH_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-eth,eth_admgz_2022.xlsx,True,,
+cod-ps-eth,eth_admpop_2022.xlsx,True,,
+cod-ps-eth,eth_admpop_adm0_2022_v2.csv,False,False,
+cod-ps-eth,eth_admpop_adm1_2022_v2.csv,True,,
+cod-ps-eth,eth_admpop_adm2_2022_v2.csv,True,,
+cod-ps-eth,eth_admpop_adm3_2022_v2.csv,True,,
+chad-populated-places-settlements,tcd_settlements.zip,False,,
+cod-ab-mus,mus_admgaz_2020.xls,True,,
+cod-ab-mus,mus_adm_2020_v2_SHP.zip,True,,
+cod-ab-mus,mus_Administrative_Boundary_NDMA_GADM_OCHA_EMF.zip,,,emf can't be p-coded
+burkina-faso-health-districts-districts-de-sante,bfa_dsa_igb_2020.zip,True,,
+burkina-faso-health-districts-districts-de-sante,bfa_dsa_igb_2020_table.xls,True,,
+global-humanitarian-response-plan-covid-19-administrative-boundaries-and-population-statistics,ghrp_covid19_admbnda_adm1_2020_09_30.zip,True,,
+global-humanitarian-response-plan-covid-19-administrative-boundaries-and-population-statistics,ghrp_covid19_20200930_gz.xlsx,False,False,
+global-humanitarian-response-plan-covid-19-administrative-boundaries-and-population-statistics,ghrp_covid19_20200930_pop.xlsx,False,False,
+global-humanitarian-response-plan-covid-19-administrative-boundaries-and-population-statistics,ghrp_covid19_adm1_2020_09_30pop.csv,False,False,
+cod-ab-syc,syc_admgz_nbs2010.xlsx,,,
+cod-ab-syc,syc_adm_nbs2010_SHP.zip,False,,
+cod-ab-syc,syc_adm_nbs2010_EMF.zip,,,emf can't be p-coded
+cod-ab-syc,syc_adm_nbs2010.gdb.zip,False,,
+zones-de-sante-rdc,OSM_RDC_sante_zones_211212.gpkg,,,Unable to read resource OSM_RDC_sante_zones_211212.gpkg.geopackage
+zones-de-sante-rdc,OSM_RDC_sante_zones_211212.zip,False,,
+cod-ab-cri,cri_admgz_2021.xlsx,True,,
+cod-ab-cri,cri_adm_2021_WGS_84.zip,True,,
+cod-ab-cri,cri_adm_2021_WGS_84.gdb.zip,False,,
+beirut-port-explosion-operational-zones,beirut_port_explosions_operational_zones_139.zip,True,,
+beirut-port-explosion-operational-zones,beirut_port_explosions_operational_zones_139.kmz,,,kmz can't be p-coded
+beirut-port-explosion-operational-zones,beirut_port_explosions_operational_zones.xlsx,True,,
+beirut-port-explosion-operational-zones,SocioEconomic_UNHabitat_20200930.zip,True,,
+beirut-emergency-zone-assessment,UNHABITAT_Zone_Data_batch2_2020_08_19.xlsx,True,,
+beirut-emergency-zone-assessment,UNHABITAT_Zone_Data_batch2_2020.08.19.csv,False,False,
+beirut-emergency-zone-assessment,UNHABITAT_Zone_Data_batch2_2020_08_19.zip,True,,
+beirut-emergency-zone-assessment,UNHABITAT_Zone_Data_batch2_2020.08.19.kmz,,,kmz can't be p-coded
+beirut-emergency-zone-assessment,UNHABITAT_Zone_Data_batch2_2020.08.19.mpk,,,esri map package can't be p-coded
+beirut-emergency-zone-assessment,UNHABITAT_Zone_Data_batch2_2020_08_19.gdb.zip,True,,
+beirut-emergency-zone-assessment,UNHABITAT_Zone_Data_batch2_2020.08.19_v93.mpk,,,esri map package can't be p-coded
+sahel-subnational-administrative-boundaries,sah_admbnda_adm3_ocha.zip,False,,
+sahel-subnational-administrative-boundaries,sah admin3 metadata.txt,,,txt can't be p-coded
+beirut-buildings-footprints,Buildings_plot_UNnumb.zip,False,,
+2021_hno-baseline_data,SUDAN_HNO 2021_Baseline Data.xlsx,True,,
+ukraine-hno,Ukraine Flash Appeal - March to December 2022 PIN_HDX.xlsx,False,False,
+ukraine-hno,UKR_FA_April2022.xlsx,True,,
+ukraine-hno,UKR_ HNO_2022.xlsx,True,,
+ukraine-hno,UKR_HNO_2021.xlsx,False,False,
+cod-ab-bwa,bwa_admgz_2011.xlsx,True,,
+cod-ab-bwa,bwa_adm_2011_SHP.zip,False,,
+cod-ab-bwa,bwa_adm_2011_EMF.zip,,,emf can't be p-coded
+cod-ab-bwa,bwa_adm_2011.gdb.zip,False,,
+libya-point-mantika,Lby_Mantika_Point.zip,False,,
+cod-ps-hti,hti-pop-statistics.xlsx,True,,
+cod-ps-hti,HTI_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-hti,hti_admpop_adm1_2022.csv,True,,
+cod-ps-hti,hti_admpop_adm2_2022.csv,True,,
+haiti-administrative-level-0-3-gazetteer,HTI_AdminBoundaries_TabularData.xlsx,True,,
+haiti-osm-settlements,hti_stle_ste_tab_s0_openstreetmap_pp_pcodedsettlements.zip,True,,
+haiti-osm-settlements,hti_stle_ste_tab_s0_openstreetmap_pp_pcodedsettlements FIS.xlsx,True,,
+limites-de-la-rdc-et-de-20-pays-avoisinants-drc-and-neighbouring-countries,OSM_RDC_PaysVoisins_211012.gpkg,,,Unable to read resource OSM_RDC_PaysVoisins_211012.gpkg.geopackage
+limites-de-la-rdc-et-de-20-pays-avoisinants-drc-and-neighbouring-countries,OSM_RDC_PaysVoisins_211012.zip,False,,
+philippines-2015-census-population-admin4-single-age,180816_philippines-population-barangay-admin-4_2015 single age.csv,,False,Unable to read resource 180816_philippines-population-barangay-admin-4_2015 single age.csv
+iraq-populated-places-2021,Iraq_Populated_Places_2021.xlsx,True,,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,01-Guatemala.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,02-El-Progreso.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,03-Sacatepequez.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,04-Chimaltenango.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,05-Escuintla.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,06-Santa-Rosa.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,07-Solola.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,08-Totonicapan.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,09-Quetzaltenango.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,10-Suchitepequez.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,11-Retalhuleu.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,12-San-Marcos.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,13-Huehuetenango.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,14-Quiche.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,16-Alta-Verapaz.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,17-Peten.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,18-Izabal.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,19-Zacapa.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,20-Chiquimula.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,22-Jutiapa.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,15-Baja-Verapaz.xlsx,False,False,
+municipal-population-projections-of-guatemala-by-age-and-sex-2015-2030,21-Jalapa.xlsx,False,False,
+grid3-angola-settlement-extents-version-01-01,Angola GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-angola-settlement-extents-version-01-01,GRID3_Angola_Settlement_Extents_Version_1.1.zip,True,,
+grid3-burundi-settlement-extents-version-01-01,Burundi GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-burundi-settlement-extents-version-01-01,GRID3_Burundi_Settlement_Extents_Version_1.1.zip,True,,
+grid3-benin-settlement-extents-version-01-01,Benin GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-benin-settlement-extents-version-01-01,GRID3_Benin_Settlement_Extents_Version_1.1.zip,False,,
+grid3-burkina-faso-settlement-extents-version-01-01,Burkina Faso GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-burkina-faso-settlement-extents-version-01-01,GRID3_Burkina_Faso_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-botswana-settlement-extents-version-01-01,Botswana GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-botswana-settlement-extents-version-01-01,GRID3_Botswana_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-central-african-republic-settlement-extents-version-01-01,Central African Republic GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-central-african-republic-settlement-extents-version-01-01,GRID3_Central_African_Republic_Settlement_Extents_Version_1.1.gdb.zip,False,,
+grid3-cote-d-ivoire-settlement-extents-version-01-01,Côte d'Ivoire GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-cote-d-ivoire-settlement-extents-version-01-01,GRID3_Cote_dIvoire_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-cameroon-settlement-extents-version-01-01,Cameroon GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-cameroon-settlement-extents-version-01-01,GRID3_Cameroon_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-republic-of-the-congo-settlement-extents-version-01-01,Congo GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-republic-of-the-congo-settlement-extents-version-01-01,GRID3_Republic_of_the_Congo_Settlement_Extents_Version_1.1.gdb.zip,False,,
+grid3-comoros-settlement-extents-version-01-01,Comoros GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-comoros-settlement-extents-version-01-01,GRID3_Comoros_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-djibouti-settlement-extents-version-01-01,GRID3_Djibouti_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-djibouti-settlement-extents-version-01-01,Djibouti GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-eritrea-settlement-extents-version-01-01,Eritrea GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-eritrea-settlement-extents-version-01-01,GRID3_Eritrea_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-ethiopia-settlement-extents-version-01-01,Ethiopia GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-ethiopia-settlement-extents-version-01-01,GRID3_Ethiopia_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-gabon-settlement-extents-version-01-01,Gabon GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-gabon-settlement-extents-version-01-01,GRID3_Gabon_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-ghana-settlement-extents-version-01-01,Ghana GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-ghana-settlement-extents-version-01-01,GRID3_Ghana_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-guinea-settlement-extents-version-01-01,GRID3_Guinea_Settlement_Extents_Version_1.1.gdb.zip,False,,
+grid3-guinea-settlement-extents-version-01-01,Guinea GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-the-gambia-settlement-extents-version-01-01,GRID3_The_Gambia_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-the-gambia-settlement-extents-version-01-01,The Gambia GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-guinea-bissau-settlement-extents-version-01-01,GRID3_Guinea_Bissau_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-guinea-bissau-settlement-extents-version-01-01,Guinea-Bissau GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-equatorial-guinea-settlement-extents-version-01-01,Equatorial Guinea GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-equatorial-guinea-settlement-extents-version-01-01,GRID3_Equatorial_Guinea_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-kenya-settlement-extents-version-01-01,GRID3_Kenya_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-kenya-settlement-extents-version-01-01,Kenya GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-liberia-settlement-extents-version-01-01,GRID3_Liberia_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-liberia-settlement-extents-version-01-01,Liberia GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-lesotho-settlement-extents-version-01-01,GRID3_Lesotho_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-lesotho-settlement-extents-version-01-01,Lesotho GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-madagascar-settlement-extents-version-01-01,GRID3_Madagascar_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-madagascar-settlement-extents-version-01-01,Madagascar GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-mali-settlement-extents-version-01-01,GRID3_Mali_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-mali-settlement-extents-version-01-01,Mali GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-mozambique-settlement-extents-version-01-01,GRID3_MOZ_Settlement_Extents_Version_01.01.gdb.zip,True,,
+grid3-mozambique-settlement-extents-version-01-01,Mozambique GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-mauritania-settlement-extents-version-01-01,GRID3_Mauritania_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-mauritania-settlement-extents-version-01-01,Mauritania GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-mauritius-settlement-extents-version-01-01,GRID3_Mauritius_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-mauritius-settlement-extents-version-01-01,Mauritius GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-malawi-settlement-extents-version-01-01,GRID3_Malawi_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-malawi-settlement-extents-version-01-01,Malawi GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-namibia-settlement-extents-version-01-01,GRID3_Namibia_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-namibia-settlement-extents-version-01-01,Namibia GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-niger-settlement-extents-version-01-01,GRID3_Niger_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-niger-settlement-extents-version-01-01,Niger GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-reunion-settlement-extents-version-01-01,GRID3_Réunion_Settlement_Extents_Version_1.1.gdb.zip,False,,
+grid3-reunion-settlement-extents-version-01-01,Réunion GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-rwanda-settlement-extents-version-01-01,GRID3_Rwanda_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-rwanda-settlement-extents-version-01-01,Rwanda GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-sudan-settlement-extents-version-01-01,GRID3_Sudan_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-sudan-settlement-extents-version-01-01,Sudan GRID3 Settlement Extents version 01.01.pdf,,,pdf can't be p-coded
+grid3-sierra-leone-settlement-extents-version-01-01,GRID3_Sierra_Leone_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-sierra-leone-settlement-extents-version-01-01,Sierra Leone GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-somalia-settlement-extents-version-01-01,GRID3_Somalia_Settlement_Extents_Version_1.1.gdb.zip,False,,
+grid3-somalia-settlement-extents-version-01-01,Somalia GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-south-sudan-settlement-extents-version-01-01,GRID3_South_Sudan_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-south-sudan-settlement-extents-version-01-01,South Sudan GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-sao-tome-and-principe-settlement-extents-version-01-01,GRID3_Sao_Tome_and_Principe_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-sao-tome-and-principe-settlement-extents-version-01-01,Sao Tome and Principe GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-eswatini-settlement-extents-version-01-01,GRID3_Eswatini_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-eswatini-settlement-extents-version-01-01,Swaziland GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-chad-settlement-extents-version-01-01,Chad GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-chad-settlement-extents-version-01-01,GRID3_Chad_Settlement_Extents_Version_1.1.gdb.zip,False,,
+grid3-togo-settlement-extents-version-01-01,GRID3_Togo_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-togo-settlement-extents-version-01-01,Togo GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-tanzania-settlement-extents-version-01-01,GRID3_Tanzania_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-tanzania-settlement-extents-version-01-01,Tanzania GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-uganda-settlement-extents-version-01-01,GRID3_Uganda_Settlement_Extents_Version_1.1.gdb.zip,False,,
+grid3-uganda-settlement-extents-version-01-01,Uganda GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-south-africa-settlement-extents-version-01-01,GRID3_South_Africa_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-south-africa-settlement-extents-version-01-01,South Africa GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-zambia-settlement-extents-version-01-01,GRID3_Zambia_Settlement_Extents_Version_1.1.gdb.zip,False,,
+grid3-zambia-settlement-extents-version-01-01,Zambia GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+grid3-zimbabwe-settlement-extents-version-01-01,GRID3_Zimbabwe_Settlement_Extents_Version_1.1.gdb.zip,True,,
+grid3-zimbabwe-settlement-extents-version-01-01,Zimbabwe GRID3 Settlement Extents Version 01.01.pdf,,,pdf can't be p-coded
+philippines-administrative-level-2-capital-cities-point-shapefile,phl_admp_adm2_capitals.zip,True,,
+cod-ab-rou,ROU_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-rou,rou_adm_ancpi_v02_20220427_AB_SHP.zip,True,,
+cod-ab-rou,rou_adm_ancpi_v02_20220427_AB_GDB.gdb.zip,False,,
+cod-ab-rou,ROU_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-rou,ROU_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-rou,ROU_RO (MapServer),,,geoservice can't be p-coded
+cod-ab-hun,HUN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-hun,hun_admbnda_osm_20220720_SHP.zip,True,,
+cod-ab-hun,hun_admbnda_osm_20220720.gdb.zip,False,,
+cod-ab-hun,COD_External/HUN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-hun,COD_External/HUN_HU (MapServer),,,geoservice can't be p-coded
+cod-ab-hun,COD_External/HUN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-svk,SVK_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-svk,svk_admbndp_geoportalsk_itos_20220707_SHP.zip,True,,
+cod-ab-svk,svk_admbndp_geoportalsk_itos_20220707.gdb.zip,True,,
+cod-ab-svk,COD_External/SVK_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-svk,COD_External/SVK_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-svk,COD_External/SVK_SK (MapServer),,,geoservice can't be p-coded
+cod-ab-rus,rus_admgz_2022_v02.xlsx,True,,
+cod-ab-rus,rus_adm_gadm_2022_v03.zip,False,,
+cod-ab-rus,rus_adm_gadm_2022_v03.gdb.zip,False,,
+grid3-senegal-settlement-extents-version-01-02,SEN_DataReleaseStatement_SettlementExtents_Version_01.02.pdf,,,pdf can't be p-coded
+grid3-senegal-settlement-extents-version-01-02,GRID3_Senegal_Settlement_Extents_Version_1.2.gdb.zip,True,,
+grid3-nigeria-settlement-extents-version-01-02,GRID3_Nigeria_Settlement_Extents_Version_1.2.gdb.zip,False,,
+grid3-nigeria-settlement-extents-version-01-02,NGA_DataReleaseStatement_SettlementExtents_Version_01.02.pdf,,,pdf can't be p-coded
+grid3-democratic-republic-of-the-congo-settlement-extents-version-01-02,DRC_DataReleaseStatement_SettlementExtents_Version_01.02.pdf,,,pdf can't be p-coded
+grid3-democratic-republic-of-the-congo-settlement-extents-version-01-02,GRID3_COD_Settlement_Extents_Version_1.2.gdb.zip,False,,
+cod-em-ukr,UKR_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-ukr,ukr_adm_sspe_20221005_EM.zip,True,,
+cod-em-ukr,ukr_adm_sspe_20221005_EM.gdb.zip,,,geoservice can't be p-coded
+cod-em-ukr,UKR_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-ukr,UKR_RU_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-ukr,UKR_UA_Edgematch (MapServer),,,geoservice can't be p-coded
+common-operational-datasets-for-humanitarian-and-development-v2-3r-philippines,UNFPA Common Operational Dataset Visualization v2.3.xlsm,False,False,
+cod-em-pak,PAK_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-pak,pak_adm_wfp_20220909_SHP.zip,False,,
+cod-em-pak,pak_adm_wfp_20220909_GDB.gdb.zip,True,,
+cod-em-tun,TUN_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-tun,tun_adm_ins_20221115_EM_SHP.zip,False,,
+cod-em-tun,tun_adm_ins_20221115_EM_GDB.gdb.zip,True,,
+cod-em-tun,tun_adm_ins_20221115_EM_EMF.zip,,,emf can't be p-coded
+cod-em-tun,COD_External_Edgematch/TUN_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-tun,COD_External_Edgematch/TUN_AR_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-ps-mda,mda_admpop_2022.xlsx,True,,
+cod-ps-mda,mdv_admpop_2022.xlsx,True,,
+cod-ps-mda,mda_admpop_adm0_2022.csv,False,False,
+cod-ps-mda,mda_admpop_adm1_2022.csv,True,,
+cod-ab-mli,MLI_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-mli,mli_admb_1m_gov_20211220_SHP.zip,True,,
+cod-ab-mli,mli_adm_1m_gov_20211220.gdb.zip,True,,
+cod-ab-mli,COD_External/MLI_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-mli,COD_External/MLI_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mli,COD_External/MLI_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-mli,V00_0/MLI_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-mli,V00_0/MLI_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mli,V00_0/MLI_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-npl,npl_admgz.xls,True,,
+cod-ps-npl,npl_admpop_2022.xlsx,True,,
+cod-ps-npl,npl_admpop_adm0_2022.csv,False,False,
+cod-ps-npl,npl_admpop_adm1_2022.csv,True,,
+cod-ps-npl,npl_admpop_adm2_2022.csv,True,,
+cod-ps-slv,SLV_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-slv,slv_admpop_2022.xlsx,True,,
+cod-ps-slv,slv_admpop_adm0_2022.csv,False,False,
+cod-ps-slv,slv_admpop_adm1_2022.csv,True,,
+cod-ps-slv,slv_admpop_adm2_2022.csv,True,,
+cod-ps-per,PER_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-per,per_admpop_2022.xlsx,True,,
+cod-ps-per,per_admpop_adm0_2022.csv,False,False,
+cod-ps-per,per_admpop_adm1_2022.csv,True,,
+cod-ab-per,PER_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-per,per_adm_ign_20200714_SHP.zip,True,,
+cod-ab-per,per_adm_ign_20200714_EMF.zip,,,emf can't be p-coded
+cod-ab-per,PER_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-per,PER_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-per,PER_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-per,PER_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-lbr,LBR Administrative Division Names and P-codes.xlsx,True,,
+cod-ab-lbr,LBR Administrative Divisions Shapefiles.zip,True,,
+cod-ab-lbr,LBR_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-lbr,LBR Administrative Divisions EMF.zip,,,emf can't be p-coded
+cod-ab-lbr,LBR_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-lbr,LBR_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-lbr,LBR_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-lbr,lbr_ppt_map.pptx,,,pptx can't be p-coded
+cod-ab-som,som_admgz_2022.xls,False,False,
+cod-ab-som,som_adm_2022_v2.zip,False,,
+cod-ps-rwa,rwa_gazetteer_rphc2012_v2.xlsx,True,,
+cod-ps-rwa,rwa_admpop_2022.xlsx,True,,
+cod-ps-rwa,rwa_admpop_adm0_2022.csv,False,False,
+cod-ps-rwa,rwa_admpop_adm1_2022.csv,True,,
+cod-ps-rwa,rwa_admpop_adm2_2022.csv,False,False,
+cod-ps-rwa,rwa_admpop_adm3_2022.csv,False,False,
+cod-ab-eri,ERI_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-eri,eri_adm_gov_20200427_SHP.zip,True,,
+cod-ab-eri,eri_adm_gov_20200427_EMF.zip,,,emf can't be p-coded
+cod-ab-eri,eri_adm_gov_20200427_GDB.gdb.zip,True,,
+cod-ab-eri,ERI_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-eri,ERI_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-eri,ERI_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-ken,KEN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-ken,ken_adm_iebc_20191031_SHP.zip,False,,
+cod-ab-ken,ken_adm_iebc_20191031_EMF.zip,,,emf can't be p-coded
+cod-ab-ken,KEN_AdminBoundaries_working.gdb.zip,True,,
+cod-ab-ken,COD_External/KEN_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-ken,COD_External/KEN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-ken,COD_External/KEN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-ben,ben_adm_1m_salb_2019_shapes.zip,False,,
+cod-ab-ben,ben_adm_1m_salb_2019_EMP.zip,,,emf can't be p-coded
+cod-ab-ben,BEN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-ben,ben_adm_1m_salb_2019_gdb.zip,False,,
+cod-ab-ben,BEN_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-ben,BEN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-ben,BEN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-ben,ben_ppt_map.pptx,,,pptx can't be p-coded
+cod-ab-bfa,BFA_AdminBoundaries_Data_2022,,,emf can't be p-coded
+cod-ab-bfa,BFA_AdminBoundaries_TabularData.xlsx,,,
+cod-ab-bfa,bfa_adm_igb_20200323_SHP.zip,True,,
+cod-ab-bfa,bfa_adm_igb_20200323_EMF.zip,,,emf can't be p-coded
+cod-ab-bfa,BFA_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-bfa,BFA_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-bfa,BFA_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-bfa,BFA_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-bfa,PREVIOUS BFA_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-bfa,PREVIOUS BFA_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-bfa,PREVIOUS BFA_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-cmr,CMR_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-cmr,cmr_admbnda_inc_20180104_SHP.zip,True,,
+cod-ab-cmr,cmr_admbnda_INC2018_EMF.zip,,,emf can't be p-coded
+cod-ab-cmr,CMR_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-cmr,CMR_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-cmr,CMR_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-cmr,CMR_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-cmr,CMR_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-cog,cog_adm_gaul_20190617_SHP.zip,True,,
+cod-ab-cog,cig_adn_gaul_20190617_EMF.zip,,,emf can't be p-coded
+cod-ab-cog,cog_adm_gaul_20190617.gdb.zip,False,,
+cod-ab-cog,COG_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-cog,COG_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-cog,COG_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-cog,cog_ppt_map.pptx,,,pptx can't be p-coded
+cod-ab-gha,GHA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-gha,gha_admbnda_gss_20210308_SHP.zip,False,,
+cod-ab-gha,gha_admbnda_GSS_EMF.zip,,,emf can't be p-coded
+cod-ab-gha,gha_admbnda_gss_20210308.gdb.zip,False,,
+cod-ab-gha,COD_External/GHA_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-gha,COD_External/GHA_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-gha,COD_External/GHA_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-gha,gha_ppt_map.pptx,,,pptx can't be p-coded
+cod-ps-gin,gin_adminboundaries_tabulardata.xlsx,False,False,
+cod-ps-gin,gin_admpop_2022.xlsx,False,False,
+cod-ps-gin,gin_admpop_adm0_2022.csv,False,False,
+cod-ps-gin,gin_admpop_adm1_2022.csv,False,False,
+cod-ps-gin,gin_admpop_adm2_2022.csv,False,False,
+cod-ps-gmb,gmb_admgz_20201.xlsx,True,,
+cod-ps-gmb,gmb_popadm_2021.xlsx,True,,
+cod-ps-gmb,gmb_popadm_2021_admin1.csv,False,False,
+cod-ab-gnb,GNB_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-gnb,gnb_admbnda_1m_salb_20210609_SHP.zip,False,,
+cod-ab-gnb,gnb_adm_1m_salb_20210609_EMF.zip,,,emf can't be p-coded
+cod-ab-gnb,gnb_admbnda_1m_salb_20210609.gdb.zip,True,,
+cod-ab-gnb,COD_External/GNB_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-gnb,COD_External/GNB_pcodes (FeatureServer),,,geoservice can't be p-coded
+cod-ab-gnb,COD_External/GNB_pcodes (MapServer),,,geoservice can't be p-coded
+cod-ab-gnb,gnb_ppt_map.pptx,,,pptx can't be p-coded
+cod-ab-gnb,gnb_adm_1m_salb_20210609_em_SHP.zip,False,,
+cod-ab-gnb,gnb_adm_1m_salb_20210609_em.gdb.zip,False,,
+cod-ab-gnb,GNB_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-ab-gnq,gnq_admbnda_gadm_20210715_SHP.zip,True,,
+cod-ab-gnq,GNQ_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-gnq,gnq_admbnda_gadm_20210-715.gdb.zip,True,,
+cod-ab-gnq,gnq_admbnda_gadm_20210-715_EMF.zip,,,emf can't be p-coded
+cod-ab-gnq,COD_External/GNQ_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-gnq,COD_External/GNQ_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-gnq,gnq_ppt_map.pptx,,,pptx can't be p-coded
+cod-ab-mrt,MRT_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-mrt,mrt_adm_gov_itos_20200801_SHP.zip,False,,
+cod-ab-mrt,mrt_adm_gov_itos_20200801_EMF.zip,,,emf can't be p-coded
+cod-ab-mrt,MRT_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-mrt,COD_External/MRT_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-mrt,COD_External/MRT_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mrt,COD_External/MRT_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-mrt,V00_0/MRT_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mrt,V00_0/MRT_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-mrt,V00_0/MRT_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-mrt,mrt_ppt_map.pptx,,,pptx can't be p-coded
+cod-ab-sen,SEN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-sen,Shapefiles.zip,True,,
+cod-ab-sen,sen_adm_gov_ocha_20190426_EMF.zip,,,emf can't be p-coded
+cod-ab-sen,SEN_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-sen,SEN_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-sen,SEN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-sen,SEN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-sen,sen_ppt_map.pptx,,,pptx can't be p-coded
+cod-ps-col,COL_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-col,col_admpop_2022.xlsx,True,,
+cod-ps-col,col_admpop_adm0_2022.csv,False,False,
+cod-ps-col,col_admpop_adm1_2022.csv,True,,
+cod-ps-col,col_admpop_adm2_2022.csv,True,,
+cod-ab-sle,SLE_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-sle,sle_admbnda_adm1_1m_gov_ocha_20161017.shp.zip,True,,
+cod-ab-sle,sle_admbnda_adm2_1m_gov_ocha.zip,True,,
+cod-ab-sle,sle_admbnda_adm3_1m_gov_ocha_20161017.zip,True,,
+cod-ab-sle,Admin 4   Counties,True,,
+cod-ab-sle,sle_admbnda_adm0_1m_gov_ocha_20161017.zip,False,,
+cod-ab-sle,sle_admbndl_admAll_1m_ocha.zip,False,,
+cod-ab-sle,sle_adm_1m_gov_ocha_20161017_EMF.zip,,,emf can't be p-coded
+cod-ab-sle,SLE feature service,,,geoservice can't be p-coded
+cod-ab-sle,SLE map service,,,geoservice can't be p-coded
+cod-ab-sle,SLE P-code feature service,,,geoservice can't be p-coded
+cod-ab-sle,SLE P-code map service,,,geoservice can't be p-coded
+cod-ab-sle,sle_ppt_map.pptx,,,pptx can't be p-coded
+cod-ab-tha,THA_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-tha,tha_adm_rtsd_itos_20210121_SHP.zip,False,,
+cod-ab-tha,THA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-tha,tha_adm_feature_areas_20191106.xls,True,,
+cod-ps-lao,lao_admpop_2020.xlsx,True,,
+cod-ps-lao,lao_adminboundaries_tabulardata.xlsx,True,,
+cod-ps-lao,lao_admpop_adm0_2020_v2.csv,False,False,
+cod-ps-lao,lao_admpop_adm1_2020_v2.csv,True,,
+cod-ps-lao,lao_admpop_adm2_2020_v2.csv,True,,
+cod-ab-khm,KHM_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-khm,khm_admbnda_adm0_gov_20181004.zip,False,,
+cod-ab-khm,khm_admbnda_adm0_gov_20181004.emf,,,emf can't be p-coded
+cod-ab-khm,khm_admbnda_adm1_gov_20181004.zip,True,,
+cod-ab-khm,khm_admbnda_adm1_gov_20181004.emf,,,emf can't be p-coded
+cod-ab-khm,khm_admbnda_adm2_gov_20181004.zip,True,,
+cod-ab-khm,khm_admbnda_adm3_gov_20181004.zip,True,,
+cod-ab-khm,khm_admbndl_admALL_gov_itos_20181004.zip,False,,
+cod-ab-khm,khm_admbndp_admALL_gov_itos_20181004.zip,True,,
+cod-ab-khm,khm_adm_gov_20181004.zip,False,,
+cod-ab-khm,KHM_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-khm,KHM_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-khm,KHM_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-khm,KHM_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-khm,kha_admpop_2022.xlsx,True,,
+cod-ps-khm,khm_admpop_adm0_2022.csv,False,False,
+cod-ps-khm,khm_admpop_adm1_2022.csv,True,,
+cod-ps-khm,khm_admpop_adm0_2016_v1.csv,False,False,
+cod-ps-khm,khm_admpop_adm1_2016_v2.csv,True,,
+cod-ab-png,png_adm_nso_20190508_SHP.zip,True,,
+cod-ab-png,png_admbnda_adm1_20180419.zip,,,emf can't be p-coded
+cod-ab-png,PNG_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-png,png_adm_nso_20190508_GDB.zip,True,,
+cod-ab-png,PNG_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-png,PNG_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-png,PNG_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-mng,MNG_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-mng,mng admpop_2021.xlsx,True,,
+cod-ps-mng,mng_admpop_adm0_2021_v2.csv,False,False,
+cod-ps-mng,mng_admpop_adm1_2021_v2.csv,True,,
+cod-ps-mng,mng_admpop_regional_2021_v2.csv,False,False,
+cod-ps-mng,mng_admpop_adm2_2017_v2.csv,True,,
+cod-ps-lso,lso_admpop_2022.xlsx,True,,
+cod-ps-lso,lso_admpop_adm0_2022.csv,False,False,
+cod-ps-lso,lso_admpop_adm1_2022.csv,True,,
+cod-ps-lso,lso_admgz.xls,,,
+cod-ab-nam,NAM_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-nam,nam_adm_nsa_ocha_20200109_SHP.zip,True,,
+cod-ab-nam,nam_adm_nsa_ocha_20200109_EMF.zip,,,emf can't be p-coded
+cod-ab-nam,NAM_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-nam,NAM_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-nam,NAM_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-zaf,ZAF_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-zaf,zaf_adm_sadb_ocha_20201109_SHP.zip,True,,
+cod-ab-zaf,zaf_adm_sadb_ocha_20201109_EMF.zip,,,emf can't be p-coded
+cod-ab-zaf,ZAF_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-zaf,COD_External/ZAF_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-zaf,COD_External/ZAF_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-zaf,COD_External/ZAF_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-ner,ner_admgz_2022.xls,,,
+cod-ab-ner,NER_adm00_feb2018.zip,False,,
+cod-ab-ner,NER_adm01_feb2018.zip,True,,
+cod-ab-ner,NER_adm02_feb2018.zip,True,,
+cod-ab-ner,NER_adm03_feb2018.zip,True,,
+cod-ab-ner,ner_admbnda_adm0_ignn_ocha.zip,,,emf can't be p-coded
+cod-ab-ecu,ECU_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-ecu,ecu_adm_inec_20190724_SHP.zip,True,,
+cod-ab-ecu,ecu_adm_inec_20190724_EMF.zip,,,emf can't be p-coded
+cod-ab-ecu,ECU_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-ecu,ECU_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-ecu,ECU_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-ecu,ECU_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-hnd,HND_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-hnd,hnd_adm_sinit_20161005_SHP.zip,False,,
+cod-ab-hnd,HND_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-hnd,hnd_pplp_sinit_20160125.zip,True,,
+cod-ab-hnd,hnd_adm_sinit_20161005_emf.zip,,,emf can't be p-coded
+cod-ab-hnd,COD_External/HND_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-hnd,COD_External/HND_pcode (FeatureServer),,,web app can't be p-coded
+cod-ab-hnd,COD_External/HND_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-hnd,hnd_admbnda_adm3_sinit_20161005.zip,True,,
+cod-ab-hnd,hnd_admbnda_adm3_sinit_20161005.emf,,,emf can't be p-coded
+cod-ab-caf,CAF_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-caf,caf_admbnda_adm0_200k_sigcaf_reach_itos_v2.zip,False,,
+cod-ab-caf,caf_admbnda_adm1_200k_sigcaf_reach_itos_v2.zip,False,,
+cod-ab-caf,caf_admbnda_adm2_200k_sigcaf_reach_itos_v2.zip,False,,
+cod-ab-caf,caf_admbnda_adm3_200k_sigcaf_reach_itos_v2.zip,False,,
+cod-ab-caf,caf_admbnda_adm4_reach_ocha_v2.zip,True,,
+cod-ab-caf,caf_admbndl_admALL_200k_sigcaf_reach_ocha_itos.zip,False,,
+cod-ab-caf,Map Service for CAF,,,geoservice can't be p-coded
+cod-ab-caf,P-code Feature Service for CAF,,,geoservice can't be p-coded
+cod-ab-caf,P-code Map Service for CAF,,,geoservice can't be p-coded
+cod-ab-caf,caf_admbndl_admALL_200k_sigcaf_reach_ocha_itos_v2.zip,False,,
+cod-ab-caf,caf_adm_200k_sigcaf_reach_itos_v2_EMF.zip,,,emf can't be p-coded
+cod-ab-yem,YEM Administrative Divisions Geodatabase.zip,False,,
+cod-ab-yem,YEM Administrative Divisions Shapefiles.zip,True,,
+cod-ab-yem,YEM Administrative Division Names and P-codes.xlsx,True,,
+cod-ab-yem,yem_admin_ochayemen_20191002.xlsx,True,,
+cod-ab-yem,yem_adm_govyem_cso_ochayemen_20191002_GPKG.zip,False,,
+cod-ab-yem,yem_adm_govyem_cso_ochayemen_20191002_TOPOJSON.zip,True,,
+cod-ab-yem,previous_files_20181102.zip,True,,
+cod-ab-yem,YEM_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-yem,YEM_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-yem,YEM_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-yem,YEM_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-yem,yem_adm_govyem_cso_20191122_EMF.zip,,,emf can't be p-coded
+cod-ps-kaz,kaz_gazetteer_2019.xlsx,False,False,
+cod-ps-kaz,kaz_admpop_2021.xlsx,False,False,
+cod-ps-kaz,kaz_admpop_adm0_2021.csv,False,False,
+cod-ps-kaz,kaz_admpop_adm1_2021.csv,False,False,
+cod-ab-syr,SYR Administrative Divisions Shapefiles.zip,True,,
+cod-ab-syr,syr_pplp_adm4_unocha_20210113.zip,,,
+cod-ab-syr,syr_admbnda_uncs_unocha_20201217.zip,True,,
+cod-ab-syr,SYR Administrative Divisions Geodatabase.zip,False,,
+cod-ab-syr,SYR Administrative Divisions EMF.zip,,,emf can't be p-coded
+cod-ab-syr,syr_humanitarian_locations_20200816.xlsx,True,,
+cod-ab-syr,30-seconds survey,,,google sheet can't be p-coded
+cod-ab-syr,SYR Administrative Division Names and P-codes.xlsx,True,,
+cod-ab-syr,SYR_PopulatedPlaces_TabularData.xlsx,True,,
+cod-ab-syr,SYR_PopulatedPlaces_candidate.gdb.zip,True,,
+cod-ab-syr,syr_pplp_adm4_unocha_20210113.zip,True,,
+cod-ab-syr,COD_External/SYR_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-syr,COD_External/SYR_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-syr,COD_External/SYR_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-syr,COD_External/SYR_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-syr,V00_0/SYR_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-syr,V00_0/SYR_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-syr,V00_0/SYR_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-syr,V00_0/SYR_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-ssd,SSD_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-ssd,ssd_admbnda_imwg_nbs_20221219_SHP.zip,True,,
+cod-ab-ssd,SSD_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-ssd,ssd_admbnda_imwg_nbs_20221219_EMF.zip,,,emf can't be p-coded
+cod-ab-ssd,COD_External/SSD_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-ssd,COD_External/SSD_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-ssd,COD_External/SSD_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-ssd,V00_0/SSD_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-ssd,V00_0/SSD_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-ssd,V00_0/SSD_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-ssd,V1_00/SSD_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-ssd,V1_00/SSD_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-ssd,V1_00/SSD_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-irq,IRQ Administrative Division Names and P-codes.xlsx,True,,
+cod-ab-irq,IRQ Administrative Divisions Shapefiles.zip,False,,
+cod-ab-irq,IRQ Administrative Divisions Geodatabase.zip,True,,
+cod-ab-irq,IRQ Administrative Divisions EMF.zip,,,emf can't be p-coded
+cod-ab-irq,IRQ_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-irq,IRQ_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-irq,IRQ_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-irq,IRQ_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-pse,PSE_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-pse,pse_admbnda_pamop_20210804.gdb.zip,,,Could not download file pse_admbnda_pamop_20210804.gdb.zip
+cod-ab-pse,pse_adm_pamop_20210806_SHP.zip,False,,
+cod-ab-pse,pse_adm_pamop_20210806_EMF.zip,,,emf can't be p-coded
+cod-ab-pse,COD_External/PSE_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-pse,COD_External/PSE_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-pse,COD_External/PSE_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-arm,arm_gazetteer_2019.xlsx,True,,
+cod-ps-arm,arm_admpop_2021.xlsx,True,,
+cod-ps-arm,arm_admpop_adm0_2021.csv,False,False,
+cod-ps-arm,arm_admpop_adm1_2021.csv,True,,
+cod-ps-caf,car_population_2022,False,False,
+cod-ps-caf,icasees_cartocensitaire2021_formatocha_public_V2.xlsx,False,False,
+cod-ps-caf,CAR_DATA_160214_POPULATION.xls,False,False,
+cod-ps-caf,caf_admpop_adm1_2015_v2.csv,,False,Unable to read resource caf_admpop_adm1_2015_v2.csv
+cod-ps-caf,caf_admpop_adm2_2015_v2.csv,,False,Unable to read resource caf_admpop_adm2_2015_v2.csv
+cod-ps-caf,caf_admpop_adm3_2015_v2.csv,,False,Unable to read resource caf_admpop_adm3_2015_v2.csv
+cod-ab-hti,hti_adm_cnigs_20181129_EMF.zip,,,emf can't be p-coded
+cod-ab-hti,HTI_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-hti,hti_adm_cnigs_20181129.zip,True,,
+cod-ab-hti,HTI_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-hti,HTI_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-hti,HTI_HT (MapServer),,,geoservice can't be p-coded
+cod-ab-hti,HTI_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-hti,HTI_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-hti,HTI_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-phl,phl_admgz_adm01234.xlsx,True,,
+cod-ab-phl,phl_gazetteer_2021_12_20.pdf,,,pdf can't be p-coded
+cod-ab-phl,phl_adminboundaries_tabulardata.xlsx,True,,
+cod-ab-phl,phl_adminboundaries_candidate_adm3.zip,True,,
+cod-ab-phl,phl_adminboundaries_candidate_exclude_adm3.zip,True,,
+cod-ab-phl,phl_adm_psa_namria_20200529_EMF.zip,,,emf can't be p-coded
+cod-ab-phl,PHL_AdminBoundaries_candidate_exclude_adm3.gdb.zip,False,,
+cod-ab-phl,PHL_AdminBoundaries_candidate_adm3.gdb.zip,True,,
+cod-ab-phl,COD_External/PHL_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-phl,COD_External/PHL_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-phl,COD_External/PHL_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-phl,V00_0/PHL_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-phl,V00_0/PHL_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-phl,V00_0/PHL_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-hnd,HND_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-hnd,hnd_admpop_2022.xlsx,True,,
+cod-ps-hnd,hnd_admpop_adm0_2022.csv,False,False,
+cod-ps-hnd,hnd_admpop_adm1_2022.csv,True,,
+cod-ps-hnd,hnd_admpop_adm2_2022.csv,True,,
+cod-ab-tcd,TCD_AdminBoundaries_TabularData 20170616.xlsx,True,,
+cod-ab-tcd,TCD_PopulatedPlaces_TabularData_201608.xlsx,False,False,
+cod-ab-tcd,tcd_admbnda_adm0_ocha.zip,False,,
+cod-ab-tcd,tcd_admbnda_adm1_ocha.zip,False,,
+cod-ab-tcd,tcd_admbnda_adm2_ocha_20170615.zip,False,,
+cod-ab-tcd,tcd_a_admbnd_adm3_ocha.zip,True,,
+cod-ab-tcd,Map service,,,geoservice can't be p-coded
+cod-ab-tcd,Pcode Map Service,,,geoservice can't be p-coded
+cod-ab-tcd,All data available through the Chad geodatabase,,,web app can't be p-coded
+cod-ab-tcd,tcd_adm_ocha_EMF.zip,,,emf can't be p-coded
+cod-ab-tcd,Pcode Feature Service,,,geoservice can't be p-coded
+cod-ab-tcd,tcd_admbndl_admALL_ocha_itos_20160714.zip,False,,
+cod-ab-tcd,tcd_matadata.txt,,,txt can't be p-coded
+cod-ab-tcd,TCD_AdminBoundaries_candidate.gdb.zip,False,,
+cod-ab-gin,GIN_AdminBoundaries_TabularData.xlsx,False,False,
+cod-ab-gin,gin_admbnda_ocha_FIS.zip,False,,
+cod-ab-gin,gin_admbnda_ocha_EMF.zip,,,emf can't be p-coded
+cod-ab-gin,gin_admgz_adm4_2021.xlsx,True,,
+cod-ab-gin,gin_admbnda_adm4_2021_ocha.zip,True,,
+cod-ab-gin,GIN_AdminBoundaries_candidate.gdb.zip,False,,
+cod-ab-gin,GIN_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-gin,GIN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-gin,GIN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-gin,gin_ppt_map.pptx,,,pptx can't be p-coded
+cod-ab-lao,LAO_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-lao,lao_adm_ngd_20191112_SHP.zip,True,,
+cod-ab-lao,LAO_AdminBoundaries_candidates.gdb.zip,True,,
+cod-ab-lao,lao_adm_ngd_20191112_EMF.zip,,,emf can't be p-coded
+cod-ab-lao,COD_External/LAO_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-lao,COD_External/LAO_LO (MapServer),,,geoservice can't be p-coded
+cod-ab-lao,COD_External/LAO_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-lao,COD_External/LAO_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-mmr,mmr_admpop_2022.xlsx,True,,
+cod-ps-mmr,mmr_admpop_adm0_2022.csv,False,False,
+cod-ps-mmr,mmr_admpop_adm1_2022.csv,True,,
+cod-ps-mmr,mmr_admpop_adm2_2022.csv,True,,
+cod-ps-mmr,mmr_admpop_adm3_2022.csv,True,,
+cod-ab-nga,nga_admbnda_osgof_eha_itos.gdb.zip,True,,
+cod-ab-nga,NGA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-nga,nga_adm_osgof_20190417.zip,False,,
+cod-ab-nga,nga_adm_osgof_20190417_EMF.zip,,,emf can't be p-coded
+cod-ab-nga,NGA_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-nga,NGA_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-nga,NGA_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-nga,COD_NGA_Admin3.topojson,True,,
+cod-ps-ken,ken_adminboundaries_tabulardata.xlsx,True,,
+cod-ps-ken,ken_admpop_2019.xlsx,True,,
+cod-ps-ken,ken_admpop_adm0_2019.csv,False,False,
+cod-ps-ken,ken_admpop_adm1_2019.csv,True,,
+cod-ab-lby,Libya Common Operational Dataset (Final 2017-OCHA).xlsx,False,True,
+cod-ab-lby,LBY_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-lby,LBY_PopulatedPlaces_TabularData.xlsx,True,,
+cod-ab-lby,Libya Geodatabase Follow-up Methodology 2017.pdf,,,pdf can't be p-coded
+cod-ab-lby,lby_adm_unosat_lbsc_20180507.gdb.zip,True,,
+cod-ab-lby,lby_adm_unosat_lbsc_20180507_SHP.zip,False,,
+cod-ab-lby,lby_adm_unosat_lbsc_20180507_EMF.zip,,,emf can't be p-coded
+cod-ab-lby,lby_pplp_unosat_lbsc_20181030.gdb.zip,True,,
+cod-ab-lby,LBY_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-lby,LBY_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-lby,LBY_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-lby,LBY_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-dza,DZA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-dza,dza_admbnda_unhcr2020_SHP.zip,True,,
+cod-ab-dza,dza_adm_unhcr2020_EMF.zip,,,emf can't be p-coded
+cod-ab-dza,dza_adm_unhcr2020.gdb.zip,,,Could not download file dza_adm_unhcr2020.gdb.zip
+cod-ab-dza,COD_External/DZA_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-dza,COD_External/DZA_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-dza,COD_External/DZA_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-dza,COD_External/DZA_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-kwt,KWT_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-kwt,kwt_adm_gadm_20220201_SHP.zip,False,,
+cod-ab-kwt,kwt_adm_gadm_20220201.gdb.zip,True,,
+cod-ab-kwt,pplp_15m_esri.zip,False,,
+cod-ab-kwt,COD_External/KWT_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-kwt,COD_External/KWT_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-kwt,COD_External/KWT_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-kwt,COD_External/KWT_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-mar,MAR_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-mar,mar_adm_unhcr2020_SHP.zip,False,,
+cod-ab-mar,mar_adm_unhcr2020_EMF.zip,,,emf can't be p-coded
+cod-ab-mar,mar_admb_unhcr2020.gdb.zip,True,,
+cod-ab-mar,COD_External/MAR_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-mar,COD_External/MAR_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-mar,COD_External/MAR_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mar,COD_External/MAR_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-omn,OMN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-omn,omn_adm_gadm_20210603_SHP.zip,False,,
+cod-ab-omn,omn_adm_gadm_20210603_EMF.zip,,,emf can't be p-coded
+cod-ab-omn,omn_adm_gadm_20210603.gdb.zip,True,,
+cod-ab-omn,COD_External/OMN_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-omn,COD_External/OMN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-omn,COD_External/OMN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-sau,SAU_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-sau,sau_adm_gadm_20210525_SHP.zip,False,,
+cod-ab-sau,sau_adm_gadm_20100525_EMF.zip,,,emf can't be p-coded
+cod-ab-sau,Capitals,False,,
+cod-ab-sau,SAU_Places.zip,False,,
+cod-ab-sau,sau_adm_gadm_20210525.gdb.zip,True,,
+cod-ab-sau,COD_External/SAU_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-sau,COD_External/SAU_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-sau,COD_External/SAU_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-esh,esh_admbnda_gadm_20210405_SHP.zip,False,,
+cod-ab-esh,ESH_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-esh,esh_admbnda_gadm_20210405_EMF.zip,,,emf can't be p-coded
+cod-ab-esh,esh_admbnda_gadm_20210405.gdb.zip,True,,
+cod-ab-esh,COD_External/ESH_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-esh,COD_External/ESH_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-esh,COD_External/ESH_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-cod,COD_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-cod,cod_admbnda_rgc_itos_20190911_SHP.zip,False,,
+cod-ab-cod,cod_admbnda_rgc_itos_20190911_EMF.zip,,,emf can't be p-coded
+cod-ab-cod,COD_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-cod,COD_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-cod,COD_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-col,COL Administrative Division Names and P-codes.xlsx,True,,
+cod-ab-col,COL Administrative Divisions Shapefiles.zip,False,,
+cod-ab-col,COL Administrative Divisions EMF.zip,,,emf can't be p-coded
+cod-ab-col,COL Administrative Divisions Geodatabase.zip,True,,
+cod-ab-col,COL_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-col,COL_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-col,COL_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-col,COL_ES (MapServer) PREVIOUS VERSION,,,geoservice can't be p-coded
+cod-ab-col,COL_pcode (FeatureServer) PREVIOUS VERSION,,,geoservice can't be p-coded
+cod-ab-col,COL_pcode (MapServer) PREVIOUS VERSION,,,geoservice can't be p-coded
+cod-ab-kgz,KGZ Administrative Division Names and P-codes.xlsx,True,,
+cod-ab-kgz,KGZ Administrative Divisions Shapefiles.zip,False,,
+cod-ab-kgz,KGZ Administrative Divisions Geodatabase.zip,True,,
+cod-ab-kgz,KGZ Administrative Divisions EMF.zip,,,emf can't be p-coded
+cod-ab-kgz,KGZ_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-kgz,KGZ_KY (MapServer),,,geoservice can't be p-coded
+cod-ab-kgz,KGZ_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-kgz,KGZ_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-kgz,KGZ_RU (MapServer),,,geoservice can't be p-coded
+cod-ps-som,SOM_AdminBoundaries_TabularData.xlsx,False,False,
+cod-ps-som,Somalia population sex and age disaggregated 2021,False,False,
+cod-ps-som,Somalia population gender disaggregated 2019,False,False,
+cod-ps-som,somalia-population-statistics 2014,False,False,
+cod-ps-som,som_pplp_adm0_v2.csv,False,False,
+cod-ps-som,som_pplp_adm1_v2.csv,False,False,
+cod-ps-som,som_pplp_adm2_v2.csv,False,False,
+cod-ps-nga,NGA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-nga,nga_admpop_2020.xlsx,False,False,
+cod-ps-nga,nga_admpop_adm0_2020.csv,False,False,
+cod-ps-nga,nga_admpop_adm1_2020.csv,False,False,
+cod-ps-nga,nga_admpop_adm2_2020.csv,False,False,
+cod-ps-nga,nga_admpop_SenDist_2020.csv,False,False,
+cod-ps-tcd,tcd_admpop_2022.xlsx,False,False,
+cod-ps-tcd,tcd_admpop_2021.xlsx,False,False,
+cod-ps-tcd,tcd_admpop_adm0_2021.csv,False,False,
+cod-ps-tcd,tcd_admpop_adm1_2021.csv,False,False,
+cod-ps-tcd,tcd_admpop_adm2_2021.csv,False,False,
+cod-ps-tcd,tcd_adminboundaries_tabulardata-20170616.xlsx,True,,
+cod-ab-sdn,SDN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-sdn,sdn_adm_cbs_nic_ssa_20200831_SHP.zip,True,,
+cod-ab-sdn,sdn_adm_cbs_nic_ssa_20200317_EMF.zip,,,emf can't be p-coded
+cod-ab-sdn,sdn_adm_cbs_nic_ssa_20200831.gdb.zip,False,,
+cod-ab-sdn,COD_External/SDN_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-sdn,COD_External/SDN_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-sdn,COD_External/SDN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-sdn,COD_External/SDN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-sdn,V1_00/SDN_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-sdn,V1_00/SDN_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-sdn,V1_00/SDN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-sdn,V1_00/SDN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-sdn,V00_0/SDN_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-sdn,V00_0/SDN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-sdn,V00_0/SDN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-lbn,LBN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-lbn,lbn_adm_cdr_20200810.zip,True,,
+cod-ab-lbn,lbn_beirut_adm4_mapaction_pcoded.zip,True,,
+cod-ab-lbn,lbn_adm_cdr_2020810_EMF.zip,,,emf can't be p-coded
+cod-ps-geo,GEO_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-geo,geo_admpop.xlsx,True,,
+cod-ps-geo,geo_supplimentary_gazetteer_2019.xlsx,False,False,
+cod-ps-geo,geo_admpop_adm0_v2.csv,False,False,
+cod-ps-geo,geo_admpop_adm1_v4.csv,True,,
+cod-ps-geo,geo_admpop_adm2_v3.csv,True,,
+cod-ps-geo,geo_suppliementary_gazetteer_2019.xlsx,False,False,
+cod-ab-zmb,ZMB_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-zmb,zmb_adm_dmmu_20201124_SHP.zip,True,,
+cod-ab-zmb,zmb_adm_dmmu_20201124_EMF.zip,,,emf can't be p-coded
+cod-ab-zmb,ZMB_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-zmb,COD_External/ZMB_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-zmb,COD_External/ZMB_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-zmb,COD_External/ZMB_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-bdi,BDI_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-bdi,bdi_admpop_2022_v2.xlsx,True,,
+cod-ps-bdi,bdi_admpop_2022_adm0_v3.csv,False,False,
+cod-ps-bdi,bdi_admpop_2022_adm1_v3.csv,True,,
+cod-ps-bdi,bdi_admpop_2022_adm2_v3.csv,True,,
+cod-ab-egy,egy_admbnda_adm0_capmas_itos_20170421.zip,False,,
+cod-ab-egy,egy_admbnda_adm1_capmas_20170421.zip,True,,
+cod-ab-egy,egy_admbnda_adm2_capmas_20170421.zip,True,,
+cod-ab-egy,egy_admbnda_adm3_capmas_20170421.zip,True,,
+cod-ab-egy,egy_admbndl_admALL_capmas_itos_20170421.zip,False,,
+cod-ab-egy,egy_admbndp_admALL_capmas_itos_20170421.zip,True,,
+cod-ab-egy,egy_adm_capmas_itos_20170421.gdb.zip,False,,
+cod-ab-egy,EGY_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-egy,egy_admbnda_capmas_itos_20170421_EMF.zip,,,emf can't be p-coded
+cod-ab-egy,COD_External/EGY_AR (MapServer),,,geoservice can't be p-coded
+cod-ab-egy,COD_External/EGY_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-egy,COD_External/EGY_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-egy,COD_External/EGY_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-phl,PHL_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-phl,phl_admpop_2022_2023_2024_2025_v2.xlsx,True,,
+cod-ps-phl,phl_admpop_adm0_2022.csv,False,False,
+cod-ps-phl,phl_admpop_adm1_2022.csv,True,,
+cod-ps-phl,phl_admpop_adm2_2022_v2.csv,True,,
+cod-ps-phl,phl_admpop_adm0_2023.csv,False,False,
+cod-ps-phl,phl_admpop_adm1_2023.csv,True,,
+cod-ps-phl,phl_admpop_adm2_2023_v2.csv,True,,
+cod-ps-phl,phl_admpop_adm0_2024.csv,False,False,
+cod-ps-phl,phl_admpop_adm1_2024_v1.csv,True,,
+cod-ps-phl,phl_admpop_adm2_2024_v2.csv,True,,
+cod-ps-phl,phl_admpop_adm0_2025.csv,False,False,
+cod-ps-phl,phl_admpop_adm1_2025.csv,True,,
+cod-ps-phl,phl_admpop_adm2_2025_v2.csv,True,,
+cod-ab-npl,npl_adminboundaries_tabulardata_20201117.xlsx,True,,
+cod-ab-npl,npl_admbnda_nd_20201117_SHP.zip,False,,
+cod-ab-npl,npl_admbnda_nd_20201117_EMF.zip,,,emf can't be p-coded
+cod-ab-npl,npl_adminboundaries_candidate_20201117.gdb.zip,False,,
+cod-ab-npl,NPL_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-npl,NPL_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-npl,NPL_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-eri,ERI_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-eri,ERI_ADM_20170818.xlsx,True,,
+cod-ps-eri,eri_adm0_pop_20170818_v1.csv,False,False,
+cod-ps-eri,eri_adm1_pop_20170818_v2.csv,True,,
+cod-ps-eri,eri_adm2_pop_20170818_v2.csv,True,,
+cod-ps-sle,SLE_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-sle,sle_population_statistics_sierraleone_2020.xlsx,True,,
+cod-ps-sle,sle_admpop_adm0_2020_v2.csv,False,False,
+cod-ps-sle,sle_admpop_adm1_2020_v2.csv,True,,
+cod-ps-sle,sle_adm2_population_v2.csv,True,,
+cod-ps-sle,sle_admpop_adm3_2020_v2.csv,True,,
+cod-ab-dom,DOM_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-dom,dom_admbnda_one_20210629_SHP.zip,True,,
+cod-ab-dom,dom_admbnda_one_20210629_EMF.zip,,,emf can't be p-coded
+cod-ab-dom,dom_admbnda_one_20210629.gdb.zip,True,,
+cod-ab-dom,COD_External/DOM_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-dom,COD_External/DOM_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-dom,COD_External/DOM_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-gtm,gtm_adm_ocha_conred_2019_SHP.zip,True,,
+cod-ab-gtm,GTM_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-gtm,gtm_adm_ocha_conred_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-gtm,GTM_AdminBoundaries_TabularData.xlsx.xlsx,,,
+cod-ab-gtm,GTM_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-gtm,GTM_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-gtm,GTM_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-blz,BLZ_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-blz,blz_adm_gadm_20210910_SHP.zip,False,,
+cod-ab-blz,blz_adm_gadm_20210910_EMF.zip,,,emf can't be p-coded
+cod-ab-blz,blz_adm_gadm_20210910.gdb.zip,True,,
+cod-ab-blz,COD_External/BLZ_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-blz,COD_External/BLZ_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-blz,COD_External/BLZ_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-bgd,BGD_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-bgd,bgd_adm_bbs_20201113_SHP.zip,True,,
+cod-ab-bgd,bgd_adm_bbs_20201113_EMF.zip,,,emf can't be p-coded
+cod-ab-bgd,BGD_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-bgd,COD_External/BGD_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-bgd,COD_External/BGD_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-bgd,COD_External/BGD_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-bgd,V00_0/BGD_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-bgd,V00_0/BGD_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-bgd,V00_0/BGD_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-dma,dma_census_2011_v5.xlsx,True,,
+cod-ps-dma,dma_census_2011_v5.csv,,False,Unable to read resource dma_census_2011_v5.csv
+cod-ps-dma,dma_pp_2011_coded.txt,,,txt can't be p-coded
+cod-ps-sen,sen_admpop_2022.xlsx,True,,
+cod-ps-sen,sen_admpop_adm0_2021.csv,False,False,
+cod-ps-sen,sen_admpop_adm0_2020_v2.csv,False,False,
+cod-ps-sen,sen_admpop_adm1_2020_v2.csv,True,,
+cod-ab-ven,VEN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-ven,ven_adm_ine_20210223_SHP.zip,True,,
+cod-ab-ven,ven_adm_ine_20210223_EMF.zip,,,emf can't be p-coded
+cod-ab-ven,ven_adm_ine_20210223.gdb.zip,True,,
+cod-ab-ven,COD_External/VEN_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-ven,COD_External/VEN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-ven,COD_External/VEN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-tgo,TGO_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-tgo,tgo_adm_inseed_itos_20210107_SHP.zip,True,,
+cod-ab-tgo,tgo_admbnda_inseed_itos_20210107_EMF.zip,,,emf can't be p-coded
+cod-ab-tgo,COD_External/TGO_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-tgo,tgo_adm_inseed_itos_20210107_GDB.zip,False,,
+cod-ab-tgo,COD_External/TGO_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-tgo,COD_External/TGO_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-tgo,V00_0/TGO_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-tgo,V00_0/TGO_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-tgo,https://gistmaps.itos.uga.edu/arcgis/rest/services/V00_0/TGO_pcode/MapServer,,,geoservice can't be p-coded
+cod-ab-tgo,tgo_ppt_map.pptx,,,pptx can't be p-coded
+cod-ab-chl,chl_adm_bcn_20211008_SHP.zip,True,,
+cod-ab-chl,chl_adm_bcn_20211008_EMF.zip,,,emf can't be p-coded
+cod-ab-chl,chl_adm_bcn_20211008.gdb.zip,True,,
+cod-ab-chl,CHL_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-chl,COD_External/CHL_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-chl,COD_External/CHL_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-chl,COD_External/CHL_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-slv,SLV_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-slv,slv_adm_gadm_2021_SHP.zip,True,,
+cod-ab-slv,slv_adm_gadm_2021_EMF.zip,,,emf can't be p-coded
+cod-ab-slv,slv_adm_2020.gdb.zip,False,,
+cod-ab-slv,COD_External/SLV_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-slv,COD_External/SLV_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-slv,COD_External/SLV_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-pan,PAN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-pan,pan_adm_gadm_20211020_SHP.zip,False,,
+cod-ab-pan,pan_adm_gadm_20211020_EMF.zip,,,emf can't be p-coded
+cod-ab-pan,pan_adm_gadm_20211020.gdb.zip,True,,
+cod-ab-pan,COD_External/PAN_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-pan,COD_External/PAN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-pan,COD_External/PAN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-nic,NIC_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-nic,nic_admbnda_inide_itos_20210826_SHP.zip,False,,
+cod-ab-nic,nic_admbnda_inide_itos_20210826.gdb.zip,False,,
+cod-ab-nic,nic_admbnda_inide_itos_20210826_EMF.zip,,,emf can't be p-coded
+cod-ab-nic,NIC_AdminBoundaries_candidate.gdb.zip,False,,
+cod-ab-nic,COD_External/NIC_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-nic,COD_External/NIC_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-nic,COD_External/NIC_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-nic,V00_0/NIC_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-nic,V00_0/NIC_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-nic,V00_0/NIC_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-vut,VUT_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-vut,vut_adm_spc_itos_20180824.zip,True,,
+cod-ab-vut,vut_admbnda_adm0_spc_20180824.zip,False,,
+cod-ab-vut,vut_admbnda_adm1_spc_20180824.zip,True,,
+cod-ab-vut,vut_admbnda_adm2_spc_20180824.zip,True,,
+cod-ab-vut,vut_admbndl_admALL_spc_itos_20180824.zip,False,,
+cod-ab-vut,vut_admbndp_admALL_spc_itos_20180824.zip,True,,
+cod-ab-vut,vut_adm_spc_20180824_EMF.zip,,,emf can't be p-coded
+cod-ab-vut,VUT_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-vut,VUT_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-vut,VUT_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-bdi,BDI_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-bdi,bdi_admbnda_igebu_ocha_itos_20171103.gdb.zip,True,,
+cod-ab-bdi,bdi_adm_igebu_ocha_20171103_SHP.zip,True,,
+cod-ab-bdi,bdi_adm_igebu_ocha_20171103_EMF.zip,,,emf can't be p-coded
+cod-ab-bdi,BDI_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-bdi,BDI_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-bdi,BDI_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-btn,btn_admbnda_bnlc_20201026_SHP.zip,False,,
+cod-ab-btn,btn_admbnda_bnlc_20201026_EMF.zip,,,emf can't be p-coded
+cod-ab-btn,btn_admbnda_bnic_20201026.gdb.zip,True,,
+cod-ab-btn,BTN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-btn,COD_External/BTN_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-btn,COD_External/BTN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-btn,COD_External/BTN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-mrt,mrt_admgz_2020.xlsx,True,,
+cod-ps-mrt,mrt_admpop_2022.xlsx,True,,
+cod-ps-mrt,mrt_admpop_adm0_2022.csv,False,False,
+cod-ps-mrt,mrt_admpop_adm1_2022.csv,True,,
+cod-ab-pak,PAK_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-pak,pak_adm_wfp_20220909_SHP.zip,False,,
+cod-ab-pak,pak_admbndl_adm_LOC_wfp_itos_20220909.zip,False,,
+cod-ab-pak,pak_adm_wfp_20220909_GDB.gdb.zip,True,,
+cod-ab-pak,COD_External/PAK_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-pak,COD_External/PAK_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-pak,COD_External/PAK_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-pak,PAK_AdminBoundaries_TabularData_KM2.xlsx,True,,
+cod-ab-tls,TLS_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-tls,tls_adm_who_ocha_20200911_SHP.zip,True,,
+cod-ab-tls,tls_adm_who_ocha_20200911_EMF.zip,,,emf can't be p-coded
+cod-ab-tls,tls_adm_who_ocha_20200911.gdb.zip,False,,
+cod-ab-tls,COD_External/TLS_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-tls,COD_External/TLS_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-tls,COD_External/TLS_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-mng,MNG Administrative Division Names and P-codes.xlsx,True,,
+cod-ab-mng,MNG Administrative Divisions Shapefiles.zip,False,,
+cod-ab-mng,MNG Administrative Divisions EMF.zip,,,emf can't be p-coded
+cod-ab-mng,MNG Administrative Divisions Geodatabase.zip,False,,
+cod-ab-mng,COD_External/MNG_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-mng,COD_External/MNG_MN (MapServer),,,geoservice can't be p-coded
+cod-ab-mng,COD_External/MNG_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mng,COD_External/MNG_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-vnm,vnm_adminboundaries_tabulardata_20201027.xlsx,True,,
+cod-ab-vnm,vnm_adm_gov_20201027.zip,True,,
+cod-ab-vnm,vnm_adminboundaries_candidate_20201027.gdb.zip,True,,
+cod-ab-vnm,vnm_adm_gov_20201027_emf.zip,,,emf can't be p-coded
+cod-ab-vnm,VNM_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-vnm,VNM_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-vnm,VNM_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-vnm,VNM_VI (MapServer),,,geoservice can't be p-coded
+cod-ab-prk,prk_adm_wfp_20190624_SHP.zip,True,,
+cod-ab-prk,prk_adm_wfp_20190624_EMF.zip,,,emf can't be p-coded
+cod-ab-prk,prk_adm_wfp_20190624.gdb.zip,True,,
+cod-ab-prk,PRK_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-prk,PRK_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-prk,PRK_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-prk,PRK_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-mdv,MDV_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-mdv,mdv_admbnd_gov_20210329_SHP.zip,False,,
+cod-ab-mdv,mdv_admbnd_gov_20210329.gdb.zip,False,,
+cod-ab-mdv,mdv_admbnda_gov_20210329_EMF.zip,,,emf can't be p-coded
+cod-ab-mdv,COD_External/MDV_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-mdv,COD_External/MDV_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mdv,COD_External/MDV_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-slb,slb_adm.xls,True,,
+cod-ps-slb,slb_pplp.xlsx,True,,
+cod-ps-slb,slb_pplp_adm0_country_v2.csv,False,False,
+cod-ps-slb,slb_pplp_adm1_province_v2.csv,True,,
+cod-ps-slb,slb_pplp_adm2_constituency_v2.csv,True,,
+cod-ps-slb,slb_admpop_adm3_2009_v2.csv,True,,
+cod-ps-fji,fji_pplp_2017_census.xlsx,True,,
+cod-ps-fji,fji_adm_gz.xlsx,True,,
+cod-ps-fji,fji_pplp_adm0_country_2017_v2.csv,False,False,
+cod-ps-fji,fji_pplp_adm1_division_2017_v3.csv,True,,
+cod-ps-fji,fji_pplp_adm2_province_2017_v2.csv,True,,
+cod-ps-fji,fji_pplp_adm3_tikina_2017_v2.csv,True,,
+cod-ps-mex,MEX_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-mex,mex_admpop_2021_v2.xlsx,True,,
+cod-ps-mex,mex_admpop_adm0_2021_v2.csv,True,,
+cod-ps-mex,mex_admpop_adm1_2021_v2.csv,True,,
+cod-ps-mex,mex_admpop_adm2_2021_v2.csv,True,,
+cod-ps-cpv,cpv_adminboundaries_tabulardata_v4.xlsx,True,,
+cod-ps-cpv,cpv_admpop_2022B.xlsx,True,,
+cod-ps-cpv,cpv_admpop_adm0_2022.csv,False,False,
+cod-ps-cpv,cpv_admpop_adm1_2022B.csv,True,,
+cod-ps-cpv,cpv_admpop_island_2022B.csv,False,False,
+cod-ab-mex,MEX_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-mex,mex_admbnda_govmex_20210618_SHP.zip,True,,
+cod-ab-mex,mex_admbnda_govmex_20210618_EMF.zip,,,emf can't be p-coded
+cod-ab-mex,mex_admbnda_govmex_20210618.gdb.zip,True,,
+cod-ab-mex,COD_External/MEX_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-mex,COD_External/MEX_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mex,COD_External/MEX_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-mex,V00_0/MEX_ES (MapServer) previous version,,,geoservice can't be p-coded
+cod-ab-mex,V00_0/MEX_pcode (FeatureServer) previous version,,,geoservice can't be p-coded
+cod-ab-mex,V00_0/MEX_pcode (MapServer) previous version,,,geoservice can't be p-coded
+cod-ps-ton,ton_admpop_2021_v8.xlsx,True,,
+cod-ps-ton,ton_Admin_Boundary_taxonomy_Metadata.xlsx,True,,
+cod-ps-ton,ton_admpop_adm0_2021_v2.csv,True,,
+cod-ps-ton,ton_admpop_adm1_2021.csv,True,,
+cod-ps-ton,ton_admpop_adm2_2021.csv,True,,
+cod-ps-ton,ton_admpop_adm3_2021.csv,True,,
+cod-ps-ton,ton_admpop_adm0_2021_years.csv,False,False,
+cod-ps-ton,ton_admpop_adm1_2021_years.csv,True,,
+cod-ps-ago,ago_admpop_2022.xlsx,True,,
+cod-ps-ago,AGO_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-ago,ago_admpop_adm0_2022.csv,False,False,
+cod-ps-ago,ago_admpop_adm1_2022_v2.csv,True,,
+cod-ps-ago,ago_admpop_adm2_2022_v2.csv,True,,
+cod-ps-png,PNG_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-png,png_admpop_2011.xlsx,True,,
+cod-ps-png,png_admpop_adm0_2011_v2.csv,False,False,
+cod-ps-png,png_admpop_adm1_2011_v2.csv,True,,
+cod-ps-png,png_admpop_adm2_2011_v2.csv,True,,
+cod-ps-png,png_admpop_adm3_2011_v2.csv,True,,
+cod-ps-mli,MLI_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-mli,Mali_Population_communes_sexe_2018.xls,True,,
+cod-ps-mli,mli_pop_adm0_v2.csv,False,False,
+cod-ps-mli,mli_pop_adm1_v2.csv,True,,
+cod-ps-mli,mli_pop_adm2_v2.csv,True,,
+cod-ps-mli,mli_pop_adm3_v2.csv,True,,
+cod-ps-bfa,bfa_population_statistic_2019_ign_v2.xlsx,True,,
+cod-ps-bfa,BFA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-bfa,bfa_adm0_pop_v2.csv,False,False,
+cod-ps-bfa,bfa_adm1_pop_v2.csv,True,,
+cod-ps-bfa,bfa_adm2_pop_v2.csv,True,,
+cod-ps-bfa,bfa_adm3_pop_v2.csv,True,,
+cod-ps-civ,civ_population_statistic_2019_unfpa_v2.xlsx,True,,
+cod-ps-civ,civ_admpop_adm0_v2.csv,False,False,
+cod-ps-civ,civ_admpop_adm1_v2.csv,True,,
+cod-ps-civ,civ_admpop_adm2_v2.csv,True,,
+cod-ps-civ,civ_admpop_adm3_v2.csv,True,,
+cod-ps-lbr,lib_population_statistic_Liberia_2020.xlsx,True,,
+cod-ps-lbr,lbr_admpop_adm0_2020_v2.csv,False,False,
+cod-ps-lbr,lbr_admpop_adm1_2020_v2.csv,True,,
+cod-ps-lbr,lbr_admpop_adm2_2020_v2.csv,True,,
+cod-ps-lbr,LBR_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-guy,guy_admgz_2021.xlsx,True,,
+cod-ps-guy,guy_admpop_2021.xlsx,True,,
+cod-ps-guy,guy_admpop_adm0_2021.csv,False,False,
+cod-ps-guy,guy_admpop_adm1_2021.csv,True,,
+cod-ps-ven,VEN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-ven,ven_admpop_2011_v2.xlsx,True,,
+cod-ps-ven,ven_admpop_adm0_2011_v2.csv,False,False,
+cod-ps-ven,ven_admpop_adm1_2011_v2.csv,True,,
+cod-ps-ven,ven_admpop_adm2_2011_v3.csv,True,,
+cod-ab-bol,BOL_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-bol,bol_adm_gb2014_SHP.zip,True,,
+cod-ab-bol,bol_adm_gb2014_EMF.zip,,,emf can't be p-coded
+cod-ab-bol,BOL_AdminBoundaries_candidate.gdb.zip,False,,
+cod-ab-bol,BOL_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-bol,BOL_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-bol,BOL_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-bol,Previous BOL_ES (MapServer),,,geoservice can't be p-coded
+cod-ab-bol,Previous BOL_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ps-uzb,uzb_adm_2018.xls,True,,
+cod-ps-uzb,uzbekistan_population_statistics_2018.xlsx,True,,
+cod-ps-uzb,uzb_admpop_adm1_v2.csv,True,,
+cod-ps-uzb,uzb_admpop_adm0_v2.csv,False,False,
+cod-ps-mhl,mhl_Admin_Boundary_taxonomy_Metadata.xlsx,True,,
+cod-ps-mhl,MHL_pplp.xlsx,True,,
+cod-ps-mhl,mhl_pplp_adm0_country_v2.csv,False,False,
+cod-ps-mhl,mhl_pplp_adm1_atolls_v2.csv,True,,
+cod-ps-mhl,mhl_pplp_adm2_eas_v2.csv,True,,
+cod-ab-uga,UGA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-uga,uga_admbnda_ubos_20200824_SHP.zip,False,,
+cod-ab-uga,uga_admbnda_ubos_20200824_EMF.zip,,,emf can't be p-coded
+cod-ab-uga,uga_admbnda_ubos_20200824.gdb.zip,True,,
+cod-ab-uga,COD_External/UGA_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-uga,COD_External/UGA_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-uga,COD_External/UGA_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-civ,CIV_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-civ,CIV_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-civ,civ_admbnda_adm0_cntig_20180706.zip,False,,
+cod-ab-civ,civ_admbnda_adm1_cntig_ocha_itos_20180706.zip,True,,
+cod-ab-civ,civ_admbnda_adm2_cntig_ocha_itos_20180706.zip,True,,
+cod-ab-civ,civ_admbnda_adm3_cntig_ocha_itos_20180706.zip,True,,
+cod-ab-civ,civ_admbndl_admALL_cntig_ocha_itos_20180706.zip,False,,
+cod-ab-civ,civ_admbndp_admALL_cntig_ocha_itos_20180706.zip,True,,
+cod-ab-civ,civ_admbnda_cntig_ocha_itos_20180706_EMF.zip,,,emf can't be p-coded
+cod-ab-civ,CIV_FR (MapServer),,,geoservice can't be p-coded
+cod-ab-civ,CIV_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-civ,CIV_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-civ,civ_ppt_map.pptx,,,pptx can't be p-coded
+cod-ab-ago,AGO_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-ago,ago_admbnda_gadm_ine_ocha_20180904_EMF.zip,,,emf can't be p-coded
+cod-ab-ago,ago_adm_gadm_ine_ocha_20180904_SHP.zip,False,,
+cod-ab-ago,ago_admbndl_admALL_gadm_ine_ocha_itos_20180904.zip,False,,
+cod-ab-ago,ago_admbndp_admALL_gadm_ine_ocha_itos_20180904.zip,True,,
+cod-ab-ago,ago_adm_gadm_ine_ocha_20180904.zip,True,,
+cod-ab-ago,AGO_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-ago,AGO_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-ago,AGO_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-zwe,ZWE_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-zwe,zwe_adm_zimstat_ocha_itos_20180911.zip,True,,
+cod-ab-zwe,zwe_admbnda_adm0_zimstat_ocha_20180911.zip,False,,
+cod-ab-zwe,zwe_admbnda_adm1_zimstat_ocha_20180911.zip,True,,
+cod-ab-zwe,zwe_admbnda_adm2_zimstat_ocha_20180911.zip,True,,
+cod-ab-zwe,zwe_admbnda_adm3_zimstat_ocha_20180911.zip,True,,
+cod-ab-zwe,zwe_admbndl_admALL_zimstat_ocha_itos_20180911.zip,False,,
+cod-ab-zwe,zwe_admbndp_admALL_zimstat_ocha_itos_20180911.zip,True,,
+cod-ab-zwe,zwe_adm_zimstat_ocha_20180911_EMF.zip,,,emf can't be p-coded
+cod-ab-zwe,ZWE_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-zwe,ZWE_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-zwe,ZWE_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-zwe,ZWE_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-zwe,zwe_admpop_2022.xlsx,True,,
+cod-ps-zwe,zwe_admpop_adm0_2022.csv,False,False,
+cod-ps-zwe,zwe_admpop_adm1_2022.csv,True,,
+cod-ps-zwe,zwe_admpop_adm2_2022.csv,True,,
+cod-ab-mwi,MWI_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-mwi,mwi_adm_nso_20181016_SHP.zip,False,,
+cod-ab-mwi,mwi_admbnda_adm0_nso_20181016.emf,,,emf can't be p-coded
+cod-ab-mwi,mwi_admbnda_adm1_nso_20181016.emf,,,emf can't be p-coded
+cod-ab-mwi,mwi_admbnda_adm2_nso_20181016.emf,,,emf can't be p-coded
+cod-ab-mwi,mwi_admbnda_adm3_nso_20181016.emf,,,emf can't be p-coded
+cod-ab-mwi,mwi_adm_nso_20181016.zip,True,,
+cod-ab-mwi,MWI_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-mwi,MWI_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-mwi,MWI_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mwi,mwi_district_lookup.xls,True,,
+cod-ps-mwi,MWI_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-mwi,mwi_admpop_2022.xlsx,True,,
+cod-ps-mwi,mwi_admpop_adm0_2022.csv,False,False,
+cod-ps-mwi,mwi_admpop_adm1_2022.csv,True,,
+cod-ps-mwi,mwi_admpop_adm2_2022.csv,True,,
+cod-ab-moz,MOZ_AdminBoundaries_TabularData.xlsx,,,
+cod-ab-moz,moz_adm_20190607b_SHP.zip,True,,
+cod-ab-moz,moz_adm_2019_EMF.zip,,,emf can't be p-coded
+cod-ab-moz,moz_admbnda_adm3_ine_20190910_km2.zip,True,,
+cod-ab-moz,MOZ_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-moz,MOZ_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-moz,MOZ_PT (MapServer),,,geoservice can't be p-coded
+cod-ps-uga,UGA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-uga,uga_admpop_2022.xlsx,True,,
+cod-ps-uga,uga_admpop_adm0_2022.csv,False,False,
+cod-ps-uga,uga_admpop_adm1_2022.csv,True,,
+cod-ps-uga,uga_admpop_adm2_2022.csv,True,,
+cod-ps-sxm,sxm_gazetteer.xlsx,True,,
+cod-ps-sxm,sxm_pop_2018.xlsx,True,,
+cod-ps-sxm,sxm_adm0_pop_2018_v2.csv,False,False,
+cod-ps-sxm,sxm_adm1_pop_2018_v2.csv,True,,
+cod-ps-mdg,mdg_gazetteer_20181031.xls,True,,
+cod-ps-mdg,mdg_admpop_2018.xls,True,,
+cod-ps-mdg,mdg_admpop_adm0_2018.csv,False,False,
+cod-ps-mdg,mdg_admpop_adm1_2018.csv,True,,
+cod-ps-mdg,mdg_admpop_adm2_2018.csv,True,,
+cod-ps-mdg,mdg_admpop_adm3_2018.csv,True,,
+cod-ps-mdg,mdg_admpop_adm4_2018.csv,True,,
+cod-ps-tza,tza_gazetteer.xlsx,True,,
+cod-ps-tza,tza_admpop_adm0_2000_v2.csv,False,False,
+cod-ps-tza,tza_admpop_adm0_2000_v2.csv,False,False,
+cod-ps-tza,tza_admpop_adm1_2000_v2.csv,True,,
+cod-ps-tza,tza_admpop_adm2_2000_v2.csv,True,,
+cod-ps-ecu,ecu_admpop_2020.xlsx,True,,
+cod-ps-ecu,ecu_admpop_adm0_2020.csv,False,False,
+cod-ps-ecu,ecu_admpop_adm1_2020.csv,True,,
+cod-ps-ecu,ECU_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-nam,nam_adminboundaries_tabulardata.xlsx,True,,
+cod-ps-nam,nam_admpop_2022.xlsx,True,,
+cod-ps-nam,nam_admpop_adm0_2022.csv,False,False,
+cod-ps-nam,nam_admpop_adm1_2022.csv,True,,
+cod-ps-nam,nam_admpop_adm2_2022.csv,True,,
+cod-ps-zaf,ZAF_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-zaf,zaf_admpop_2020.xlsx,True,,
+cod-ps-zaf,zaf_admpop_adm0_2020.csv,False,False,
+cod-ps-zaf,zaf_admpop_adm1_2020.csv,True,,
+cod-ps-zaf,zaf_admpop_adm2_2020.csv,True,,
+cod-ab-com,COM_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-com,com_adm_cosep_ocha_20191205_SHP.zip,False,,
+cod-ab-com,com_adm_cosep_ocha_20191205_EMF.zip,,,emf can't be p-coded
+cod-ab-com,COM_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-com,COM_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-com,COM_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-com,COM_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-com,COM_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-com,com_admpop_2017.xlsx,True,,
+cod-ps-com,com_admpop_adm0_2017.csv,False,False,
+cod-ps-com,com_admpop_adm1_2017.csv,True,,
+cod-ps-btn,BTN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-btn,btn_admpop_2022.xlsx,True,,
+cod-ps-btn,btn_admpop_adm0_2022.csv,False,False,
+cod-ps-btn,btn_admpop_adm1_2022.csv,True,,
+cod-ps-prk,prk_pop.xls,True,,
+cod-ps-prk,prk_pop_adm0_v2.csv,False,False,
+cod-ps-prk,prk_pop_adm1_v2.csv,True,,
+cod-ps-prk,prk_pop_adm2_v2.csv,True,,
+cod-ps-bgd,BGD_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-bgd,bgd_admpop_2022.xlsx,True,,
+cod-ps-bgd,bgd_admpop_adm0_2022.csv,False,False,
+cod-ps-bgd,bgd_admpop_adm1_2022.csv,True,,
+cod-ps-bgd,bgd_admpop_adm2_2022.csv,True,,
+cod-ps-bgd,bgd_admpop_adm3_2022.csv,True,,
+cod-ps-tha,THA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-tha,tha_admpop_2022.xlsx,True,,
+cod-ps-tha,tha_admpop_adm0_2022.csv,False,False,
+cod-ps-tha,tha_admpop_adm1_2022.csv,True,,
+cod-ps-tha,tha_admpop_adm2_2022.csv,True,,
+cod-ps-tto,tto_admpop_2020.xlsx,True,,
+cod-ps-tto,tto_adm_gazetteer_v2.xls,True,,
+cod-ps-tto,tto_admpop_adm0_2020­_v2.csv,False,False,
+cod-ps-tto,tto_admpop_adm1_2020_v2.csv,True,,
+cod-ab-lka,LKA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-lka,lka_adm_20220816_SHP.zip,True,,
+cod-ab-lka,lka_adm_20220816.gdb.zip,True,,
+cod-ab-lka,Admin4_EN_SI_Conflicts.xlsx,True,,
+cod-ab-lka,COD_External/LKA_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-lka,COD_External/LKA_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-lka,COD_External/LKA_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-lka,COD_External/LKA_SI (MapServer),,,geoservice can't be p-coded
+cod-ab-lka,COD_External/LKA_TA (MapServer),,,geoservice can't be p-coded
+cod-ab-lka,V00_0/LKA_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-lka,https://gistmaps.itos.uga.edu/arcgis/rest/services/V00_0/LKA_pcode/FeatureServer,,,geoservice can't be p-coded
+cod-ab-lka,V00_0/LKA_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-lka,V00_0/LKA_SI (MapServer),,,geoservice can't be p-coded
+cod-ab-lka,V00_0/LKA_TA (MapServer),,,geoservice can't be p-coded
+cod-ab-lka,V1_00/LKA_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-lka,V1_00/LKA_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-lka,https://gistmaps.itos.uga.edu/arcgis/rest/services/V1_00/LKA_pcode/MapServer,,,geoservice can't be p-coded
+cod-ab-lka,V1_00/LKA_SI (MapServer),,,geoservice can't be p-coded
+cod-ab-lka,V1_00/LKA_TA (MapServer),,,geoservice can't be p-coded
+cod-ab-irn,IRN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-irn,irn_adm_unhcr_20190514_SHP.zip,False,,
+cod-ab-irn,irn_adm_unhcr_20190514.gdb.zip,True,,
+cod-ab-irn,irn_adm_unchr_20190514_EMF.zip,,,emf can't be p-coded
+cod-ab-irn,IRN_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-irn,IRN_FA (MapServer),,,geoservice can't be p-coded
+cod-ab-irn,IRN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-irn,IRN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-irn,irn_adm_gazetteer_2019_v2.xlsx,True,,
+cod-ps-irn,irn_admpop.xlsx,True,,
+cod-ps-irn,irn_admpop_adm0_2019_v2.csv,False,False,
+cod-ps-irn,irn_admpop_adm1_2019_v2.csv,True,,
+cod-ps-irn,irn_admpop_adm2_2019_v2.csv,True,,
+cod-ps-lca,lca_adm_gazetteer.xlsx,True,,
+cod-ps-lca,lca_admpop_2019.xlsx,True,,
+cod-ps-lca,lca_pop_adm0_v2.csv,False,False,
+cod-ps-lca,lca_pop_adm1_v2.csv,True,,
+cod-ps-tca,tca_gazetteer.xlsx,True,,
+cod-ps-tca,tci_admpop_2022.xlsx,False,False,
+cod-ps-ben,ben_population_statistic_2019_isb_v2.xlsx,True,,
+cod-ps-ben,ben_adm0_pop_v2.csv,False,False,
+cod-ps-ben,ben_adm1_pop_v2.csv,True,,
+cod-ps-ben,ben_adm2_pop_v2.csv,True,,
+cod-ps-ben,BEN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-bmu,bmu_admpop_2022.xlsx,False,False,
+cod-ps-pak,Pakistan_population_statistics_2017_20190603.xlsx,True,,
+cod-ps-pak,PAK COD-PS 2019_05_22.pdf,,,pdf can't be p-coded
+cod-ps-pak,pak_adminboundaries_tabulardata.xlsx,True,,
+cod-ps-pak,pak_admpop_adm0_v2.csv,False,False,
+cod-ps-pak,pak_admpop_adm1_v2.csv,True,,
+cod-ps-pak,pak_admpop_adm2_v2.csv,False,False,
+cod-ps-pak,pak_admpop_adm3.csv,,,Could not download file pak_admpop_adm3.csv
+cod-ps-fsm,fsm_pplp.xlsx,True,,
+cod-ps-fsm,fsm_pplp_adm0_country_v2.csv,False,False,
+cod-ps-fsm,fsm_pplp_adm1_state_v2.csv,True,,
+cod-ps-fsm,fsm_pplp_adm2_municipality_v2.csv,True,,
+cod-ps-fsm,Source_FSM_Projected_Population-Estimate-Details.xlsx,True,,
+cod-ps-fsm,fsm_adm_gazeteer.xls,True,,
+cod-ps-tgo,TGO_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-tgo,TGO_ADM2_POP_2021.xlsx,True,,
+cod-ps-tgo,tgo_admpop_adm0_2021.csv,False,False,
+cod-ps-tgo,tgo_admpop_adm1_2021.csv,True,,
+cod-ps-cub,cub_adm_gazetteer.xlsx,True,,
+cod-ps-cub,cub_admpop_2020.xlsx,True,,
+cod-ps-cub,cub_admpop_adm0_2020.csv,False,False,
+cod-ps-cub,cub_admpop_adm1_2020.csv,True,,
+cod-ps-cub,cub_admpop_adm2_2020.csv,True,,
+cod-ps-blz,BLZ_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-blz,cuw_admpop_v3.xlsx,True,,
+cod-ps-blz,blz_adm0_pop_v2.csv,False,False,
+cod-ps-blz,blz_adm1_pop_v2.csv,True,,
+cod-ps-blz,blz_adm2_pop_v2.csv,True,,
+cod-ps-pse,PSE_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-pse,pse_admpop_pcbs2020.xlsx,True,,
+cod-ps-pse,pse_admpop_adm0_2022.csv,False,False,
+cod-ps-pse,pse_admpop_adm1_2022.csv,True,,
+cod-ab-geo,GEO_AdminBoundaries_TabularData.xlsx,,,
+cod-ab-geo,geo_adm_geostat_20191018_SHP.zip,False,,
+cod-ab-geo,geo_adm_geostat_20191018_EMF.zip,,,emf can't be p-coded
+cod-ab-geo,geo_adm_geostat_20191018_SHP.zip,,,
+cod-ab-geo,geo_supplimentary_gazetteer_2019.xlsx,False,False,
+cod-ab-geo,GEO_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-geo,GEO_KA (MapServer),,,geoservice can't be p-coded
+cod-ab-geo,GEO_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-geo,GEO_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-eth,ETH_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-eth,eth_adm_csa_bofedb_2021_SHP.zip,True,,
+cod-ab-eth,ETH_AdminBoundaries_candidate.gdb.zip,False,,
+cod-ab-eth,COD_External/ETH_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-eth,COD_External/ETH_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-eth,COD_External/ETH_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-eth,V00_0/ETH_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-eth,V00_0/ETH_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-eth,V00_0/ETH_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-eth,V1_00/ETH_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-eth,V1_00/ETH_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-eth,V1_00/ETH_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-cod,COD_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-cod,cod_admpop_2019.xlsx,True,,
+cod-ps-cod,cod_admpop_adm0_2020.csv,False,False,
+cod-ps-cod,cod_admpop_adm0_2019.csv,False,False,
+cod-ps-cod,cod_admpop_adm1_2020.csv,True,,
+cod-ps-cod,cod_admpop_adm1_2019.csv,True,,
+cod-ps-cod,cod_admpop_adm2_2020.csv,True,,
+cod-ps-cod,cod_admpop_adm2_2019.csv,True,,
+cod-ps-vnm,VNM_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-vnm,vnm_admpop_2022.xlsx,True,,
+cod-ps-vnm,vnm_admpop_adm0_2022.csv,False,False,
+cod-ps-vnm,vnm_admpop_adm1_2022_v2.csv,True,,
+cod-ps-jam,jam_adm_pop.xlsx,True,,
+cod-ps-jam,jam_adm.xlsx,True,,
+cod-ps-jam,jam_adm0_pop_v2.csv,False,False,
+cod-ps-jam,jam_adm1_pop_v2.csv,True,,
+cod-ab-afg,AFG_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-afg,COD_External/AFG_DA (MapServer),,,geoservice can't be p-coded
+cod-ab-afg,COD_External/AFG_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-afg,COD_External/AFG_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-sur,sur_gz_adm_2017.xls,True,,
+cod-ps-sur,sur_admpop_2017.xls,True,,
+cod-ps-sur,sur_admpop_adm0_v2.csv,False,False,
+cod-ps-sur,sur_admpop_adm1_v2.csv,True,,
+cod-ps-sur,sur_admpop_adm2_v2.csv,True,,
+cod-ps-vir,vir_adm_2020.xls,False,False,
+cod-ps-vir,vir_admpop_2020.xls,False,False,
+cod-ps-vir,vir_admpop_adm0_v2.csv,False,False,
+cod-ps-vir,vir_admpop_adm1_v2.csv,False,False,
+cod-ps-vir,vir_admpop_adm2_v2.csv,False,False,
+cod-ps-pri,pri_adm.xls,True,,
+cod-ps-pri,pri_admpop_2019.xlsx,True,,
+cod-ps-pri,pri_adm0_pop_v2.csv,False,False,
+cod-ps-pri,pri_adm1_pop_v2.csv,,False,Unable to read resource pri_adm1_pop_v2.csv
+cod-ps-ssd,SS_20211210_2022_Population_Estimates_Overview v3.pdf,,,pdf can't be p-coded
+cod-ps-ssd,SSD_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-ssd,ssd_admpop_2022_v2.xlsx,True,,
+cod-ps-ssd,ssd_admpop_adm0_2022_v2.csv,False,False,
+cod-ps-ssd,ssd_admpop_adm1_2022_v2.csv,True,,
+cod-ps-ssd,ssd_admpop_adm2_2022_v2.csv,True,,
+cod-ps-brb,brb_adm_gz.xlsx,True,,
+cod-ps-brb,brb_admpop_2022.xlsx,False,False,
+cod-ps-brb,brb_admpop_adm0_2010_v2.csv,False,False,
+cod-ab-mys,MYS_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-mys,mys_admb_unhcr_20210211_SHP.zip,False,,
+cod-ab-mys,mys_admb_unhcr_20210211_EMF.zip,,,emf can't be p-coded
+cod-ab-mys,mys_admb_unhcr_20210211.gdb.zip,True,,
+cod-ab-mys,COD_External/MYS_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-mys,COD_External/MYS_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-mys,COD_External/MYS_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-mys,MYS_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-mys,mys_admpop_2020.xlsx,True,,
+cod-ps-mys,mys_admpop_adm0_2020_v2.csv,False,False,
+cod-ps-mys,mys_admpop_adm1_2020_v2.csv,True,,
+cod-ps-glp,glp_admpop_2019.xlsx,True,,
+cod-ps-glp,glp_adm_2019.xlsx,True,,
+cod-ps-glp,glp_admpop_adm0_v2.csv,False,False,
+cod-ps-glp,glp_admpop_adm1_v2.csv,True,,
+cod-ps-glp,glp_admpop_adm2_v2.csv,True,,
+cod-ps-cuw,cuw_admpop_2022.xlsx,False,False,
+cod-ab-idn,IDN_Admin123Boundaries_TabularData.xlsx,True,,
+cod-ab-idn,IDN_Admin4Boundaries_TabularData.xlsx,True,,
+cod-ab-idn,idn_adm_bps_20200401_SHP.zip,True,,
+cod-ab-idn,idn_adm_bps_adm4_20200401_SHP.zip,True,,
+cod-ab-idn,IDN_AdminBoundaries_candidate.gdb.zip,True,,
+cod-ab-idn,IDN_Admin4Boundaries_candidate.gdb.zip,True,,
+cod-ab-idn,idn_adm_bps_20200401_EMF.zip,,,emf can't be p-coded
+cod-ab-idn,IDN_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-idn,IDN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-idn,IDN_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-idn,IDN_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-idn,IDN_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ps-kir,kir_admgz_2020.xlsx,True,,
+cod-ps-kir,kir_admpop_2020.xlsx,True,,
+cod-ps-kir,kir_admpop_adm0_2020.csv,False,False,
+cod-ps-kir,kir_admpop_adm1_2020.csv,True,,
+cod-ps-kir,kir_admpop_adm2_2020.csv,True,,
+cod-ps-dom,dom_admgz_2020.xlsx,True,,
+cod-ps-dom,dom_admpop_2022.xlsx,True,,
+cod-ps-dom,dom_admpop_adm0_2022.csv,False,False,
+cod-ps-dom,dom_admpop_adm1_2022.csv,True,,
+cod-ps-dom,dom_admpop_adm2_2022.csv,True,,
+cod-ps-mtq,mtq_adm_gz_2016_ignf.xlsx,True,,
+cod-ps-mtq,mtq_admpop_insee_2016.xlsx,True,,
+cod-ps-mtq,mtq_adm0_pop_v2.csv,False,False,
+cod-ps-mtq,mtq_adm1_pop_v2.csv,True,,
+cod-ps-mtq,mtq_adm2_pop_v3.csv,True,,
+cod-ps-blm,blm_adm_gz_2016_INSEE.xlsx,False,False,
+cod-ps-blm,blm_admpop_2016_insee_v2.xlsx,False,False,
+cod-ps-blm,blm_admpop_adm0_2016_insee_v2.csv,False,False,
+cod-ps-blm,blm_admpop_adm1_2016_insee_v2.csv,False,False,
+cod-ps-maf,maf_adm_gz_2016_INSEE.xlsx,False,False,
+cod-ps-maf,maf_admpop_2016_INSEE.xlsx,False,False,
+cod-ps-maf,maf_admpop_adm0_2016_insee_v2.csv,False,False,
+cod-ps-maf,maf_admpop_adm1_2016_insee_v2.csv,False,False,
+cod-ps-msr,msr_adm_gz.xlsx,True,,
+cod-ps-msr,msr_admpop_2011.xlsx,True,,
+cod-ps-msr,msr_admpop_adm0_2011_v2.csv,False,False,
+cod-ps-msr,msr_admpop_adm1_2011_v2.csv,True,,
+cod-ps-kna,kna_admgz_2020.xlsx,True,,
+cod-ps-kna,kna_admpop_2020.xlsx,True,,
+cod-ps-kna,kna_admpop_adm0_2000_v2.csv,False,False,
+cod-ps-kna,kna_admpop_adm1_2000_v2.csv,True,,
+cod-ps-cym,cym_admgz_2020.xlsx,True,,
+cod-ps-cym,cym_admpop_2021.xlsx,False,False,
+cod-ps-vgb,vgb_admpop_2022.xlsx,False,False,
+cod-ps-vgb,vgb_admgz_2020.xlsx,True,,
+cod-ps-vut,vut_adminboundaries_tabulardata.xlsx,True,,
+cod-ps-vut,vut_admpop_2020.xlsx,True,,
+cod-ps-vut,vut_admpop_adm0_2020.csv,False,False,
+cod-ps-vut,vut_admpop_adm1_2020.csv,True,,
+cod-ps-vut,vut_admpop_adm2_2020.csv,True,,
+cod-ps-abw,abw_admpop_2020.xlsx,False,False,
+cod-ps-bra,bra_admgz_ibge_2020.xlsx,True,,
+cod-ps-bra,bra_admpop_2022.xlsx,True,,
+cod-ps-bra,bra_admpop_adm0_2022.csv,False,False,
+cod-ps-bra,bra_admpop_adm1_2022.csv,True,,
+cod-ps-arg,arg_admgz.xlsx,True,,
+cod-ps-arg,arc_admpop_2021.xlsx,True,,
+cod-ps-arg,arg_admpop_adm0_2021.csv,False,False,
+cod-ps-arg,arg_admpop_adm1_2021.csv,True,,
+cod-ab-swz,SWZ_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-swz,swz_admbnda_cso2007_SHP.zip,False,,
+cod-ab-swz,swz_adm_cso_20210127_EMF.zip,,,emf can't be p-coded
+cod-ab-swz,swz_adm_cso_20170127.gdb.zip,True,,
+cod-ab-swz,COD_External/SWZ_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-swz,COD_External/SWZ_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-swz,COD_External/SWZ_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-swz,SWZ_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-swz,swz_admpop_2022.xlsx,True,,
+cod-ps-swz,swz_admpop_adm0_2022.csv,False,False,
+cod-ps-swz,swz_admpop_adm1_2022.csv,True,,
+cod-ps-grd,grd_admgz_2020.xlsx,True,,
+cod-ps-grd,grd_admpop_2011.xlsx,True,,
+cod-ps-grd,grd_admpop_adm0_2011_v2.csv,False,False,
+cod-ps-grd,grd_admpop_adm1_2011_v2.csv,True,,
+cod-ps-gtm,gtm_adminboundaries_tabulardata.xlsx,True,,
+cod-ps-gtm,gtm_admpop_2022.xlsx,True,,
+cod-ps-gtm,gtm_admpop_adm0_2022.csv,False,False,
+cod-ps-gtm,gtm_admpop_adm1_2022.csv,True,,
+cod-ps-gtm,gtm_admpop_adm2_2022.csv,True,,
+cod-ps-chl,chl_admgz.xlsx,True,,
+cod-ps-chl,chl_admpop_2022.xlsx,True,,
+cod-ps-chl,chl_admpop_adm0_2022.csv,False,False,
+cod-ps-chl,chl_admpop_adm1_2022.csv,True,,
+cod-ps-chl,chl_admpop_adm2_2022.csv,True,,
+cod-ps-chl,chl_admpop_adm3_2022.csv,True,,
+cod-ps-bol,BOL_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-bol,bol_admpop_2022.xlsx,True,,
+cod-ps-bol,bol_admpop_adm0_2022.csv,False,False,
+cod-ps-bol,bol_admpop_adm1_2022.csv,True,,
+cod-ps-syc,syc_admgz_nbs2010.xlsx,True,,
+cod-ps-syc,syc_admpop_nbs2019.xlsx,True,,
+cod-ps-syc,syc_admpop_adm0_nbs2019_v2.csv,False,False,
+cod-ps-syc,syc_admpop_adm1_nbs2019_v2.csv,True,,
+cod-ps-syc,syc_admpop_adm2_nbs2019_v2.csv,True,,
+cod-ps-syc,syc_admpop_adm3_nbs2019_v2.csv,True,,
+cod-ps-nic,NIC_AdminBoundaries_TabularData.xlsx,False,False,
+cod-ps-nic,NIC_ADM2_pop_2020.xlsx,True,,
+cod-ps-nic,nic_admpop_adm0_2020.csv,False,False,
+cod-ps-nic,nic_admpop_adm1_2020.csv,True,,
+cod-ps-nic,nic_admpop_adm2_2020.csv,True,,
+cod-ps-pan,pan_admgaz_2020.xlsx,True,,
+cod-ps-pan,pan_admpop_2022.xlsx,True,,
+cod-ps-pan,pan_admpop_adm0_2022.csv,False,False,
+cod-ps-pan,pan_admpop_adm1_2022.csv,True,,
+cod-ps-pry,pry_admgz_DGEEC_2020.xlsx,True,,
+cod-ps-pry,pry_admpop_adm_2022.xlsx,True,,
+cod-ps-pry,pry_admpop_adm0_2022.csv,False,False,
+cod-ps-pry,pry_admpop_adm1_2022.csv,True,,
+cod-ps-pry,pry_admpop_adm2_2022.csv,True,,
+cod-ps-ury,ury_admgaz_2020.xlsx,True,,
+cod-ps-ury,cmr_admpop_2022.xlsx,True,,
+cod-ps-ury,ury_admpop_adm0_2022.csv,False,False,
+cod-ps-ury,ury_admpop_adm1_2022.csv,True,,
+cod-ps-stp,stp_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-stp,stp_admpop_2022.xlsx,True,,
+cod-ps-stp,stp_admpop_adm0_2022.csv,False,False,
+cod-ps-stp,stp_admpop_adm1_2022.csv,True,,
+cod-ps-stp,stp_admpop_adm2_2022.csv,True,,
+cod-ps-mus,mus_admgaz_2020.xls,True,,
+cod-ps-mus,mus_admpop_2018_2011_.xlsx,True,,
+cod-ps-mus,mus_admpop_adm0_2022_v2.csv,False,False,
+cod-ps-mus,mus_admpop_adm1_2022_v2.csv,True,,
+cod-ps-guf,guf_admbgz_ign.xls,True,,
+cod-ps-guf,guf_admpop_insee_2016_v2.xlsx,True,,
+cod-ps-guf,guf_admpop_adm0_insee_2016_v2.csv,False,False,
+cod-ps-guf,guf_admpop_adm1_insee_2016_v2.csv,True,,
+cod-ps-guf,guf_admpop_adm2_insee_2016_v3.csv,True,,
+cod-ps-lka,lka_adminboundaries_tabulardata.xlsx,True,,
+cod-ps-lka,lka_admpop_2022_v2.xlsx,True,,
+cod-ps-lka,lka_admpop_adm0_2022.csv,False,False,
+cod-ps-lka,lka_admpop_adm1_2022.csv,True,,
+cod-ps-lka,lka_admpop_adm2_2022.csv,True,,
+cod-ps-lka,lka_admpop_adm0_2022_special.csv,False,False,
+cod-ps-lka,lka_admpop_adm1_2022_special.csv,True,,
+cod-ps-lka,lka_admpop_adm2_2022_special.csv,True,,
+cod-ps-idn,IDN_Admin123Boundaries_TabularData.xlsx,True,,
+cod-ps-idn,idn_admpop_2020_v2.xlsx,True,,
+cod-ps-idn,idn_admpop_adm0_2020_v2.csv,False,False,
+cod-ps-idn,idn_admpop_adm1_2020_v2.csv,True,,
+cod-ps-idn,idn_admpop_adm2_2020_v3.csv,True,,
+cod-ps-moz,moz_adminboundaries_tabulardata.xlsx,True,,
+cod-ps-moz,moz_admpop_2017.xlsx,True,,
+cod-ps-moz,moz_admpop_adm0_2017_v2.csv,False,False,
+cod-ps-moz,moz_admpop_adm1_2017_v2.csv,True,,
+cod-ps-moz,moz_admpop_adm2_2017_v2.csv,True,,
+cod-ps-vct,vct_admgz_2021.xlsx,True,,
+cod-ps-vct,vct_admpop_2022.xlsx,False,False,
+cod-ps-zmb,zmb_admpop_2020.xlsx,True,,
+cod-ps-zmb,zmb_admpop_adm0_2020_v2.csv,False,False,
+cod-ps-zmb,zmb_admpop_adm1_2020_v2.csv,True,,
+cod-ps-afg,afg_admpop_adm1_2021_v2.csv,True,,
+cod-ps-afg,afg_popadm_adm0_2021_v2.csv,False,False,
+cod-ps-afg,afg_admpop_adm0_1_2021_v2.xlsx,True,,
+cod-ps-afg,afg_pcode_list_adm0_3.xlsx,True,,
+cod-ps-bwa,bwa_admgz_2011.xlsx,True,,
+cod-ps-bwa,bwa_admpop_2022.xlsx,True,,
+cod-ps-bwa,bwa_admpop_adm0_2022.csv,False,False,
+cod-ps-bwa,bwa_admpop_adm1_2022.csv,True,,
+cod-ps-bwa,bwa_admpop_adm2_2022.csv,True,,
+cod-ps-bwa,bwa_admpop_adm3_2022.csv,True,,
+cod-ps-gha,GHA_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-gha,gha_admpop_2022.xlsx,True,,
+cod-ps-gha,gha_admpop_adm0_2022.csv,False,False,
+cod-ps-gha,gha_admpop_adm1_2022.csv,True,,
+cod-ps-gha,gha_admpop_adm2_2022.csv,True,,
+cod-ps-tur,tur_admpop_2021.xlsx,True,,
+cod-ps-tur,tur_admpop_adm0_2021.csv,False,False,
+cod-ps-tur,tur_admpop_adm1_2021.csv,True,,
+cod-ps-tur,tur_admpop_adm2_2021.csv,True,,
+cod-ps-tur,common-operational-dataset.xlsx,True,,
+cod-ps-alb,alb_admgz_adm1.xls,True,,
+cod-ps-alb,alb_admpop_2021.xlsx,True,,
+cod-ps-alb,alb_admpop_adm0_2021.csv,False,False,
+cod-ps-alb,alb_admpop_adm1_2021.csv,True,,
+cod-ab-ukr,UKR_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-ukr,ukr_adm_sspe_20221005.zip,,,Could not download file ukr_adm_sspe_20221005.zip
+cod-ab-ukr,ukr_adm_sspe_20221005.gdb.zip,,,Could not download file ukr_adm_sspe_20221005.gdb.zip
+cod-ab-ukr,COD_External/UKR_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-ukr,COD_External/UKR_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-ukr,COD_External/UKR_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-ukr,COD_External/UKR_RU (MapServer),,,geoservice can't be p-coded
+cod-ab-ukr,COD_External/UKR_UA (MapServer),,,geoservice can't be p-coded
+cod-ab-ukr,V00_0/UKR_EN (MapServer),,,geoservice can't be p-coded
+cod-ab-ukr,V00_0/UKR_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-ukr,V00_0/UKR_pcode (MapServer),,,geoservice can't be p-coded
+cod-ab-ukr,V00_0/UKR_RU (MapServer),,,geoservice can't be p-coded
+cod-ab-ukr,V00_0/UKR_UA (MapServer),,,geoservice can't be p-coded
+cod-ps-cri,cri_admgz_2021.xlsx,True,,
+cod-ps-cri,cri_admpop_unfpa_2021.xlsx,True,,
+cod-ps-cri,cri_admpop_adm0_unfpa2021.csv,False,False,
+cod-ps-cri,cri_admpop_adm1_unfpa2021.csv,True,,
+cod-ps-cri,cri_admpop_adm2_unfpa2021.csv,True,,
+cod-ps-cri,cri_admpop_adm3_unfpa2021.csv,True,,
+cod-ps-ukr,UKR_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-ukr,ukr_admpop_2022.xlsx,True,,
+cod-ps-ukr,ukr_admpop_adm0_2022.csv,False,False,
+cod-ps-ukr,ukr_admpop_adm1_2022.csv,True,,
+cod-ps-ukr,UKR ADM0,,False,Unable to read resource UKR ADM0.json
+cod-ps-ukr,UKR ADM1,,False,Unable to read resource UKR ADM1.json
+cod-ab-pol,pol_adm_gov_v02_20220414_SHP.zip,False,,
+cod-ab-pol,POL_AdminBoundaries_TabularData.xlsx,True,,
+cod-ab-pol,pol_adm_gov_v02_20220414_GDB.gdb.zip,True,,
+cod-ab-pol,POL_PL (MapServer),,,geoservice can't be p-coded
+cod-ab-pol,POL_pcode (FeatureServer),,,geoservice can't be p-coded
+cod-ab-pol,POL_pcode (MapServer),,,geoservice can't be p-coded
+cod-ps-rou,rou_admgz_ancpi_2022_v02.xlsx,True,,
+cod-ps-rou,rou_admpop_2022_v01.xlsx,True,,
+cod-ps-rou,rou_admpop_adm0_2022_v01.csv,False,False,
+cod-ps-rou,rou_admpop_adm1_2022_v01.csv,True,,
+cod-ps-rou,rou_admpop_adm2_2022_v01.csv,True,,
+cod-ps-hun,hun_admgz_osm_2022_v02.xlsx,True,,
+cod-ps-hun,hun_admpop_2022_v01.xlsx,True,,
+cod-ps-hun,hun_admpop_adm0_2022_v01.csv,False,False,
+cod-ps-hun,hun_admpop_adm1_2022_v01.csv,True,,
+cod-ps-pol,pol_admgz_gov_2022.xlsx,False,False,
+cod-ps-pol,pol_admpop_adm0_2020.csv,False,False,
+cod-ps-pol,pol_admpop_adm1_2020.csv,True,,
+cod-ps-pol,pol_admpop_adm2_2020.csv,True,,
+cod-ps-svk,svk_admgz_2022_v03.xlsx,True,,
+cod-ps-svk,svk_admpop_2021_v01.xlsx,True,,
+cod-ps-svk,svk_admpop_adm0_2021_v01.csv,False,False,
+cod-ps-svk,svk_admpop_adm1_2021_v01.csv,True,,
+cod-ps-svk,svk_admpop_adm2_2021_v01.csv,True,,
+cod-em-civ,CIV_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-civ,civ_admbnda_cntig_20180706_em_v2.zip,True,,
+cod-em-civ,civ_admbnda_cntig_20180706_em_v2.gdb.zip,True,,
+cod-em-civ,CIV_FR_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-gin,GIN_AdminBoundaries_TabularData.xlsx,False,False,
+cod-em-gin,gin_admbnda_ocha_em_v2.zip,False,,
+cod-em-gin,gin_admbnda_ocha_em_v2.gdb.zip,False,,
+cod-em-gin,GIN_FR_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-gnb,GNB_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-gnb,gnb_admbnda_1m_salb_20210609_v2_em.zip,False,,
+cod-em-gnb,gnb_admbnda_1m_salb_20210609_v2_em.gdb.zip,False,,
+cod-em-gnb,GNB_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-lbr,LBR_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-lbr,kwt_admbnda_gadm_20220201_v2_em.zip,False,,
+cod-em-lbr,lbr_admbnda_ocha_20191104_v2_em.gdb.zip,False,,
+cod-em-lbr,LBR_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-ben,BEN_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-ben,ben_admbnda_1m_salb_20190816_em_v2_SHP.zip,True,,
+cod-em-ben,ben_adm_1m_salb_20190816_em_v2.gdb.zip,False,,
+cod-em-ben,BEN_FR_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-sle,SLE_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-sle,sle_admbnda_1m_gov_ocha_20170228_v2_em.shp.zip,True,,
+cod-em-sle,sle_admbnda_1m_gov_ocha_20170228_v2_em.gdb.zip,False,,
+cod-em-sle,SLE_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-gha,GHA_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-gha,gha_admbnda_gss_20210308_em_v2.zip,True,,
+cod-em-gha,gha_admbnda_gss_20210308_em_v2.gdb.zip,False,,
+cod-em-gha,GHA_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-ner,ner_admgz_2022.xls,,,
+cod-em-ner,ner_admbnda_ignn_ocha_em_v2.zip,False,,
+cod-em-ner,ner_admbnda_ignn_ocha_em_v2.gdb.zip,False,,
+cod-em-nga,nga_adminboundaries_tabulardata.xlsx,True,,
+cod-em-nga,nga_adm_osgof_20190417_em_SHP.zip,False,,
+cod-em-nga,nga_adm_osgof_20190417_em_GDB.gdb.zip,False,,
+cod-em-nga,NGA_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-tgo,TGO_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-tgo,tgo_admbnda_inseed_itos_20210107_em_v2.zip,True,,
+cod-em-tgo,tgo_admbnda_inseed_itos_20210107_em_v2.gdb.zip,False,,
+cod-em-tgo,TGO_FR_edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-pol,POL_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-pol,pol_admbnda_gov_v02_20220414_em.zip,True,,
+cod-em-pol,pol_admbnda_gov_v02_20220414_em.gdb.zip,False,,
+cod-em-pol,POL_PL_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-rou,ROU_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-rou,rou_admbnda_ancpi_v02_20220427.zip,True,,
+cod-em-rou,rou_admbnda_ancpi_v02_20220427.gdb.zip,False,,
+cod-em-rou,ROU_RO_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-mda,MDA_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-mda,mda_admbnda_unhcr_20220510_em.zip,False,,
+cod-em-mda,mda_admbnda_unhcr_20220510_v2_em.gdb.zip,False,,
+cod-em-mda,COD_External_Edgematch/MDA_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-bfa,BFA_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-bfa,bfa_admbnda_igb_20200323_em_v2_SHP.zip,True,,
+cod-em-bfa,bfa_admbnda_igb_20200323_em_v2.gdb.zip,False,,
+cod-em-bfa,BFA_FR_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-caf,CAF_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-caf,caf_admbnda_200k_sigcaf_reach_itos_em_v2.zip,False,,
+cod-em-caf,caf_admbnda_200k_sigcaf_reach_itos_em_v2.gdb.zip,False,,
+cod-em-caf,CAF_FR_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-cmr,CMR_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-cmr,cmr_admbnda_inc_20180104_em_v2.zip,True,,
+cod-em-cmr,cmr_admbnda_inc_20180104_em_v2.gdb.zip,False,,
+cod-em-cmr,CMR_FR_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-cmr,CMR_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-kwt,KWT_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-kwt,kwt_admbnda_gadm_20220201_v2_em.zip,False,,
+cod-em-kwt,kwt_admbnda_gadm_20220201_v2_em.gdb.zip,False,,
+cod-em-kwt,COD_External_Edgematch/KWT_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-mli,MLI_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-mli,mli_admbnda_1m_gov_20211220_v2_em.zip,True,,
+cod-em-mli,mli_admbnda_1m_gov_20211220_v2_em.gdb.zip,False,,
+cod-em-mli,COD_External_Edgematch/MLI_FR_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-tcd,TCD_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-tcd,tcd_admbnda_ocha_20160714_em_v2.zip,False,,
+cod-em-tcd,tcd_admbnda_ocha_20160714_em_v2.gdb.zip,True,,
+cod-em-tcd,TCD_FR_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-ps-gab,gabpcoderowca20150210.xlsx,True,,
+cod-ps-gab,gab_admpop_2022.xlsx,True,,
+cod-ps-gab,gab_admpop_adm0_2022.csv,False,False,
+cod-ps-gab,gab_admpop_adm1_2022.csv,True,,
+cod-ps-cmr,CMR_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-cmr,cmr_admpop_2022.xlsx,True,,
+cod-ps-cmr,cmr_admpop_adm0_2022.csv,False,False,
+cod-ps-cmr,cmr_admpop_adm1_2022.csv,True,,
+cod-em-svk,SVK_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-svk,svk_admbnda_geoportalsk_20220707_em.zip,False,,
+cod-em-svk,svk_admbnda_adm0_geoportalsk_20220707_em.gdb.zip,False,,
+cod-em-svk,COD_External_Edgematch/SVK_SK_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-hun,HUN_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-hun,hun_admbnda_osm_20220720_em.zip,False,,
+cod-em-hun,hun_admbnda_osm_20220720_ab.gdb.zip,True,,
+cod-em-blr,BLR_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-blr,blr_adm_unicef_20220727_AB_SHP.zip,False,,
+cod-em-blr,blr_adm_unicef_20220727_AB.gdb.zip,True,,
+cod-em-blr,COD_External_Edgematch/BLR_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-gmb,GMB_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-gmb,gmb_adm_ndma_20220901_em_SHP.zip,True,,
+cod-em-gmb,gmb_adm_ndma_20220901_GDB.gdb.zip,True,,
+cod-em-gmb,COD_External_Edgematch/GMB_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-ps-mdv,MDV_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-mdv,mdv_admpop_2022.xlsx,True,,
+cod-ps-mdv,mdv_admpop_adm0_2022.csv,False,False,
+cod-ps-mdv,mdv_admpop_adm1_2022.csv,True,,
+cod-ps-mdv,mdv_admpop_adm2_2022.csv,True,,
+cod-em-bgr,BGR_AdminBoundaries_TabularData.xlsx,True,,
+cod-em-bgr,bgr_adm_unicef_20221012_em_SHP.zip,False,,
+cod-em-bgr,bgr_adm_unicef_20221012_em_GDB.gdb.zip,False,,
+cod-em-bgr,COD_External_Edgematch/BGR_BG_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-em-bgr,COD_External_Edgematch/BGR_EN_Edgematch (MapServer),,,geoservice can't be p-coded
+cod-ps-sdn,SDN_AdminBoundaries_TabularData.xlsx,True,,
+cod-ps-sdn,sdn_admpop_2022.xlsx,True,,
+cod-ps-sdn,sdn_admpop_adm0_2022.csv,False,False,
+cod-ps-sdn,sdn_admpop_adm1_2022.csv,True,,
