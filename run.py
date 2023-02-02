@@ -22,7 +22,7 @@ def main(**ignore):
     with temp_dir(folder="TempLocationExploration") as temp_folder:
         datasets = Dataset.search_in_hdx(
             fq='cod_level:"cod-standard"'
-        )
+        ) + Dataset.search_in_hdx(fq='cod_level:"cod-enhanced"')
         logger.info(f"Found {len(datasets)} datasets")
 
         global_pcodes = get_global_pcodes(
