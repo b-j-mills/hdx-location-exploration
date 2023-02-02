@@ -7,42 +7,18 @@ from hxl.geo import LAT_PATTERNS, LON_PATTERNS
 from os import mkdir
 from os.path import basename, dirname, join
 from pandas import concat, isna, read_csv, read_excel
-from requests import get
 from shutil import rmtree
 from zipfile import ZipFile, is_zipfile
 
-from hdx.location.country import Country
+from hdx.utilities.dictandlist import read_list_from_csv
 from hdx.utilities.uuid import get_uuid
 
 logger = logging.getLogger(__name__)
 
 
-def get_global_pcodes():
-    pcodes = []
-    locations = []
-    itos_locations = get("https://apps.itos.uga.edu/CODV2API/api/v1/locations").json()
-    for location in itos_locations:
-        iso3 = location["location_iso"]
-        iso2 = Country.get_iso2_from_iso3(iso3)
-        if not iso2:
-            continue
-        if iso2.lower() in locations:
-            continue
-        locations.append(iso2.lower())
-
-    for iso in locations:
-        for level in reversed(range(1, 6)):
-            itos_url = f"https://apps.itos.uga.edu/CODV2API/api/v1/themes/cod-ab/lookup/{level}/{iso}"
-            itos_pcodes = get(itos_url).json()
-            if len(itos_pcodes) == 0:
-                continue
-            for unit in itos_pcodes:
-                for l in range(1, level + 1):
-                    pcode = unit.get(f"admin{l}Pcode")
-                    if pcode:
-                        pcodes.append(pcode)
-            break
-
+def get_global_pcodes(url):
+    pcodes = read_list_from_csv(url)
+    pcodes = [str(p[1]) for p in pcodes[1:]]
     return pcodes
 
 

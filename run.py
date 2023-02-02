@@ -25,7 +25,9 @@ def main(**ignore):
         )
         logger.info(f"Found {len(datasets)} datasets")
 
-        global_pcodes = get_global_pcodes()
+        global_pcodes = get_global_pcodes(
+            "https://raw.githubusercontent.com/b-j-mills/hdx-global-pcodes/main/global_pcodes.csv"
+        )
 
         with open("datasets_location_status.csv", "w") as c:
             writer = csv.writer(c)
