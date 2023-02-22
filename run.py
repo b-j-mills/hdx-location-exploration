@@ -20,14 +20,14 @@ def main(**ignore):
                          "shp", "topojson", "xls", "xlsx"]
 
     with temp_dir(folder="TempLocationExploration") as temp_folder:
-        datasets = Dataset.search_in_hdx(fq='groups="tur"')
+        datasets = Dataset.search_in_hdx(fq='groups:"tur"')
         logger.info(f"Found {len(datasets)} datasets")
 
         global_pcodes = get_global_pcodes(
             "https://raw.githubusercontent.com/b-j-mills/hdx-global-pcodes/main/global_pcodes.csv"
         )
 
-        status = [["dataset name", "resource name", "pcoded", "latlonged", "error"]]
+        status = [["dataset name", "resource name", "format", "pcoded", "latlonged", "error"]]
 
         for dataset in datasets:
             logger.info(f"Checking {dataset['name']}")
@@ -38,9 +38,10 @@ def main(**ignore):
                     status.append([
                         dataset["name"],
                         resource["name"],
+                        resource.get_file_type(),
                         None,
                         None,
-                        f"{resource.get_file_type()} can't be p-coded",
+                        "Not checking format",
                     ])
                     continue
 
@@ -48,6 +49,7 @@ def main(**ignore):
                 status.append([
                     dataset["name"],
                     resource["name"],
+                    resource.get_file_type(),
                     pcoded,
                     latlonged,
                     error,

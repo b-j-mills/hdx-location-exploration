@@ -26,7 +26,7 @@ def download_resource(resource, fileext, resource_folder):
     try:
         _, resource_file = resource.download(folder=resource_folder)
     except:
-        error = f"Could not download file {resource['name']}"
+        error = f"Unable to download file"
         return None, error
 
     if is_zipfile(resource_file) or ".zip" in basename(resource_file):
@@ -35,7 +35,7 @@ def download_resource(resource, fileext, resource_folder):
             with ZipFile(resource_file, "r") as z:
                 z.extractall(temp)
         except:
-            error = f"Could not unzip resource {resource['name']}"
+            error = f"Unable to unzip resource"
             return None, error
         resource_files = glob(join(temp, "**", f"*.{fileext}"), recursive=True)
         if len(resource_files) > 1:  # make sure to remove directories containing the actual files
@@ -61,7 +61,7 @@ def read_downloaded_data(resource_files, fileext):
                     resource_file, sheet_name=None, nrows=100
                 )
             except:
-                error = f"Unable to read resource {basename(resource_file)}"
+                error = f"Unable to read resource"
                 continue
             for key in contents:
                 if contents[key].empty:
@@ -72,7 +72,7 @@ def read_downloaded_data(resource_files, fileext):
                 contents = read_csv(resource_file, nrows=100, skip_blank_lines=True)
                 data[get_uuid()] = parse_tabular(contents, fileext)
             except:
-                error = f"Unable to read resource {basename(resource_file)}"
+                error = f"Unable to read resource"
                 continue
         if fileext in ["geojson", "json", "shp", "topojson"]:
             try:
@@ -80,7 +80,7 @@ def read_downloaded_data(resource_files, fileext):
                     get_uuid(): read_file(resource_file, rows=100)
                 }
             except:
-                error = f"Unable to read resource {basename(resource_file)}"
+                error = f"Unable to read resource"
                 continue
         if fileext in ["gdb", "gpkg"]:
             try:
@@ -88,7 +88,7 @@ def read_downloaded_data(resource_files, fileext):
                     get_uuid(): read_file(dirname(resource_file), layer=basename(resource_file), rows=100)
                 }
             except:
-                error = f"Unable to read resource {basename(resource_file)}"
+                error = f"Unable to read resource"
                 continue
 
     return data, error
