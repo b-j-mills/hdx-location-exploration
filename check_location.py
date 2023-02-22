@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 def get_global_pcodes(url):
     pcodes = read_list_from_csv(url)
-    pcodes = [str(p[1]) for p in pcodes[1:]]
+    pcodes = [str(p[2]) for p in pcodes[1:]]
     return pcodes
 
 
@@ -106,7 +106,7 @@ def parse_tabular(df, fileext):
         return df
     hxlrow = None  # find hxl row and incorporate into header
     i = 0
-    while i < 10 and i < len(df) and not hxlrow:
+    while i < 10 and i < len(df) and hxlrow is None:
         hxltags = [bool(re.match("#.*", t)) if t else True for t in df.loc[i].astype(str)]
         if all(hxltags):
             hxlrow = i
@@ -160,8 +160,8 @@ def check_pcoded(df, global_pcodes):
 
 def check_latlong(df):
     latlonged = None
-    lat_header_exp = "(.*latitude?.*)|(lat)|((point.?)?y)|(#\s?geo\s?\+\s?lat)"
-    lon_header_exp = "(.*longitude?.*)|(lon(g)?)|((point.?)?x)|(#\s?geo\s?\+\s?lon)"
+    lat_header_exp = "(.*latitude?.*)|(lat)|(point.?y)|(#\s?geo\s?\+\s?lat)"
+    lon_header_exp = "(.*longitude?.*)|(lon(g)?)|(point.?x)|(#\s?geo\s?\+\s?lon)"
 
     latted = None
     longed = None
