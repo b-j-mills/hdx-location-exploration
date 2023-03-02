@@ -154,7 +154,7 @@ def check_pcoded(df, global_pcodes):
         column = column[~column.isin(["NA", "NAN", "NONE", "NULL"])]
         matches = sum(column.isin(global_pcodes))
         pcnt_match = matches / len(column)
-        if pcnt_match > 0.95:
+        if pcnt_match >= 0.95:
             pcoded = True
 
     return pcoded
@@ -179,12 +179,14 @@ def check_latlong(df):
         if lat_header:
             matches = concat([column.str.match(lat_exp.pattern, case=False) for lat_exp in LAT_PATTERNS], axis=1)
             matches = sum(matches.any(axis=1))
-            if (len(column) - matches) <= 5 and matches > 0:
+            pcnt_match = matches / len(column)
+            if pcnt_match >= 0.95:
                 latted = True
         if lon_header:
             matches = concat([column.str.match(lon_exp.pattern, case=False) for lon_exp in LON_PATTERNS], axis=1)
             matches = sum(matches.any(axis=1))
-            if (len(column) - matches) <= 5 and matches > 0:
+            pcnt_match = matches / len(column)
+            if pcnt_match >= 0.95:
                 longed = True
 
         if latted and longed:
