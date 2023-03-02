@@ -58,7 +58,7 @@ def read_downloaded_data(resource_files, fileext):
         if fileext in ["xlsx", "xls"]:
             try:
                 contents = read_excel(
-                    resource_file, sheet_name=None, nrows=100
+                    resource_file, sheet_name=None, nrows=200
                 )
             except:
                 error = f"Unable to read resource"
@@ -69,7 +69,7 @@ def read_downloaded_data(resource_files, fileext):
                 data[get_uuid()] = parse_tabular(contents[key], fileext)
         if fileext == "csv":
             try:
-                contents = read_csv(resource_file, nrows=100, skip_blank_lines=True)
+                contents = read_csv(resource_file, nrows=200, skip_blank_lines=True)
                 data[get_uuid()] = parse_tabular(contents, fileext)
             except:
                 error = f"Unable to read resource"
@@ -77,7 +77,7 @@ def read_downloaded_data(resource_files, fileext):
         if fileext in ["geojson", "json", "shp", "topojson"]:
             try:
                 data = {
-                    get_uuid(): read_file(resource_file, rows=100)
+                    get_uuid(): read_file(resource_file, rows=200)
                 }
             except:
                 error = f"Unable to read resource"
@@ -85,7 +85,7 @@ def read_downloaded_data(resource_files, fileext):
         if fileext in ["gdb", "gpkg"]:
             try:
                 data = {
-                    get_uuid(): read_file(dirname(resource_file), layer=basename(resource_file), rows=100)
+                    get_uuid(): read_file(dirname(resource_file), layer=basename(resource_file), rows=200)
                 }
             except:
                 error = f"Unable to read resource"
@@ -151,8 +151,10 @@ def check_pcoded(df, global_pcodes):
         if not pcoded_header:
             continue
         column = df[h].dropna().astype("string").str.upper()
+        column = column[~column.isin(["NA", "NAN", "NONE", "NULL"])]
         matches = sum(column.isin(global_pcodes))
-        if (len(column) - matches) <= 5 and matches > 0:
+        pcnt_match = matches / len(column)
+        if pcnt_match > 0.95:
             pcoded = True
 
     return pcoded
@@ -218,7 +220,7 @@ def check_location(resource, global_pcodes, temp_folder):
     if not error and not pcoded:
         pcoded = False
 
-    if not pcoded and filetype in ["csv", "json", "xls", "xlsx"]:
+    if not pcoded and filetype in ["csv", "json", "xls", "xlsx"] and not error:
         for key in contents:
             if latlonged:
                 break
