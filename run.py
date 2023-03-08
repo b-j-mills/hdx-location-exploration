@@ -45,6 +45,17 @@ def main(**ignore):
                     ])
                     continue
 
+                if resource["size"] > 1073741824:
+                    status.append([
+                        dataset["name"],
+                        resource["name"],
+                        resource.get_file_type(),
+                        None,
+                        None,
+                        "Not checking files of this size",
+                    ])
+                    continue
+
                 pcoded, latlonged, error = check_location(resource, global_pcodes, temp_folder)
                 status.append([
                     dataset["name"],
