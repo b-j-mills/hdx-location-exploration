@@ -3,10 +3,9 @@ import re
 from fiona import listlayers
 from geopandas import read_file
 from glob import glob
-from hxl.geo import LAT_PATTERNS, LON_PATTERNS
 from os import mkdir
 from os.path import basename, dirname, join
-from pandas import concat, isna, read_csv, read_excel
+from pandas import isna, read_csv, read_excel
 from shutil import rmtree
 from zipfile import ZipFile, is_zipfile
 
@@ -141,6 +140,8 @@ def parse_tabular(df, fileext):
 
 def check_pcoded(df, global_pcodes):
     pcoded = None
+    rows = None
+    matches = None
     header_exp = "((adm)?.*p?.?cod.*)|(#\s?adm\s?\d?\+?\s?p?(code)?)"
 
     for h in df.columns:
@@ -152,52 +153,19 @@ def check_pcoded(df, global_pcodes):
             continue
         column = df[h].dropna().astype("string").str.upper()
         column = column[~column.isin(["NA", "NAN", "NONE", "NULL"])]
+        if len(column) == 0:
+            continue
         matches = sum(column.isin(global_pcodes))
-        pcnt_match = matches / len(column)
+        rows = len(column)
+        pcnt_match = matches / rows
         if pcnt_match >= 0.95:
             pcoded = True
 
-    return pcoded
-
-
-def check_latlong(df):
-    latlonged = None
-    lat_header_exp = "(.*latitude?.*)|(lat)|(point.?y)|(#\s?geo\s?\+\s?lat)"
-    lon_header_exp = "(.*longitude?.*)|(lon(g)?)|(point.?x)|(#\s?geo\s?\+\s?lon)"
-
-    latted = None
-    longed = None
-    for h in df.columns:
-        if latlonged:
-            break
-        headers = h.split("||")
-        lat_header = any([bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in headers])
-        lon_header = any([bool(re.match(lon_header_exp, head, re.IGNORECASE)) for head in headers])
-        if not lat_header and not lon_header:
-            continue
-        column = df[h].dropna().astype(str)
-        if lat_header:
-            matches = concat([column.str.match(lat_exp.pattern, case=False) for lat_exp in LAT_PATTERNS], axis=1)
-            matches = sum(matches.any(axis=1))
-            pcnt_match = matches / len(column)
-            if pcnt_match >= 0.95:
-                latted = True
-        if lon_header:
-            matches = concat([column.str.match(lon_exp.pattern, case=False) for lon_exp in LON_PATTERNS], axis=1)
-            matches = sum(matches.any(axis=1))
-            pcnt_match = matches / len(column)
-            if pcnt_match >= 0.95:
-                longed = True
-
-        if latted and longed:
-            latlonged = True
-
-    return latlonged
+    return rows, matches, pcoded
 
 
 def check_location(resource, global_pcodes, temp_folder):
     pcoded = None
-    latlonged = None
 
     resource_folder = join(temp_folder, get_uuid())
     mkdir(resource_folder)
@@ -215,21 +183,14 @@ def check_location(resource, global_pcodes, temp_folder):
 
     contents, error = read_downloaded_data(resource_files, fileext)
 
+    if len(contents) == 0:
+        return None, None, error
+
     for key in contents:
         if pcoded:
             break
-        pcoded = check_pcoded(contents[key], global_pcodes)
-    if not error and not pcoded:
-        pcoded = False
-
-    if not pcoded and filetype in ["csv", "json", "xls", "xlsx"] and not error:
-        for key in contents:
-            if latlonged:
-                break
-            latlonged = check_latlong(contents[key])
-        if not latlonged:
-            latlonged = False
+        rows, matches, pcoded = check_pcoded(contents[key], global_pcodes)
 
     rmtree(resource_folder)
 
-    return pcoded, latlonged, error
+    return rows, matches, error
