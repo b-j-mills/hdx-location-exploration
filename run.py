@@ -23,11 +23,11 @@ def main(**ignore):
         datasets = Dataset.search_in_hdx(fq='groups:"ben"')
         logger.info(f"Found {len(datasets)} datasets")
 
-        global_pcodes = get_global_pcodes(
+        global_pcodes, global_miscodes = get_global_pcodes(
             "https://raw.githubusercontent.com/b-j-mills/hdx-global-pcodes/main/global_pcodes.csv"
         )
 
-        status = [["dataset name", "resource name", "format", "rows_checked", "rows_pcoded", "error"]]
+        status = [["dataset name", "resource name", "format", "pcoded", "mis_pcoded", "error"]]
 
         for dataset in datasets:
             logger.info(f"Checking {dataset['name']}")
@@ -56,13 +56,13 @@ def main(**ignore):
                     ])
                     continue
 
-                rows, pcoded, error = check_location(resource, global_pcodes, temp_folder)
+                pcoded, mis_pcoded, error = check_location(resource, global_pcodes, global_miscodes, temp_folder)
                 status.append([
                     dataset["name"],
                     resource["name"],
                     resource.get_file_type(),
-                    rows,
                     pcoded,
+                    mis_pcoded,
                     error,
                 ])
 
@@ -72,7 +72,7 @@ def main(**ignore):
 if __name__ == "__main__":
     facade(
         main,
-        hdx_site="prod",
+        hdx_site="feature",
         user_agent="LocationExploration",
         hdx_read_only=True,
         preprefix="HDXINTERNAL",

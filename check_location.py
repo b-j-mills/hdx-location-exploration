@@ -9,6 +9,7 @@ from pandas import isna, read_csv, read_excel
 from shutil import rmtree
 from zipfile import ZipFile, is_zipfile
 
+from hdx.location.country import Country
 from hdx.utilities.dictandlist import read_list_from_csv
 from hdx.utilities.uuid import get_uuid
 
@@ -16,9 +17,18 @@ logger = logging.getLogger(__name__)
 
 
 def get_global_pcodes(url):
-    pcodes = read_list_from_csv(url)
-    pcodes = [str(p[2]) for p in pcodes[1:]]
-    return pcodes
+    code_dict = read_list_from_csv(url, dict_form=True, headers=["Location", "Admin Level", "P-Code", "Name"])
+    pcodes = [str(p["P-Code"]) for p in code_dict if not p["P-Code"] == "P-Code"]
+    miscodes = []
+    for p in code_dict[1:]:
+        iso3_code = p["Location"]
+        iso2_code = Country.get_iso2_from_iso3(iso3_code)
+        code2 = p["P-Code"].replace(iso3_code, iso2_code).replace("0", "")
+        code3 = p["P-Code"].replace(iso2_code, iso3_code).replace("0", "")
+        miscodes.append(code2)
+        miscodes.append(code3)
+    miscodes = list(set(miscodes))
+    return pcodes, miscodes
 
 
 def download_resource(resource, fileext, resource_folder):
@@ -138,10 +148,8 @@ def parse_tabular(df, fileext):
     return df
 
 
-def check_pcoded(df, global_pcodes):
+def check_pcoded(df, global_pcodes, miscodes=False):
     pcoded = None
-    rows = None
-    matches = None
     header_exp = "((adm)?.*p?.?cod.*)|(#\s?adm\s?\d?\+?\s?p?(code)?)"
 
     for h in df.columns:
@@ -155,17 +163,19 @@ def check_pcoded(df, global_pcodes):
         column = column[~column.isin(["NA", "NAN", "NONE", "NULL"])]
         if len(column) == 0:
             continue
+        if miscodes:
+            column = column.str.replace("0", "")
         matches = sum(column.isin(global_pcodes))
-        rows = len(column)
-        pcnt_match = matches / rows
-        if pcnt_match >= 0.95:
+        pcnt_match = matches / len(column)
+        if pcnt_match >= 0.9:
             pcoded = True
 
-    return rows, matches, pcoded
+    return pcoded
 
 
-def check_location(resource, global_pcodes, temp_folder):
+def check_location(resource, global_pcodes, global_miscodes, temp_folder):
     pcoded = None
+    mis_pcoded = None
 
     resource_folder = join(temp_folder, get_uuid())
     mkdir(resource_folder)
@@ -189,8 +199,16 @@ def check_location(resource, global_pcodes, temp_folder):
     for key in contents:
         if pcoded:
             break
-        rows, matches, pcoded = check_pcoded(contents[key], global_pcodes)
+        pcoded = check_pcoded(contents[key], global_pcodes)
+
+    if pcoded:
+        return pcoded, mis_pcoded, error
+
+    for key in contents:
+        if mis_pcoded:
+            break
+        mis_pcoded = check_pcoded(contents[key], global_miscodes, miscodes=True)
 
     rmtree(resource_folder)
 
-    return rows, matches, error
+    return pcoded, mis_pcoded, error
