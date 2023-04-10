@@ -21,12 +21,17 @@ def get_global_pcodes(url):
     pcodes = [str(p["P-Code"]) for p in code_dict if not p["P-Code"] == "P-Code"]
     miscodes = []
     for p in code_dict[1:]:
+        pcode = p["P-Code"].replace("0", "")
+        miscodes.append(pcode)
         iso3_code = p["Location"]
         iso2_code = Country.get_iso2_from_iso3(iso3_code)
-        code2 = p["P-Code"].replace(iso3_code, iso2_code).replace("0", "")
-        code3 = p["P-Code"].replace(iso2_code, iso3_code).replace("0", "")
-        miscodes.append(code2)
-        miscodes.append(code3)
+        if iso3_code in pcode:
+            miscode = pcode.replace(iso3_code, iso2_code)
+            miscodes.append(miscode)
+            continue
+        if iso2_code in pcode:
+            miscode = pcode.replace(iso2_code, iso3_code)
+            miscodes.append(miscode)
     miscodes = list(set(miscodes))
     return pcodes, miscodes
 
