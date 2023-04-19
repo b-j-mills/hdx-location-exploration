@@ -18,21 +18,40 @@ logger = logging.getLogger(__name__)
 
 def get_global_pcodes(url):
     code_dict = read_list_from_csv(url, dict_form=True, headers=["Location", "Admin Level", "P-Code", "Name"])
-    pcodes = [str(p["P-Code"]) for p in code_dict if not p["P-Code"] == "P-Code"]
-    miscodes = []
-    for p in code_dict[1:]:
-        pcode = p["P-Code"].replace("0", "")
-        miscodes.append(pcode)
-        iso3_code = p["Location"]
-        iso2_code = Country.get_iso2_from_iso3(iso3_code)
-        if iso3_code in pcode:
-            miscode = pcode.replace(iso3_code, iso2_code)
-            miscodes.append(miscode)
+    pcodes = {"WORLD": []}
+    miscodes = {"WORLD": []}
+    for p in code_dict:
+        if p["P-Code"] == "P-Code":
             continue
-        if iso2_code in pcode:
-            miscode = pcode.replace(iso2_code, iso3_code)
-            miscodes.append(miscode)
-    miscodes = list(set(miscodes))
+        pcode = p["P-Code"]
+        iso3_code = p["Location"]
+        if iso3_code in pcodes:
+            pcodes[iso3_code].append(pcode)
+        else:
+            pcodes[iso3_code] = [pcode]
+        pcodes["WORLD"].append(pcode)
+
+        iso2_code = Country.get_iso2_from_iso3(iso3_code)
+        if iso3_code not in pcode and iso2_code not in pcode:
+            continue
+
+        pcode_no0 = pcode.replace("0", "")
+        if iso3_code in miscodes:
+            miscodes[iso3_code].append(pcode_no0)
+        else:
+            miscodes[iso3_code] = [pcode_no0]
+        miscodes["WORLD"].append(pcode_no0)
+
+        if iso3_code in pcode_no0:
+            miscode = pcode_no0.replace(iso3_code, iso2_code)
+            miscodes[iso3_code].append(miscode)
+            miscodes["WORLD"].append(miscode)
+            continue
+        if iso2_code in pcode_no0:
+            miscode = pcode_no0.replace(iso2_code, iso3_code)
+            miscodes[iso3_code].append(miscode)
+            miscodes["WORLD"].append(miscode)
+
     return pcodes, miscodes
 
 
@@ -153,7 +172,7 @@ def parse_tabular(df, fileext):
     return df
 
 
-def check_pcoded(df, global_pcodes, miscodes=False):
+def check_pcoded(df, pcodes, miscodes=False):
     pcoded = None
     header_exp = "((adm)?.*p?.?cod.*)|(#\s?adm\s?\d?\+?\s?p?(code)?)"
 
@@ -165,12 +184,12 @@ def check_pcoded(df, global_pcodes, miscodes=False):
         if not pcoded_header:
             continue
         column = df[h].dropna().astype("string").str.upper()
-        column = column[~column.isin(["NA", "NAN", "NONE", "NULL"])]
+        column = column[~column.isin(["NA", "NAN", "NONE", "NULL", ""])]
         if len(column) == 0:
             continue
         if miscodes:
             column = column.str.replace("0", "")
-        matches = sum(column.isin(global_pcodes))
+        matches = sum(column.isin(pcodes))
         pcnt_match = matches / len(column)
         if pcnt_match >= 0.9:
             pcoded = True
@@ -178,7 +197,7 @@ def check_pcoded(df, global_pcodes, miscodes=False):
     return pcoded
 
 
-def check_location(resource, global_pcodes, global_miscodes, temp_folder):
+def check_location(resource, pcodes, miscodes, temp_folder):
     pcoded = None
     mis_pcoded = None
 
@@ -204,7 +223,7 @@ def check_location(resource, global_pcodes, global_miscodes, temp_folder):
     for key in contents:
         if pcoded:
             break
-        pcoded = check_pcoded(contents[key], global_pcodes)
+        pcoded = check_pcoded(contents[key], pcodes)
 
     if pcoded:
         return pcoded, mis_pcoded, error
@@ -212,7 +231,7 @@ def check_location(resource, global_pcodes, global_miscodes, temp_folder):
     for key in contents:
         if mis_pcoded:
             break
-        mis_pcoded = check_pcoded(contents[key], global_miscodes, miscodes=True)
+        mis_pcoded = check_pcoded(contents[key], miscodes, miscodes=True)
 
     rmtree(resource_folder)
 

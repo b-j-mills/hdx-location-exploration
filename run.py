@@ -32,6 +32,10 @@ def main(**ignore):
         for dataset in datasets:
             logger.info(f"Checking {dataset['name']}")
 
+            locations = dataset.get_location_iso3s()
+            pcodes = [pcode for iso in global_pcodes for pcode in global_pcodes[iso] if iso in locations]
+            miscodes = [pcode for iso in global_miscodes for pcode in global_miscodes[iso] if iso in locations]
+
             resources = dataset.get_resources()
             for resource in resources:
                 if resource.get_file_type() not in allowed_filetypes:
@@ -56,7 +60,7 @@ def main(**ignore):
                     ])
                     continue
 
-                pcoded, mis_pcoded, error = check_location(resource, global_pcodes, global_miscodes, temp_folder)
+                pcoded, mis_pcoded, error = check_location(resource, pcodes, miscodes, temp_folder)
                 status.append([
                     dataset["name"],
                     resource["name"],
