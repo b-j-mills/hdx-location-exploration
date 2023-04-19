@@ -1,6 +1,4 @@
 import logging
-import warnings
-from shapely.errors import ShapelyDeprecationWarning
 
 from hdx.data.dataset import Dataset
 from hdx.facades.keyword_arguments import facade
@@ -12,7 +10,6 @@ from check_location import check_location, get_global_pcodes
 
 setup_logging()
 logger = logging.getLogger(__name__)
-warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 
 
 def main(**ignore):
@@ -20,7 +17,7 @@ def main(**ignore):
                          "shp", "topojson", "xls", "xlsx"]
 
     with temp_dir(folder="TempLocationExploration") as temp_folder:
-        datasets = Dataset.search_in_hdx(fq='groups:"ben"')
+        datasets = Dataset.search_in_hdx(fq='groups:"tur"')
         logger.info(f"Found {len(datasets)} datasets")
 
         global_pcodes, global_miscodes = get_global_pcodes(
