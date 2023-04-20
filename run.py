@@ -51,7 +51,7 @@ def main(**ignore):
                     ])
                     continue
 
-                if resource["size"] and resource["size"] > 1073741824:
+                if resource["size"] and resource["size"] > configuration["resource_size"]:
                     status.append([
                         dataset["name"],
                         resource["name"],

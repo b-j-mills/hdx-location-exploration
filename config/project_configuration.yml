@@ -14,3 +14,5 @@ allowed_filetypes:
   - "topojson"
   - "xls"
   - "xlsx"
+
+resource_size: 1073741824
