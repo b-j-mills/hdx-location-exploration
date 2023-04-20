@@ -9,22 +9,25 @@ from pandas import isna, read_csv, read_excel
 from shutil import rmtree
 from zipfile import ZipFile, is_zipfile
 
+from hdx.data.dataset import Dataset
 from hdx.location.country import Country
-from hdx.utilities.dictandlist import read_list_from_csv
 from hdx.utilities.uuid import get_uuid
 
 logger = logging.getLogger(__name__)
 
 
-def get_global_pcodes(url):
-    code_dict = read_list_from_csv(url, dict_form=True, headers=["Location", "Admin Level", "P-Code", "Name"])
+def get_global_pcodes(dataset_info, downloader, locations=list()):
+    dataset = Dataset.read_from_hdx(dataset_info["dataset"])
+    resource = [r for r in dataset.get_resources() if r["name"] == dataset_info["name"]]
+    headers, iterator = downloader.get_tabular_rows(resource[0]["url"], dict_form=True)
+
     pcodes = {"WORLD": []}
     miscodes = {"WORLD": []}
-    for p in code_dict:
-        if p["P-Code"] == "P-Code":
+    for row in iterator:
+        pcode = row[dataset_info["p-code"]]
+        iso3_code = row[dataset_info["admin"]]
+        if len(locations) > 0 and iso3_code not in locations and "WORLD" not in locations:
             continue
-        pcode = p["P-Code"]
-        iso3_code = p["Location"]
         if iso3_code in pcodes:
             pcodes[iso3_code].append(pcode)
         else:

@@ -1,9 +1,12 @@
 import logging
+from os.path import join
 
+from hdx.api.configuration import Configuration
 from hdx.data.dataset import Dataset
 from hdx.facades.keyword_arguments import facade
-from hdx.utilities.easy_logging import setup_logging
 from hdx.utilities.dictandlist import write_list_to_csv
+from hdx.utilities.downloader import Download
+from hdx.utilities.easy_logging import setup_logging
 from hdx.utilities.path import temp_dir
 
 from check_location import check_location, get_global_pcodes
@@ -13,16 +16,18 @@ logger = logging.getLogger(__name__)
 
 
 def main(**ignore):
-    allowed_filetypes = ["csv", "geodatabase", "geojson", "geopackage", "json",
-                         "shp", "topojson", "xls", "xlsx"]
+
+    configuration = Configuration.read()
+
+    with Download(rate_limit={"calls": 1, "period": 0.1}) as downloader:
+        global_pcodes, global_miscodes = get_global_pcodes(
+            configuration["global_pcodes"],
+            downloader,
+        )
 
     with temp_dir(folder="TempLocationExploration") as temp_folder:
         datasets = Dataset.search_in_hdx(fq='groups:"tur"')
         logger.info(f"Found {len(datasets)} datasets")
-
-        global_pcodes, global_miscodes = get_global_pcodes(
-            "https://raw.githubusercontent.com/b-j-mills/hdx-global-pcodes/main/global_pcodes.csv"
-        )
 
         status = [["dataset name", "resource name", "format", "pcoded", "mis_pcoded", "error"]]
 
@@ -35,7 +40,7 @@ def main(**ignore):
 
             resources = dataset.get_resources()
             for resource in resources:
-                if resource.get_file_type() not in allowed_filetypes:
+                if resource.get_file_type() not in configuration["allowed_filetypes"]:
                     status.append([
                         dataset["name"],
                         resource["name"],
@@ -73,8 +78,9 @@ def main(**ignore):
 if __name__ == "__main__":
     facade(
         main,
-        hdx_site="feature",
+        hdx_site="prod",
         user_agent="LocationExploration",
         hdx_read_only=True,
         preprefix="HDXINTERNAL",
+        project_config_yaml=join("config", "project_configuration.yml"),
     )

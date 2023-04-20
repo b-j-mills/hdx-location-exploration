@@ -1,0 +1,16 @@
+global_pcodes:
+  dataset: "global-pcodes"
+  name: "global_pcodes.csv"
+  p-code: "P-Code"
+  admin: "Location"
+
+allowed_filetypes:
+  - "csv"
+  - "geodatabase"
+  - "geojson"
+  - "geopackage"
+  - "json"
+  - "shp"
+  - "topojson"
+  - "xls"
+  - "xlsx"
