@@ -54,13 +54,11 @@ def main(**ignore):
                 if mis_pcoded:
                     logger.warning(f"{dataset['name']}: {resource['name']}: may be mis-pcoded")
 
-                if error:
+                if pcoded is None:
                     logger.error(f"{dataset['name']}: {resource['name']}: {error}")
+                    continue
 
-                if not pcoded:
-                    resource["p_coded"] = False
-                if pcoded:
-                    resource["p_coded"] = True
+                resource["p_coded"] = pcoded
 
             try:
                 dataset.update_in_hdx(

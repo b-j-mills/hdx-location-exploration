@@ -236,6 +236,9 @@ def check_location(resource, pcodes, miscodes, temp_folder):
             break
         mis_pcoded = check_pcoded(contents[key], miscodes, miscodes=True)
 
+    if not error and pcoded is None:
+        pcoded = False
+
     rmtree(resource_folder)
 
     return pcoded, mis_pcoded, error
