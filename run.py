@@ -38,6 +38,10 @@ def main(**ignore):
 
             resources = dataset.get_resources()
             for resource in resources:
+                if dataset.get_organization()["name"] == "hot":
+                    resource["p_coded"] = False
+                    continue
+
                 if resource.get_file_type() not in configuration["allowed_filetypes"]:
                     resource["p_coded"] = False
                     continue
