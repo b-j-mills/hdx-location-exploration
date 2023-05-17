@@ -54,9 +54,8 @@ def main(**ignore):
                 if mis_pcoded:
                     logger.warning(f"{dataset['name']}: {resource['name']}: may be mis-pcoded")
 
-                if pcoded is None:
+                if error:
                     logger.error(f"{dataset['name']}: {resource['name']}: {error}")
-                    continue
 
                 resource["p_coded"] = pcoded
 
