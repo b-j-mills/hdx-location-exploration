@@ -1,3 +1,3 @@
 ### HDX location exploration
 
-This script searches for p-codes and coordinates in datasets on HDX. It downloads resources and checks both headers and the first 50 rows to find objects that look like either data category, and outputs results into a spreadsheet.
+This script searches for p-codes and misformatted p-codes in datasets on HDX. It downloads resources and checks the first 200 rows against a list of authoritative p-codes in that location. If more than 90% of them match then it is marked as p-coded in HDX.
