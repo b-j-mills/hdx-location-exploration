@@ -3,23 +3,59 @@ import re
 from fiona import listlayers
 from geopandas import read_file
 from glob import glob
-from hxl.geo import LAT_PATTERNS, LON_PATTERNS
 from os import mkdir
 from os.path import basename, dirname, join
-from pandas import concat, isna, read_csv, read_excel
+from pandas import isna, read_csv, read_excel
 from shutil import rmtree
 from zipfile import ZipFile, is_zipfile
 
-from hdx.utilities.dictandlist import read_list_from_csv
+from hdx.data.dataset import Dataset
+from hdx.location.country import Country
 from hdx.utilities.uuid import get_uuid
 
 logger = logging.getLogger(__name__)
 
 
-def get_global_pcodes(url):
-    pcodes = read_list_from_csv(url)
-    pcodes = [str(p[2]) for p in pcodes[1:]]
-    return pcodes
+def get_global_pcodes(dataset_info, downloader, locations=list()):
+    dataset = Dataset.read_from_hdx(dataset_info["dataset"])
+    resource = [r for r in dataset.get_resources() if r["name"] == dataset_info["name"]]
+    headers, iterator = downloader.get_tabular_rows(resource[0]["url"], dict_form=True)
+
+    pcodes = {"WORLD": []}
+    miscodes = {"WORLD": []}
+    for row in iterator:
+        pcode = row[dataset_info["p-code"]]
+        iso3_code = row[dataset_info["admin"]]
+        if len(locations) > 0 and iso3_code not in locations and "WORLD" not in locations:
+            continue
+        if iso3_code in pcodes:
+            pcodes[iso3_code].append(pcode)
+        else:
+            pcodes[iso3_code] = [pcode]
+        pcodes["WORLD"].append(pcode)
+
+        iso2_code = Country.get_iso2_from_iso3(iso3_code)
+        if iso3_code not in pcode and iso2_code not in pcode:
+            continue
+
+        pcode_no0 = pcode.replace("0", "")
+        if iso3_code in miscodes:
+            miscodes[iso3_code].append(pcode_no0)
+        else:
+            miscodes[iso3_code] = [pcode_no0]
+        miscodes["WORLD"].append(pcode_no0)
+
+        if iso3_code in pcode_no0:
+            miscode = pcode_no0.replace(iso3_code, iso2_code)
+            miscodes[iso3_code].append(miscode)
+            miscodes["WORLD"].append(miscode)
+            continue
+        if iso2_code in pcode_no0:
+            miscode = pcode_no0.replace(iso2_code, iso3_code)
+            miscodes[iso3_code].append(miscode)
+            miscodes["WORLD"].append(miscode)
+
+    return pcodes, miscodes
 
 
 def download_resource(resource, fileext, resource_folder):
@@ -139,7 +175,7 @@ def parse_tabular(df, fileext):
     return df
 
 
-def check_pcoded(df, global_pcodes):
+def check_pcoded(df, pcodes, miscodes=False):
     pcoded = None
     header_exp = "((adm)?.*p?.?cod.*)|(#\s?adm\s?\d?\+?\s?p?(code)?)"
 
@@ -151,53 +187,22 @@ def check_pcoded(df, global_pcodes):
         if not pcoded_header:
             continue
         column = df[h].dropna().astype("string").str.upper()
-        column = column[~column.isin(["NA", "NAN", "NONE", "NULL"])]
-        matches = sum(column.isin(global_pcodes))
+        column = column[~column.isin(["NA", "NAN", "NONE", "NULL", ""])]
+        if len(column) == 0:
+            continue
+        if miscodes:
+            column = column.str.replace("0", "")
+        matches = sum(column.isin(pcodes))
         pcnt_match = matches / len(column)
-        if pcnt_match >= 0.95:
+        if pcnt_match >= 0.9:
             pcoded = True
 
     return pcoded
 
 
-def check_latlong(df):
-    latlonged = None
-    lat_header_exp = "(.*latitude?.*)|(lat)|(point.?y)|(#\s?geo\s?\+\s?lat)"
-    lon_header_exp = "(.*longitude?.*)|(lon(g)?)|(point.?x)|(#\s?geo\s?\+\s?lon)"
-
-    latted = None
-    longed = None
-    for h in df.columns:
-        if latlonged:
-            break
-        headers = h.split("||")
-        lat_header = any([bool(re.match(lat_header_exp, head, re.IGNORECASE)) for head in headers])
-        lon_header = any([bool(re.match(lon_header_exp, head, re.IGNORECASE)) for head in headers])
-        if not lat_header and not lon_header:
-            continue
-        column = df[h].dropna().astype(str)
-        if lat_header:
-            matches = concat([column.str.match(lat_exp.pattern, case=False) for lat_exp in LAT_PATTERNS], axis=1)
-            matches = sum(matches.any(axis=1))
-            pcnt_match = matches / len(column)
-            if pcnt_match >= 0.95:
-                latted = True
-        if lon_header:
-            matches = concat([column.str.match(lon_exp.pattern, case=False) for lon_exp in LON_PATTERNS], axis=1)
-            matches = sum(matches.any(axis=1))
-            pcnt_match = matches / len(column)
-            if pcnt_match >= 0.95:
-                longed = True
-
-        if latted and longed:
-            latlonged = True
-
-    return latlonged
-
-
-def check_location(resource, global_pcodes, temp_folder):
+def check_location(resource, pcodes, miscodes, temp_folder):
     pcoded = None
-    latlonged = None
+    mis_pcoded = None
 
     resource_folder = join(temp_folder, get_uuid())
     mkdir(resource_folder)
@@ -215,21 +220,25 @@ def check_location(resource, global_pcodes, temp_folder):
 
     contents, error = read_downloaded_data(resource_files, fileext)
 
+    if len(contents) == 0:
+        return None, None, error
+
     for key in contents:
         if pcoded:
             break
-        pcoded = check_pcoded(contents[key], global_pcodes)
-    if not error and not pcoded:
-        pcoded = False
+        pcoded = check_pcoded(contents[key], pcodes)
 
-    if not pcoded and filetype in ["csv", "json", "xls", "xlsx"] and not error:
-        for key in contents:
-            if latlonged:
-                break
-            latlonged = check_latlong(contents[key])
-        if not latlonged:
-            latlonged = False
+    if pcoded:
+        return pcoded, mis_pcoded, error
+
+    for key in contents:
+        if mis_pcoded:
+            break
+        mis_pcoded = check_pcoded(contents[key], miscodes, miscodes=True)
+
+    if not error and pcoded is None:
+        pcoded = False
 
     rmtree(resource_folder)
 
-    return pcoded, latlonged, error
+    return pcoded, mis_pcoded, error
