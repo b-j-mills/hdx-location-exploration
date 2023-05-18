@@ -39,6 +39,9 @@ def main(**ignore):
 
             resources = dataset.get_resources()
             for resource in resources:
+                if resource.get("p_coded") is not None:
+                    continue
+
                 if dataset.get_organization()["name"] == "hot":
                     resource["p_coded"] = False
                     continue
