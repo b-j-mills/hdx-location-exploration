@@ -26,12 +26,13 @@ def main(**ignore):
         )
 
     with temp_dir(folder="TempLocationExploration") as temp_folder:
-        datasets = Dataset.search_in_hdx(fq='groups:"tur"')
-        logger.info(f"Found {len(datasets)} datasets")
+        datasets = Dataset.search_in_hdx(
+            fq='cod_level:"cod-standard"'
+        ) + Dataset.search_in_hdx(
+            fq='cod_level:"cod-enhanced"'
+        )
 
         for dataset in datasets:
-            # logger.info(f"Checking {dataset['name']}")
-
             locations = dataset.get_location_iso3s()
             pcodes = [pcode for iso in global_pcodes for pcode in global_pcodes[iso] if iso in locations]
             miscodes = [pcode for iso in global_miscodes for pcode in global_miscodes[iso] if iso in locations]
