@@ -1,3 +1,4 @@
 ### HDX location exploration
+[![Build Status](https://github.com/b-j-mills/hdx-location-exploration/actions/workflows/run-python-tests.yml/badge.svg)](https://github.com/b-j-mills/hdx-location-exploration/actions/workflows/run-python-tests.yml) [![Coverage Status](https://coveralls.io/repos/github/b-j-mills/hdx-location-exploration/badge.svg?branch=main&ts=1)](https://coveralls.io/github/b-j-mills/hdx-location-exploration?branch=main)
 
 This script searches for p-codes and misformatted p-codes in datasets on HDX. It downloads resources and checks the first 200 rows against a list of authoritative p-codes in that location. If more than 90% of them match then it is marked as p-coded in HDX.
